@@ -43,4 +43,11 @@
     var(--page-padding-bottom);
 
   @extend .parent;
+
+  .table {
+    width: 100%;
+    
+    @extend .flex;
+    @extend .child2;
+  }
 }

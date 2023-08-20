@@ -1,5 +1,11 @@
 @import "../Table.module.scss";
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .searchClan {
   height: var(--main-table-height) !important;
   border-bottom: 0 !important;
