@@ -1,5 +1,6 @@
 import express from "express";
-import { getClanUsers } from "./functions/getClanUsers.js";
+import { getClanMembers } from "./functions/getClanMembers.js";
+import { getPlayerInfo } from "./functions/getPlayerInfo.js";
 import dotenv from "dotenv";
 
 dotenv.config()
@@ -33,7 +34,18 @@ app.use(function (req, res, next) {
 
 app.get("/clanMembers", async (req, res) => {
   const clanTag = req.query.clanTag;
-  const data = await getClanUsers(`%23` + clanTag);
+  const data = await getClanMembers(clanTag);
+
+  if (data.ok === false)
+    res.status(data.status).json({
+      message: data.statusText,
+    });
+  else res.send(data);
+});
+
+app.get("/player", async (req, res) => {
+  const playerTag = req.query.playerTag;
+  const data = await getPlayerInfo(playerTag);
 
   if (data.ok === false)
     res.status(data.status).json({

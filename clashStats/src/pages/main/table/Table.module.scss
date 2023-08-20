@@ -1,0 +1,65 @@
+@import "../Main.module.scss";
+
+.itemHover {
+  transition: var(--transition);
+  &:hover {
+    background-color: var(--focus-color);
+  }
+}
+
+.block {
+  height: var(--main-table-heigth);
+  max-height: var(--main-table-max-heigth);
+
+  width: var(--main-table-width);
+  max-width: var(--main-table-max-width);
+
+  border: 1px solid var(--border-color);
+}
+
+.tableContainer {
+  display: relative;
+  height: 100%;
+
+  flex-direction: column;
+  @extend .flex;
+  @extend .child2;
+
+  .table {
+    position: relative;
+
+    height: var(--main-table-heigth);
+    width: var(--main-table-width);
+
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: auto;
+    table-layout: fixed;
+
+    display: flex;
+    flex-direction: column;
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    td,
+    th {
+      white-space: nowrap;
+      height: var(--main-table-height);
+      padding: var(--item-padding-top) var(--item-padding-left);
+      text-align: center;
+      @extend .itemHover;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @extend .block;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+}

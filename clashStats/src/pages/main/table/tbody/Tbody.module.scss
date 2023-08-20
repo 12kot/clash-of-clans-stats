@@ -1,0 +1,20 @@
+.container {
+  .row {
+    .cell {
+      text-align: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: calc(var(--items-gap) / 2);
+
+      img {
+        max-height: calc(var(--main-table-height) / 2);
+      }
+    }
+
+    &:nth-child(even) {
+      background: var(--main--table-focus-color);
+    }
+  }
+}

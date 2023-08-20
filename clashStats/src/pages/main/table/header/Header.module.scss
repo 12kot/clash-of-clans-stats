@@ -1,0 +1,21 @@
+@import "../Table.module.scss";
+
+.searchClan {
+  height: var(--main-table-height) !important;
+  border-bottom: 0 !important;
+  @extend .block;
+
+  justify-content: space-between;
+  @extend .flex;
+
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  padding: var(--item-padding-top);
+
+  .item {
+    border-radius: calc(var(--border-radius) + 1px);
+    padding: calc(var(--item-padding-top)) var(--item-padding-left);
+
+    cursor: pointer;
+    @extend .itemHover;
+  }
+}

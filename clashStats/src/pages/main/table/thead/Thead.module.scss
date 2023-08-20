@@ -1,0 +1,10 @@
+.container {
+  tr th {
+    position: sticky;
+    top: -1px;
+    background-color: var(--bg-color);
+
+    border-bottom: 1px solid var(--focus-color);
+    border-collapse: separate;
+  }
+}
