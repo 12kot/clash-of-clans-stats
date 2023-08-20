@@ -2,6 +2,8 @@ import React, { ReactElement } from "react";
 import styles from "./Tbody.module.scss";
 import { useAppSelector } from "hooks/store";
 import { playerType } from "types/types";
+import experience from "assets/experience.png";
+import versusrTrophy from "assets/versus-trophy.png";
 
 const getTableItems = (clanMembers: playerType[]): ReactElement[] => {
   return clanMembers.map((member, index) => (
@@ -16,17 +18,22 @@ const getTableItems = (clanMembers: playerType[]): ReactElement[] => {
         <div className={styles.cell}>{member.tag}</div>
       </td>
       <td>
-        <div className={styles.cell}>{member.expLevel}</div>
-      </td>
-      <td>
         <div className={styles.cell}>
-          <img src={member.league.iconUrls.small} alt={member.league.name}></img>
-
-          <span>{member.trophies}</span>
+          <span>{member.expLevel}</span>
+          <img src={experience} alt={"experience"} />
         </div>
       </td>
       <td>
-        <div className={styles.cell}>{member.builderBaseTrophies}</div>
+        <div className={styles.cell}>
+          <span>{member.trophies}</span>
+          <img src={member.league.iconUrls.small} alt={member.league.name} />
+        </div>
+      </td>
+      <td>
+        <div className={styles.cell}>
+          <span>{member.builderBaseTrophies}</span>
+          <img src={versusrTrophy} alt={"versusrTrophy"} />
+        </div>
       </td>
       <td>
         <div className={styles.cell}>{member.donations}</div>
