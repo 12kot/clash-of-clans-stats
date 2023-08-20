@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  height: var(--header-height);
+  
+  box-shadow: 0px 0px 10px var(--focus-color);
+  background-color: var(--bg-color);
+
+  padding: var(--item-padding-top) var(--page-padding-left);
+  gap: var(--item-gap);
+  display: flex;
+  align-items: center;
+  
+  position: fixed;
+  top: 0;
+  z-index: 4000;
+  
+  .logo {
+    font-size: var(--header-logo-size);
+  }
+}
