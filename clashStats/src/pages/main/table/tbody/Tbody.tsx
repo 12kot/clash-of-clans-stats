@@ -20,7 +20,7 @@ const getTableItems = (clanMembers: playerType[]): ReactElement[] => {
       </td>
       <td>
         <div className={styles.cell}>
-          <img src={member.league.iconUrls.small} alt=""></img>
+          <img src={member.league.iconUrls.small} alt={member.league.name}></img>
 
           <span>{member.trophies}</span>
         </div>

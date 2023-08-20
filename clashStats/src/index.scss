@@ -26,3 +26,13 @@ body {
 
   background-color: var(--bg-color);
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--scroll-color);
+}

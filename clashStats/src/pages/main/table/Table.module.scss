@@ -1,7 +1,8 @@
 @import "../Main.module.scss";
 
-.itemHover {
+.cellHover {
   transition: var(--transition);
+
   &:hover {
     background-color: var(--focus-color);
   }
@@ -41,19 +42,18 @@
     table {
       border-collapse: separate;
       border-spacing: 0;
-    }
 
-    td,
-    th {
-      white-space: nowrap;
-      height: var(--main-table-height);
-      padding: var(--item-padding-top) var(--item-padding-left);
-      text-align: center;
-      @extend .itemHover;
-    }
+      tr {
+        @extend .cellHover;
+        height: var(--main-table-height);
 
-    &::-webkit-scrollbar {
-      display: none;
+        td,
+        th {
+          white-space: nowrap;
+          padding: var(--item-padding-top) var(--item-padding-left);
+          text-align: center;
+        }
+      }
     }
 
     @extend .block;

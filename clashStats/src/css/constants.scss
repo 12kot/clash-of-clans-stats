@@ -1,11 +1,13 @@
 :root {
   --font-color: #fff;
-  --bg-color: #202124;
+  --bg-color: #191919;
 
-  --border-color: #333;
-  --focus-color: rgba(126, 126, 126, 0.15);
+  --border-color: #2D4263;
+  --focus-color: #2D4263;
 
-  --main--table-focus-color: rgba(72, 72, 72, 0.1);
+  --main--table-color: rgb(34, 34, 38);
+
+  --scroll-color: #2D4263;
 
   --page-padding-top: var(--header-height);
   --page-padding-left: 4vw;
