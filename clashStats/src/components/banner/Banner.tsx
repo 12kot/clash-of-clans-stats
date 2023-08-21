@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import styles from "./Banner.module.scss";
-import banner from "assets/cocBanner.jpeg";
+import banner from "assets/img/cocBanner.jpeg";
 
 const Banner = ({ text }: { text?: string }): ReactElement => {
   return (

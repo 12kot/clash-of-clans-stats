@@ -1,6 +1,9 @@
 :root {
   --font-color: #141414;
   --bg-color: #ffff;
+
+  --negative-color: #fff;
+
   --button-color: #e03997;
   --button-font-color: #ffff;
 
@@ -24,7 +27,7 @@
 
   --font-size: 16px;
   --h1-size: 40px;
-  --h2-size: 24px;
+  --h2-size: 18px;
 
   --transition: 0.3s;
 
@@ -39,16 +42,19 @@
   @media screen and (max-width: 1024px) {
     --font-size: 15px;
     --h1-size: 35px;
-    --h2-size: 24px;
+    --h2-size: 17px;
+    --page-padding-left: 6vw;
   }
   @media screen and (max-width: 768px) {
     --font-size: 14px;
     --h1-size: 30px;
-    --h2-size: 24px;
+    --h2-size: 16px;
+    --page-padding-left: 4vw;
   }
   @media screen and (max-width: 484px) {
     --font-size: 14px;
     --h1-size: 25px;
-    --h2-size: 24px;
+    --h2-size: 15px;
+    --page-padding-left: 10px;
   }
 }
