@@ -1,0 +1,17 @@
+.items {
+  display: flex;
+
+  margin: 0 0 -2px;
+  z-index: 2;
+  .item {
+    padding: var(--item-padding-top) var(--item-padding-left);
+
+    &:hover {
+      background-color: var(--focus-color);
+    }
+  }
+
+  .active {
+    border-bottom: 3px solid var(--button-color);
+  }
+}
