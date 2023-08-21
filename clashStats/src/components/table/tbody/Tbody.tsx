@@ -32,7 +32,7 @@ const getTableItems = (clanMembers: playerType[]): ReactElement[] => {
       <td>
         <div className={styles.cell}>
           <span>{member.builderBaseTrophies}</span>
-          <img src={versusrTrophy} alt={"versusrTrophy"} />
+          <img src={versusrTrophy} alt={"versusTrophy"} />
         </div>
       </td>
       <td>

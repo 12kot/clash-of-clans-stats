@@ -1,15 +1,14 @@
 import React, { ReactElement } from "react";
 import styles from "./Main.module.scss";
-import About from "./about/About";
-import Table from "components/table/Table";
+import Banner from "components/banner/Banner";
 
 const Main = (): ReactElement => {
   return (
     <main className={styles.container}>
-      <About />
-      <div className={styles.table}>
-        <Table />
+      <div className={styles.banner}>
+        <Banner text="Book of stats - best stats"/>
       </div>
+      sfsgfedg
     </main>
   );
 };

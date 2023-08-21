@@ -27,6 +27,12 @@ body {
   background-color: var(--bg-color);
 }
 
+button,
+a {
+  outline: 0;
+  border: none;
+}
+
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;

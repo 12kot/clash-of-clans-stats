@@ -1,20 +1,20 @@
 :root {
-  --font-color: #fff;
-  --bg-color: #191919;
+  --font-color: #141414;
+  --bg-color: #ffff;
 
-  --border-color: #2D4263;
-  --focus-color: #2D4263;
+  --border-color: rgba(34,36,38,.15);
+  --focus-color: rgba(34,36,38,.15);
 
-  --main--table-color: rgb(34, 34, 38);
+  --table-color: rgba(34,36,38,.15);
 
-  --scroll-color: #2D4263;
+  --scroll-color: rgba(34,36,38,.15);
 
   --page-padding-top: var(--header-height);
-  --page-padding-left: 4vw;
+  --page-padding-left: 8vw;
   --page-padding-bottom: 25px;
 
-  --item-padding-top: 5px;
-  --item-padding-left: 10px;
+  --item-padding-top: 8px;
+  --item-padding-left: 12px;
 
   --items-gap: 12px;
   --border-radius: 8px;
@@ -24,8 +24,8 @@
   --transition: 0.3s;
 
   //HEADER
-  --header-height: 65px;
-  --header-logo-size: 24px;
+  --header-height: 45px;
+  --header-logo-size: 16px;
 
   //MAIN
   --main-table-heigth: 70%;
