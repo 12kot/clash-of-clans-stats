@@ -1,25 +1,30 @@
 :root {
   --font-color: #141414;
   --bg-color: #ffff;
+  --button-color: #e03997;
+  --button-font-color: #ffff;
 
-  --border-color: rgba(34,36,38,.15);
-  --focus-color: rgba(34,36,38,.15);
+  --border-color: rgba(34, 36, 38, 0.15);
+  --border-focus-color: rgba(34, 36, 38, 0.25);
+  --focus-color: rgba(34, 36, 38, 0.05);
 
-  --table-color: rgba(34,36,38,.15);
+  --table-color: rgba(34, 36, 38, 0.15);
 
-  --scroll-color: rgba(34,36,38,.15);
+  --scroll-color: rgba(34, 36, 38, 0.15);
 
   --page-padding-top: var(--header-height);
   --page-padding-left: 8vw;
   --page-padding-bottom: 25px;
 
-  --item-padding-top: 8px;
-  --item-padding-left: 12px;
-
+  --item-padding-top: 12px;
+  --item-padding-left: 14px;
   --items-gap: 12px;
-  --border-radius: 8px;
+
+  --border-radius: 4px;
 
   --font-size: 16px;
+  --h1-size: 40px;
+  --h2-size: 24px;
 
   --transition: 0.3s;
 
@@ -28,22 +33,22 @@
   --header-logo-size: 16px;
 
   //MAIN
-  --main-table-heigth: 70%;
-  --main-table-max-heigth: 500px;
-
-  --main-table-width: 80%;
-  --main-table-max-width: 750px;
-
-  --main-table-height: 47px;
+  --main-banner-height: calc(var(--header-height) + 350px);
+  --main-input-height: 50px;
 
   @media screen and (max-width: 1024px) {
-    --page-padding-top: calc(var(--header-height) + 20px);
-    --page-padding-left: 8vw;
-
+    --font-size: 15px;
+    --h1-size: 35px;
+    --h2-size: 24px;
+  }
+  @media screen and (max-width: 768px) {
     --font-size: 14px;
-
-    //MAIN
-    --main-table-heigth: 80%;
-    --main-table-width: 100%;
+    --h1-size: 30px;
+    --h2-size: 24px;
+  }
+  @media screen and (max-width: 484px) {
+    --font-size: 14px;
+    --h1-size: 25px;
+    --h2-size: 24px;
   }
 }

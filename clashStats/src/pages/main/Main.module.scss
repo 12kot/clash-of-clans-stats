@@ -11,13 +11,45 @@
   align-items: center;
 
   .banner {
-    height: calc(var(--header-height) + 350px);
-    max-height: calc(var(--header-height) + 350px);
+    padding-top: var(--header-height);
+    height: var(--main-banner-height);
     width: 100%;
+  }
 
-    @media screen and (max-width: 1024px) {
-      height: calc(var(--header-height) + 350px);
-      max-height: calc(var(--header-height) + 650px);
+  .search {
+    padding: 0 var(--page-padding-left);
+
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    .items {
+      display: flex;
+
+      margin: 0 0 -2px;
+      z-index: 2;
+      .item {
+        padding: var(--item-padding-top) var(--item-padding-left);
+
+        &:hover {
+          background-color: var(--focus-color);
+        }
+      }
+
+      .active {
+        border-bottom: 3px solid var(--button-color);
+      }
     }
+  }
+
+  .top {
+    height: 400px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0) 25%,
+      rgba(0, 0, 0, 0) 75%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 }

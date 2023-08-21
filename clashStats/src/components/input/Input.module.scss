@@ -1,0 +1,12 @@
+.input {
+  height: var(--main-input-height);
+  padding: var(--item-padding-top) var(--item-padding-left);
+  margin-bottom: var(--item-padding-top);
+
+  border: 2px solid var(--border-color);
+  border-top: 3px solid var(--border-color);
+
+  &:focus {
+    border-color: var(--border-focus-color);
+  }
+}
