@@ -1,0 +1,30 @@
+.nameContainer {
+  display: flex;
+  gap: var(--items-gap);
+  width: fit-content;
+  align-items: center;
+  margin-bottom: 5px;
+
+  img {
+    height: 50px;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .clanName {
+      font-weight: 600;
+    }
+
+    .tag {
+      color: var(--second-font-color);
+      font-size: calc(var(--font-size) - 2px);
+    }
+  }
+
+  .icon {
+    height: 30px !important;
+  }
+}

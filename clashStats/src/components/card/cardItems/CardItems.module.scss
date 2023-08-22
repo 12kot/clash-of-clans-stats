@@ -1,0 +1,18 @@
+.valueItem {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--items-gap) / 2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+
+  padding: calc(var(--item-padding-top) / 2) calc(var(--item-padding-left) / 2);
+
+  &:hover {
+    border-color: var(--border-focus-color);
+  }
+
+  .icon {
+    height: 20px;
+  }
+}
