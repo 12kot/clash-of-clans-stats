@@ -2,6 +2,9 @@ import express from "express";
 import { getClanMembers } from "./functions/getClanMembers.js";
 import { getPlayerInfo } from "./functions/getPlayerInfo.js";
 import dotenv from "dotenv";
+import { checkData } from "./fetch/checkData.js";
+import { getClanInfo } from "./functions/getClanInfo.js";
+import { getClanRaids } from "./functions/getClanRaids.js";
 
 dotenv.config()
 
@@ -32,26 +35,33 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.get("/clans/capitalraidseasons", async (req, res) => {
+  const clanTag = req.query.clanTag;
+  const count = req.query.count;
+  const data = await getClanRaids(clanTag, count);
+
+  checkData(data, res);
+});
+
+app.get("/clans", async (req, res) => {
+  const clanTag = req.query.clanTag;
+  const data = await getClanInfo(clanTag);
+
+  checkData(data, res);
+});
+
 app.get("/clanMembers", async (req, res) => {
   const clanTag = req.query.clanTag;
   const data = await getClanMembers(clanTag);
 
-  if (data.ok === false)
-    res.status(data.status).json({
-      message: data.statusText,
-    });
-  else res.send(data);
+  checkData(data, res);
 });
 
 app.get("/player", async (req, res) => {
   const playerTag = req.query.playerTag;
   const data = await getPlayerInfo(playerTag);
 
-  if (data.ok === false)
-    res.status(data.status).json({
-      message: data.statusText,
-    });
-  else res.send(data);
+  checkData(data, res);
 });
 
 app.listen(port, (err) => {
