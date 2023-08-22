@@ -1,19 +1,15 @@
 import React, { ReactElement } from "react";
 import styles from "./TopStatisticItems.module.scss";
-import ClanCard from "../../../components/cards/ClanCard/ClanCard";
-
-const StatsJSON = [
-  { header: "Самый популярный клан" },
-  { header: "Самый популярный игрок" },
-  { header: "Лучший игрок" },
-];
+import MostPopularClan from "./MostPopularClan";
+import MostPopularPlayer from "./MostPopularPlayer";
+import TopPlayer from "./TopPlayer";
 
 const TopStatisticItems = (): ReactElement => {
   return (
     <article className={styles.topStats}>
-      {StatsJSON.map((stat, index) => (
-        <ClanCard header={stat.header} key={index} />
-      ))}
+      <MostPopularClan />
+      <MostPopularPlayer />
+      <TopPlayer />
     </article>
   );
 };

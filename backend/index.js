@@ -57,7 +57,7 @@ app.get("/clanMembers", async (req, res) => {
   checkData(data, res);
 });
 
-app.get("/player", async (req, res) => {
+app.get("/players", async (req, res) => {
   const playerTag = req.query.playerTag;
   const data = await getPlayerInfo(playerTag);
 

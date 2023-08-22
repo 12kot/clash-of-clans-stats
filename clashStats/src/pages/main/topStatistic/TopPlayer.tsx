@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 
 import versusTrop from "assets/img/versus-trophy.png";
-import Card from "../Card";
 import { CardHeaderType, CardItemsType, LabelType } from "types/cardTypes";
+import Card from "components/cards/Card";
 
 const labels: LabelType[] = [
   { img: versusTrop, title: "a" },
@@ -40,7 +40,7 @@ const headerCard: CardHeaderType = {
   ],
 };
 
-const card = {
+const playerInfo = {
   header: "Самый популярный клан",
   labels,
   trophies,
@@ -48,10 +48,10 @@ const card = {
   headerCard
 }
 
-const ClanCard = (): ReactElement => {
+const TopPlayer = (): ReactElement => {
   return (
-    <Card {...card} />
+    <Card {...playerInfo} />
   );
 };
 
-export default ClanCard;
+export default TopPlayer;

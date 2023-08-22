@@ -1,12 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./CardItems.module.scss";
+import { CardItemsType } from "types/cardTypes";
 
-type itemType = {
-  img: string;
-  value: number;
-};
-
-const getItems = (items: itemType[]): ReactElement[] => {
+const getItems = (items: CardItemsType[]): ReactElement[] => {
   return items.map((item) => (
     <span className={styles.valueItem}>
       <img src={item.img} alt="" className={styles.icon} />
@@ -16,7 +12,7 @@ const getItems = (items: itemType[]): ReactElement[] => {
 };
 
 type Props = {
-  items: itemType[];
+  items: CardItemsType[];
 };
 
 const CardItems = ({ items }: Props): ReactElement => {

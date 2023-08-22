@@ -1,7 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./CardHeader.module.scss";
+import { CardHeaderType, LabelType } from "types/cardTypes";
 
-const getLables = (labels: Label[]): ReactElement[] => {
+const getLables = (labels: LabelType[]): ReactElement[] => {
   return labels.map((label) => (
     <img
       src={label.img}
@@ -11,24 +12,7 @@ const getLables = (labels: Label[]): ReactElement[] => {
   ));
 };
 
-type Player = {
-  player: {
-    img: string;
-    name: string;
-    tag: string;
-  };
-};
-
-type Label = {
-  img: string;
-  title: string;
-};
-
-interface Props extends Player {
-  labels: Label[];
-}
-
-const CardHeader = ({ player, labels }: Props): ReactElement => {
+const CardHeader = ({ player, labels }: CardHeaderType): ReactElement => {
   return (
     <header className={styles.nameContainer}>
       <img src={player.img} alt=""></img>

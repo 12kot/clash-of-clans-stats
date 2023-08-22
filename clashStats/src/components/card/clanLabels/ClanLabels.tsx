@@ -1,10 +1,6 @@
 import React, { ReactElement } from "react";
 import styles from "./ClanLabels.module.scss";
-
-type LabelType = {
-  img: string;
-  title: string;
-};
+import { LabelType } from "types/cardTypes";
 
 const getLabels = (labels: LabelType[]): ReactElement[] => {
   return labels.map((label) => (
