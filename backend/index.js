@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { checkData } from "./fetch/checkData.js";
 import { getClanInfo } from "./functions/getClanInfo.js";
 import { getClanRaids } from "./functions/getClanRaids.js";
+import { getTopPlayer } from "./functions/getCardInfo/getTopPlayer.js";
 
 dotenv.config()
 
@@ -34,6 +35,13 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+app.use("/public", express.static("public"));
+
+app.get("/topcards", async (req, res) => {
+  const data = await getTopPlayer();
+
+  checkData(data, res);
+});
 
 app.get("/clans/capitalraidseasons", async (req, res) => {
   const clanTag = req.query.clanTag;
@@ -50,7 +58,7 @@ app.get("/clans", async (req, res) => {
   checkData(data, res);
 });
 
-app.get("/clanMembers", async (req, res) => {
+app.get("/clanmembers", async (req, res) => {
   const clanTag = req.query.clanTag;
   const data = await getClanMembers(clanTag);
 

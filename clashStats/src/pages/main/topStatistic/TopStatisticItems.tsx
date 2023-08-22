@@ -1,15 +1,18 @@
 import React, { ReactElement } from "react";
 import styles from "./TopStatisticItems.module.scss";
-import MostPopularClan from "./MostPopularClan";
-import MostPopularPlayer from "./MostPopularPlayer";
-import TopPlayer from "./TopPlayer";
+import { CardType } from "types/cardTypes";
+import Card from "components/cards/Card";
+import { useAppSelector } from "hooks/store";
 
 const TopStatisticItems = (): ReactElement => {
+  const card = useAppSelector((state) => state.app.card);
+
   return (
     <article className={styles.topStats}>
-      <MostPopularClan />
-      <MostPopularPlayer />
-      <TopPlayer />
+      <Card {...(card as CardType)} />
+      <Card {...(card as CardType)} />
+      <Card {...(card as CardType)} />
+      
     </article>
   );
 };

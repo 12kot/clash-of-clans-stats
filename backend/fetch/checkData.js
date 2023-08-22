@@ -1,5 +1,5 @@
 export const checkData = (data, res) => {
-  if (data.ok === false)
+  if (data?.ok === false)
     return res.status(data.status).json({
       message: data.statusText,
     });

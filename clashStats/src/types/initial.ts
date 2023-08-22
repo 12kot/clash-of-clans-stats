@@ -1,3 +1,4 @@
+import { CardType } from "./cardTypes";
 import { clanMembersType, playerHouseType, playerType } from "./types";
 
 export const playerHouseInitial: playerHouseType = {
@@ -31,9 +32,25 @@ export const playerInitial: playerType = {
   donations: 0,
   donationsReceived: 0,
   ...playerLeagueInitial,
-  ...playerHouseInitial
+  ...playerHouseInitial,
 };
 
 export const clanMembersInitial: clanMembersType = {
   items: [playerInitial],
+};
+
+export const initialCard: CardType = {
+  header: "",
+  headerCard: {
+    player: {
+      img: "",
+      name: "",
+      tag: "",
+    },
+
+    labels: [],
+  },
+  trophies: [],
+  otherInfo: [],
+  labels: [],
 };

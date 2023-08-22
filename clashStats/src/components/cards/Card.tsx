@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import styles from "./Card.module.scss";
 import CardHeader from "components/card/cardHeader/CardHeader";
 import CardItems from "components/card/cardItems/CardItems";
-import ClanLabels from "components/card/clanLabels/ClanLabels";
+import Labels from "components/card/labels/Labels";
 import { CardType } from "types/cardTypes";
 
 const Card = ({
@@ -26,7 +26,7 @@ const Card = ({
 
         <section className={styles.values}>
           <CardItems items={otherInfo} />
-          <ClanLabels labels={labels} />
+          <Labels labels={labels} />
         </section>
       </main>
     </section>
