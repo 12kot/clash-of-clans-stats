@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import styles from "./Card.module.scss";
+import styles from "./CardContainer.module.scss";
 import CardHeader from "components/card/cardHeader/CardHeader";
 import CardItems from "components/card/cardItems/CardItems";
 import ClanLabels from "components/card/clanLabels/ClanLabels";
@@ -52,18 +52,18 @@ type Props = {
 
 const ClanCard = ({ header }: Props): ReactElement => {
   return (
-    <section className={styles.item}>
+    <section className={styles.container}>
       <header className={styles.header}>
         <h2>{header}</h2>
       </header>
 
       <main className={styles.content}>
         <CardHeader {...headerCard} />
-        <section className={styles.clanValues}>
+        <section className={styles.values}>
           <CardItems items={items1} />
         </section>
 
-        <section className={styles.clanValues}>
+        <section className={styles.values}>
           <CardItems items={items2} />
           <ClanLabels labels={labels} />
         </section>

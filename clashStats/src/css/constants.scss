@@ -40,22 +40,81 @@
   --main-banner-height: calc(var(--header-height) + 350px);
   --main-input-height: 50px;
 
+  //CARD
+  --card-height: 175px;
+  --card-min-width: 330px;
+  //--card-max-width: 480px;
+
+  //CARD-LABELS
+  --card-player-img-heigth: 50px;
+  --card-player-labels-img-heigth: 30px;
+  --card-icons-img-heigth: 20px;
+
   @media screen and (max-width: 1024px) {
     --font-size: 15px;
     --h1-size: 35px;
     --h2-size: 17px;
     --page-padding-left: 6vw;
+
+    //CARD
+    --card-height: 165px;
+    --card-min-width: 290px;
+    //--card-max-width: 480px;
+
+    //CARD-LABELS
+    --card-player-img-heigth: 45px;
+    --card-player-labels-img-heigth: 25px;
+    --card-icons-img-heigth: 18px;
   }
+
   @media screen and (max-width: 768px) {
     --font-size: 14px;
     --h1-size: 30px;
     --h2-size: 16px;
     --page-padding-left: 4vw;
+
+    //CARD
+    --card-height: 155px;
+    --card-min-width: 280px;
+    //--card-max-width: 480px;
+
+    //CARD-LABELS
+    --card-player-img-heigth: 40px;
+    --card-player-labels-img-heigth: 25px;
+    --card-icons-img-heigth: 18px;
   }
-  @media screen and (max-width: 484px) {
+
+  @media screen and (max-width: 480px) {
     --font-size: 14px;
     --h1-size: 25px;
     --h2-size: 15px;
     --page-padding-left: 10px;
+
+    //CARD
+    --card-height: 155px;
+    --card-min-width: 280px;
+    //--card-max-width: 480px;
+
+    //CARD-LABELS
+    --card-player-img-heigth: 40px;
+    --card-player-labels-img-heigth: 25px;
+    --card-icons-img-heigth: 18px;
+  }
+
+  @media screen and (max-width: 320px) {
+    --font-size: 12px;
+    --h1-size: 20px;
+    --h2-size: 15px;
+    --page-padding-left: 10px;
+
+    //CARD
+    --card-height: 150px;
+    --card-min-width: 250px;
+    //--card-max-width: 480px;
+
+    //CARD-LABELS
+    --card-player-img-heigth: 30px;
+    --card-player-labels-img-heigth: 18px;
+    --card-icons-img-heigth: 14px;
   }
 }

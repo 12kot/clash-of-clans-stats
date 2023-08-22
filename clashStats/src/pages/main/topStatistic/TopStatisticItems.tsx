@@ -6,9 +6,6 @@ const StatsJSON = [
   { header: "Самый популярный клан" },
   { header: "Самый популярный игрок" },
   { header: "Лучший игрок" },
-  { header: "Лучший игрок" },
-  { header: "Лучший игрок" },
-  { header: "Лучший игрок" },
 ];
 
 const TopStatisticItems = (): ReactElement => {

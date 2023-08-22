@@ -4,6 +4,6 @@
   gap: calc(var(--items-gap) / 2);
 
   .icon {
-    height: 20px!important;
+    height: var(--card-icons-img-heigth)!important;
   }
 }
