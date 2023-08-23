@@ -1,10 +1,11 @@
 import React, { ReactElement } from "react";
 import styles from "./CardItems.module.scss";
 import { CardItemsType } from "types/cardTypes";
+import { v4 } from "uuid";
 
 const getItems = (items: CardItemsType[]): ReactElement[] => {
   return items.map((item) => (
-    <span className={styles.valueItem}>
+    <span className={styles.valueItem} key={v4()}>
       <img src={item.img} alt="" className={styles.icon} />
       {item.value}
     </span>

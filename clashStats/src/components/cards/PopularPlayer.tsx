@@ -5,7 +5,7 @@ import React, { ReactElement } from "react";
 const PopularPlayer = (): ReactElement => {
   const card = useAppSelector((state) => state.app.cards.popularPlayer);
 
-  return <Card {...card.player} />;
+  return <Card {...card.player} header={"Самый популярный игрок"} />;
 };
 
 export default PopularPlayer;

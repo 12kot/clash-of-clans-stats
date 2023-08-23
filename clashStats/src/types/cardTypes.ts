@@ -21,7 +21,6 @@ export type CardHeaderType = {
 };
 
 export type CardType = {
-  header: string;
   img: string;
   headerCard: CardHeaderType;
   trophies: CardItemsType[];

@@ -5,6 +5,10 @@ import CardItems from "components/card/cardItems/CardItems";
 import Labels from "components/card/labels/Labels";
 import { CardType } from "types/cardTypes";
 
+interface Props extends CardType {
+  header: string
+}
+
 const Card = ({
   header,
   img,
@@ -12,7 +16,7 @@ const Card = ({
   trophies,
   otherInfo,
   labels,
-}: CardType): ReactElement => {
+}: Props): ReactElement => {
   return (
     <section className={styles.container}>
       <header className={styles.header}>

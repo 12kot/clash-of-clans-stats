@@ -5,7 +5,7 @@ import React, { ReactElement } from "react";
 const TopPlayer = (): ReactElement => {
   const card = useAppSelector((state) => state.app.cards.topPlayer);
 
-  return <Card {...card.player} />;
+  return <Card {...card.player} header={"Лучший игрок Беларуси"} />;
 };
 
 export default TopPlayer;

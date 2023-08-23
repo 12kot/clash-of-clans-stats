@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import styles from "./CardHeader.module.scss";
 import { CardHeaderType, LabelType } from "types/cardTypes";
 import { NavLink } from "react-router-dom";
+import { v4 } from "uuid";
 
 const getLables = (labels: LabelType[]): ReactElement[] => {
   return labels.map((label) => (
@@ -10,6 +11,7 @@ const getLables = (labels: LabelType[]): ReactElement[] => {
       alt={label.title}
       title={label.title}
       className={styles.icon}
+      key={v4()}
     ></img>
   ));
 };

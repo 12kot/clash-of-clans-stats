@@ -5,7 +5,7 @@ import React, { ReactElement } from "react";
 const PopularClan = (): ReactElement => {
   const card = useAppSelector((state) => state.app.cards.popularClan);
 
-  return <Card {...card.player} />;
+  return <Card {...card.player} header={"Самый популярный клан"} />;
 };
 
 export default PopularClan;

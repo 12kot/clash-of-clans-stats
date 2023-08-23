@@ -58,7 +58,7 @@ const getData = async <T>(path: string): Promise<T | boolean> => {
 export const getTopPlayer = createAsyncThunk<{ topPlayer: CardType }, void>(
   "app/getTopPlayer",
   async (_, { rejectWithValue }) => {
-    const res: CardType | boolean = await getData(`cards/topPlayer`);
+    const res: CardType | boolean = await getData(`cards/topplayer`);
 
     if (typeof res === "boolean") return rejectWithValue("");
     return { topPlayer: res };
@@ -69,16 +69,16 @@ export const getPopularPlayer = createAsyncThunk<
   { popularPlayer: CardType },
   void
 >("app/getPopularPlayer", async (_, { rejectWithValue }) => {
-  const res: CardType | boolean = await getData(`cards/popularPlayer`);
+  const res: CardType | boolean = await getData(`cards/mostpopularplayer`);
 
   if (typeof res === "boolean") return rejectWithValue("");
   return { popularPlayer: res };
 });
 
 export const getPopularClan = createAsyncThunk<{ popularClan: CardType }, void>(
-  "app/getTopPlayer",
+  "app/getPopularClan",
   async (_, { rejectWithValue }) => {
-    const res: CardType | boolean = await getData(`cards/popularClan`);
+    const res: CardType | boolean = await getData(`cards/mostpopularclan`);
 
     if (typeof res === "boolean") return rejectWithValue("");
     return { popularClan: res };
@@ -110,7 +110,7 @@ const appSlice = createSlice({
         state.cards.popularPlayer.player = action.payload.popularPlayer;
         state.cards.popularPlayer.loading = false;
       })
-      .addCase(getPopularPlayer.fulfilled, (state, action) => {
+      .addCase(getPopularPlayer.rejected, (state) => {
         state.cards.popularPlayer.player = initialCard;
         state.cards.popularPlayer.loading = false;
       })
