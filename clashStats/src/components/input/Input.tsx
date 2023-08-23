@@ -1,21 +1,27 @@
 import React, { ReactElement } from "react";
 import styles from "./Input.module.scss";
 import SearchSVG from "assets/svg/SearchSVG";
+import { SearchType } from "types/search";
+import Results from "./results/Results";
 
 type Props = {
+  type: string;
   placeholder: string;
   value: string;
   onChange: React.Dispatch<React.SetStateAction<string>>;
   onClick: () => void;
   disabled: boolean;
+  results: SearchType[];
 };
 
 const Input = ({
+  type,
   placeholder,
   value,
   onChange,
   onClick,
   disabled,
+  results,
 }: Props): ReactElement => {
   return (
     <div className={styles.container}>
@@ -28,11 +34,9 @@ const Input = ({
       <button className={styles.icon} onClick={onClick} disabled={disabled}>
         <SearchSVG />
       </button>
-      
+
       <div className={styles.results}>
-        <div className={styles.resultItem}>ф</div>
-        <div className={styles.resultItem}></div>
-        <div className={styles.resultItem}></div>
+        <Results results={results} type={type} />
       </div>
     </div>
   );

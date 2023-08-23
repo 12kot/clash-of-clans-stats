@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { CardType } from "types/cardTypes";
 import { initialCard } from "types/initial";
+import { getDataFromFetch } from "./getDataFromFetch";
 
 type InitialStateType = {
   cards: {
@@ -40,27 +41,12 @@ const initialState: InitialStateType = {
   },
 };
 
-const getData = async <T>(path: string): Promise<T | boolean> => {
-  const res = await fetch(`http://localhost:8000/${path}`);
-
-  try {
-    if (res.ok) {
-      const data: T = await res.json();
-      return data;
-    }
-
-    return false;
-  } catch {
-    return false;
-  }
-};
-
 export const getTopPlayer = createAsyncThunk<{ topPlayer: CardType }, void>(
   "app/getTopPlayer",
   async (_, { rejectWithValue }) => {
-    const res: CardType | boolean = await getData(`cards/topplayer`);
+    const res: CardType | Error = await getDataFromFetch(`cards/topplayer`);
 
-    if (typeof res === "boolean") return rejectWithValue("");
+    if (res instanceof Error) return rejectWithValue(res.message);
     return { topPlayer: res };
   }
 );
@@ -69,18 +55,18 @@ export const getPopularPlayer = createAsyncThunk<
   { popularPlayer: CardType },
   void
 >("app/getPopularPlayer", async (_, { rejectWithValue }) => {
-  const res: CardType | boolean = await getData(`cards/mostpopularplayer`);
+  const res: CardType | Error = await getDataFromFetch(`cards/mostpopularplayer`);
 
-  if (typeof res === "boolean") return rejectWithValue("");
+  if (res instanceof Error) return rejectWithValue(res.message);
   return { popularPlayer: res };
 });
 
 export const getPopularClan = createAsyncThunk<{ popularClan: CardType }, void>(
   "app/getPopularClan",
   async (_, { rejectWithValue }) => {
-    const res: CardType | boolean = await getData(`cards/mostpopularclan`);
+    const res: CardType | Error = await getDataFromFetch(`cards/mostpopularclan`);
 
-    if (typeof res === "boolean") return rejectWithValue("");
+    if (res instanceof Error) return rejectWithValue(res.message);
     return { popularClan: res };
   }
 );

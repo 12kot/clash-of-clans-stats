@@ -32,6 +32,9 @@
 
   --transition: 0.3s;
 
+  //INPUT
+  --input-results-width: 45%;
+
   //HEADER
   --header-height: 45px;
   --header-logo-size: 16px;
@@ -57,6 +60,9 @@
     --h2-size: 17px;
     --page-padding-left: 6vw;
 
+    //INPUT
+    --input-results-width: 60%;
+
     //CARD
     --card-height: 170px;
     --card-min-width: 300px;
@@ -75,6 +81,9 @@
     --h2-size: 16px;
     --page-padding-left: 4vw;
 
+    //INPUT
+    --input-results-width: 80%;
+
     //CARD
     --card-height: 160px;
     --card-min-width: 290px;
@@ -92,6 +101,9 @@
     --h1-size: 25px;
     --h2-size: 15px;
     --page-padding-left: 10px;
+
+    //INPUT
+    --input-results-width: 100%;
 
     //CARD
     --card-height: 160px;

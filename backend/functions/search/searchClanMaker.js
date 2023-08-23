@@ -18,7 +18,7 @@ export const searchClanMaker = (items) => {
           value: item.clanPoints,
         },
         {
-          img: "http://localhost:8000/public/trophy/capital.png",
+          img: "http://localhost:8000/public/trophy/capital.webp",
           value: item.clanCapitalPoints,
         },
         {

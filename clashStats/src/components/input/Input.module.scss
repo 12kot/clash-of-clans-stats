@@ -46,24 +46,27 @@
   .results {
     position: absolute;
     display: none;
-    flex-direction: column;
 
     top: 0;
-    
+    left: 0;
+
     transform: translateY(var(--main-input-height));
-    width: 100%;
+    width: var(--input-results-width);
+
     height: fit-content;
-    gap: var(--items-gap);
+    max-height: calc(var(--main-input-height) * 5);
+    overflow-y: auto;
 
     z-index: 2;
+    border-radius: var(--border-radius);
+    box-shadow: 1px 1px 1px var(--button-color);
 
-    .resultItem {
-      background-color: red;
-      height: var(--main-input-height);
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
   input:focus ~ .results {
-    display: flex;
+    display: block;
   }
 }

@@ -1,0 +1,37 @@
+.resultItem {
+  padding: 0 calc(var(--item-padding-left));
+
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+
+  height: var(--main-input-height) !important;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: var(--items-gap);
+
+  img {
+    height: calc(var(--main-input-height) / 1.4);
+  }
+
+  &:hover {
+    border: 1px solid var(--border-focus-color);
+    img {
+      scale: 1.1;
+    }
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 600;
+
+    .tag {
+      font-size: calc(var(--font-size) - 2px);
+      font-weight: 300;
+    }
+  }
+}
