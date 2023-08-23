@@ -21,7 +21,7 @@ const otherInfo: CardItemsType[] = [
 ];
 
 const headerCard: CardHeaderType = {
-  player: {
+  object: {
     img: "https://api-assets.clashofclans.com/badges/70/SuLLCOjmNMlkKFFuHz0SRkXNcmpvSyOBz0MZXkQM4SE.png",
     name: "Отстранённые",
     tag: "#jekngkl",

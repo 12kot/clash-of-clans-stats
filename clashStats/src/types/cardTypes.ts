@@ -9,7 +9,7 @@ export type LabelType = {
 };
 
 export type CardHeaderType = {
-  player: {
+  object: {
     img: string;
     name: string;
     tag: string;

@@ -1,18 +1,16 @@
 import React, { ReactElement } from "react";
 import styles from "./TopStatisticItems.module.scss";
-import { CardType } from "types/cardTypes";
 import Card from "components/cards/Card";
 import { useAppSelector } from "hooks/store";
 
 const TopStatisticItems = (): ReactElement => {
-  const card = useAppSelector((state) => state.app.card);
+  const cards = useAppSelector((state) => state.app.cards);
 
   return (
     <article className={styles.topStats}>
-      <Card {...(card as CardType)} />
-      <Card {...(card as CardType)} />
-      <Card {...(card as CardType)} />
-      
+      {cards.map((card) => (
+        <Card {...card} />
+      ))}
     </article>
   );
 };

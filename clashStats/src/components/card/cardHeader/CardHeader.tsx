@@ -12,13 +12,13 @@ const getLables = (labels: LabelType[]): ReactElement[] => {
   ));
 };
 
-const CardHeader = ({ player, labels }: CardHeaderType): ReactElement => {
+const CardHeader = ({ object, labels }: CardHeaderType): ReactElement => {
   return (
     <header className={styles.nameContainer}>
-      <img src={player.img} alt=""></img>
+      <img src={object.img} alt=""></img>
       <div className={styles.name}>
-        <span className={styles.clanName}>{player.name}</span>
-        <span className={styles.tag}>{player.tag}</span>
+        <span className={styles.clanName}>{object.name}</span>
+        <span className={styles.tag}>{object.tag}</span>
       </div>
       {getLables(labels)}
     </header>

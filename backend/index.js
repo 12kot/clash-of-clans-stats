@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import { checkData } from "./fetch/checkData.js";
 import { getClanInfo } from "./functions/getClanInfo.js";
 import { getClanRaids } from "./functions/getClanRaids.js";
-import { getTopPlayer } from "./functions/getCardInfo/getTopPlayer.js";
+import { getCards } from "./functions/getCardInfo/getCards.js";
 
 dotenv.config()
 
@@ -38,9 +38,10 @@ app.use(function (req, res, next) {
 app.use("/public", express.static("public"));
 
 app.get("/topcards", async (req, res) => {
-  const data = await getTopPlayer();
+  const data = await getCards();
 
-  checkData(data, res);
+  res.send(data);
+  //await checkData(data, res);
 });
 
 app.get("/clans/capitalraidseasons", async (req, res) => {
@@ -48,28 +49,28 @@ app.get("/clans/capitalraidseasons", async (req, res) => {
   const count = req.query.count;
   const data = await getClanRaids(clanTag, count);
 
-  checkData(data, res);
+  await checkData(data, res);
 });
 
 app.get("/clans", async (req, res) => {
   const clanTag = req.query.clanTag;
   const data = await getClanInfo(clanTag);
 
-  checkData(data, res);
+  await checkData(data, res);
 });
 
 app.get("/clanmembers", async (req, res) => {
   const clanTag = req.query.clanTag;
   const data = await getClanMembers(clanTag);
 
-  checkData(data, res);
+  await checkData(data, res);
 });
 
 app.get("/players", async (req, res) => {
   const playerTag = req.query.playerTag;
   const data = await getPlayerInfo(playerTag);
 
-  checkData(data, res);
+  await checkData(data, res);
 });
 
 app.listen(port, (err) => {

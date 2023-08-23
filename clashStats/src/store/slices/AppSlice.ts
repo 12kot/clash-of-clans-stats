@@ -1,17 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { CardType } from "types/cardTypes";
-import { initialCard } from "types/initial";
 
-const initialState = { card: initialCard };
+type InitialStateType = {
+  cards: CardType[];
+};
 
-export const getTopPlayers = createAsyncThunk<{ topPlayer: CardType }, void>(
+const initialState: InitialStateType = { cards: [] };
+
+export const getTopPlayers = createAsyncThunk<{ topPlayer: CardType[] }, void>(
   "app/getTopPlayers",
   async (_, { rejectWithValue }) => {
     const res = await fetch(`http://localhost:8000/topcards`);
 
     try {
       if (res.ok) {
-        const data: CardType = await res.json();
+        const data: CardType[] = await res.json();
         console.log(data);
         return { topPlayer: data };
       }
@@ -29,8 +32,7 @@ const appSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getTopPlayers.fulfilled, (state, action) => {
-      state.card = action.payload.topPlayer;
-      console.log(state.card);
+      state.cards = action.payload.topPlayer;
     });
   },
 });
