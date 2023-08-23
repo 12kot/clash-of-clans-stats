@@ -7,6 +7,7 @@ import { CardType } from "types/cardTypes";
 
 const Card = ({
   header,
+  img,
   headerCard,
   trophies,
   otherInfo,
@@ -29,6 +30,7 @@ const Card = ({
           <Labels labels={labels} />
         </section>
       </main>
+      <img src={img} alt="" className={styles.banner} />
     </section>
   );
 };

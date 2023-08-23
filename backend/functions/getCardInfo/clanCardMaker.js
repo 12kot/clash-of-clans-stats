@@ -18,22 +18,20 @@ export const clanCardMaker = async (data, header) => {
 
   return {
     header: header,
+    img: `https://flagsapi.com/${data.location.countryCode}/flat/64.png`,
     headerCard: {
       object: {
         img: data.badgeUrls.small,
         title: data.name,
         name: data.name,
         tag: data.tag,
+        type: "CLAN",
       },
 
       labels: [
         {
           img: `http://localhost:8000/public/townhall/capital/${data.clanCapital.capitalHallLevel}.png`,
           title: `Capital level: ${data.clanCapital.capitalHallLevel}`,
-        },
-        {
-          img: `https://flagsapi.com/${data.location.countryCode}/flat/64.png`,
-          title: data.location.name,
         },
       ],
     },

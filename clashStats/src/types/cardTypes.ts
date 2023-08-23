@@ -14,6 +14,7 @@ export type CardHeaderType = {
     title: string;
     name: string;
     tag: string;
+    type: "PLAYER" | "CLAN";
   };
 
   labels: LabelType[];
@@ -21,6 +22,7 @@ export type CardHeaderType = {
 
 export type CardType = {
   header: string;
+  img: string;
   headerCard: CardHeaderType;
   trophies: CardItemsType[];
   otherInfo: CardItemsType[];

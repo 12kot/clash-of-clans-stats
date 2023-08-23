@@ -41,12 +41,14 @@ export const clanMembersInitial: clanMembersType = {
 
 export const initialCard: CardType = {
   header: "",
+  img: "",
   headerCard: {
     object: {
       title: "",
       img: "",
       name: "",
       tag: "",
+      type: "PLAYER"
     },
 
     labels: [],

@@ -23,15 +23,17 @@ export const playerCardMaker = async (data, header) => {
 
   return {
     header: header,
+    img: data.clan.badgeUrls.small,
     headerCard: {
       object: {
         img: `http://localhost:8000/public/townhall/home/${data.townHallLevel}.png`,
         title: `Townhall ${data.townHallLevel}`,
         name: data.name,
         tag: data.tag,
+        type: "PLAYER"
       },
 
-      labels: [{ img: data.clan.badgeUrls.small, title: data.clan.name }],
+      labels: [],
     },
 
     trophies: getTrophies(),
