@@ -43,6 +43,7 @@ export const initialCard: CardType = {
   header: "",
   headerCard: {
     object: {
+      title: "",
       img: "",
       name: "",
       tag: "",

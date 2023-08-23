@@ -25,7 +25,8 @@ export const playerCardMaker = async (data, header) => {
     header: header,
     headerCard: {
       object: {
-        img: "http://localhost:8000/public/townhall/home/TH15_03.png",
+        img: `http://localhost:8000/public/townhall/home/${data.townHallLevel}.png`,
+        title: `Townhall ${data.townHallLevel}`,
         name: data.name,
         tag: data.tag,
       },

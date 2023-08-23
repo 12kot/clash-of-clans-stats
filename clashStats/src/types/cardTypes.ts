@@ -11,6 +11,7 @@ export type LabelType = {
 export type CardHeaderType = {
   object: {
     img: string;
+    title: string;
     name: string;
     tag: string;
   };

@@ -7,6 +7,7 @@ const getLables = (labels: LabelType[]): ReactElement[] => {
     <img
       src={label.img}
       alt={label.title}
+      title={label.title}
       className={styles.icon}
     ></img>
   ));
