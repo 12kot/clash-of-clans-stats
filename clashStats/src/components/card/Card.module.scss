@@ -60,10 +60,9 @@
   overflow: hidden;
   .banner {
     position: absolute;
-    height: calc(var(--card-player-img-heigth) * 1.1);
-    right: var(--items-gap);
-    top: var(--items-gap);
-    z-index: 1;
+    height: calc(var(--card-player-img-heigth));
+    right: var(--item-padding-left);
+    top: var(--item-padding-top);
 
     //filter: drop-shadow(0px 0px 50px var(--button-color));
   }

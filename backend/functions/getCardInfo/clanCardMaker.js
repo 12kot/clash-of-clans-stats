@@ -1,4 +1,4 @@
-export const clanCardMaker = async (data, header) => {
+export const clanCardMaker = async (data) => {
   const getTrophies = () => {
     return [
       {
@@ -17,7 +17,6 @@ export const clanCardMaker = async (data, header) => {
   };
 
   return {
-    header: header,
     img: `https://flagsapi.com/${data.location.countryCode}/flat/64.png`,
     headerCard: {
       object: {

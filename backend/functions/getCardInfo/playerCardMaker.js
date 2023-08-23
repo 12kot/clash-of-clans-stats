@@ -1,4 +1,4 @@
-export const playerCardMaker = async (data, header) => {
+export const playerCardMaker = async (data) => {
   const getTrophies = () => {
     const trophies = [];
 
@@ -17,12 +17,11 @@ export const playerCardMaker = async (data, header) => {
         img: "http://localhost:8000/public/trophy/versus.png",
         value: data.builderBaseTrophies,
       },
-      ...trophies
+      ...trophies,
     ];
   };
 
   return {
-    header: header,
     img: data.clan.badgeUrls.small,
     headerCard: {
       object: {
@@ -30,7 +29,7 @@ export const playerCardMaker = async (data, header) => {
         title: `Townhall ${data.townHallLevel}`,
         name: data.name,
         tag: data.tag,
-        type: "PLAYER"
+        type: "PLAYER",
       },
 
       labels: [],

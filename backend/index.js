@@ -6,8 +6,11 @@ import { checkData } from "./fetch/checkData.js";
 import { getClanInfo } from "./functions/getClanInfo.js";
 import { getClanRaids } from "./functions/getClanRaids.js";
 import { getCards } from "./functions/getCardInfo/getCards.js";
+import { getTopPlayer } from "./functions/getCardInfo/getTopPlayer.js";
+import { getMostPopularPlayer } from "./functions/getCardInfo/getMostPopularPlayer.js";
+import { getMostPopularClan } from "./functions/getCardInfo/getMostPopularClan.js";
 
-dotenv.config()
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
@@ -37,11 +40,25 @@ app.use(function (req, res, next) {
 });
 app.use("/public", express.static("public"));
 
-app.get("/topcards", async (req, res) => {
-  const data = await getCards();
+app.get("/cards/topplayer", async (req, res) => {
+  const data = await getTopPlayer();
 
-  res.send(data);
-  //await checkData(data, res);
+  if (typeof data.ok === "boolean") await checkData(data, res);
+  else res.send(data);
+});
+
+app.get("/cards/mostpopularplayer", async (req, res) => {
+  const data = await getMostPopularPlayer();
+
+  if (typeof data.ok === "boolean") await checkData(data, res);
+  else res.send(data);
+});
+
+app.get("/cards/mostpopularclan", async (req, res) => {
+  const data = await getMostPopularClan();
+
+  if (typeof data.ok === "boolean") await checkData(data, res);
+  else res.send(data);
 });
 
 app.get("/clans/capitalraidseasons", async (req, res) => {
