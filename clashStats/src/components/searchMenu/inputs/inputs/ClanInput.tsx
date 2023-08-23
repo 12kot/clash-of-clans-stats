@@ -25,7 +25,7 @@ const ClanInput = (): ReactElement => {
   return (
     <Input
       type="clan"
-      placeholder="CLAN"
+      placeholder="Clan name or tag"
       value={searchClan}
       onChange={setSearchClan}
       onClick={handleSearchClan}

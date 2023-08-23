@@ -16,7 +16,7 @@ const PlayerInput = () => {
   return (
     <Input
       type="player"
-      placeholder="PLAYER"
+      placeholder="Player tag"
       value={searchPlayer}
       onChange={setSearchPlayer}
       onClick={handleSearchPlayer}
