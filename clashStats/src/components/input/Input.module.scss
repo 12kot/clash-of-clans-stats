@@ -42,4 +42,28 @@
       }
     }
   }
+
+  .results {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+
+    top: 0;
+    
+    transform: translateY(var(--main-input-height));
+    width: 100%;
+    height: fit-content;
+    gap: var(--items-gap);
+
+    z-index: 2;
+
+    .resultItem {
+      background-color: red;
+      height: var(--main-input-height);
+    }
+  }
+
+  input:focus ~ .results {
+    display: flex;
+  }
 }

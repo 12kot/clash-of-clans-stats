@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import appSlice from "./slices/AppSlice";
 import clanSlice from "./slices/ClanSlice";
+import searchSlice from "./slices/SearchSlice";
 
 const rootReducer = combineReducers({
     app: appSlice.reducer,
     clan: clanSlice.reducer,
+    search: searchSlice.reducer,
 });
 
 const store = configureStore({

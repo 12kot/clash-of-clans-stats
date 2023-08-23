@@ -28,6 +28,12 @@ const Input = ({
       <button className={styles.icon} onClick={onClick} disabled={disabled}>
         <SearchSVG />
       </button>
+      
+      <div className={styles.results}>
+        <div className={styles.resultItem}>ф</div>
+        <div className={styles.resultItem}></div>
+        <div className={styles.resultItem}></div>
+      </div>
     </div>
   );
 };

@@ -44,7 +44,11 @@ const Inputs = ({ activeButton }: Props): ReactElement => {
     );
   };
 
-  return <section className={styles.input}>{getInput(activeButton)}</section>;
+  return (
+    <section className={styles.input}>
+      {getInput(activeButton)}
+    </section>
+  );
 };
 
 export default Inputs;
