@@ -35,7 +35,6 @@ export const searchClans = createAsyncThunk<{searchClanItems: SearchType[]}, { n
     );
 
     if (res instanceof Error) return rejectWithValue(res.message);
-    console.log(res)
     return { searchClanItems: res };
   }
 );
