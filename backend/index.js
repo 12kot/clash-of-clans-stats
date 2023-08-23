@@ -5,10 +5,10 @@ import dotenv from "dotenv";
 import { checkData } from "./fetch/checkData.js";
 import { getClanInfo } from "./functions/getClanInfo.js";
 import { getClanRaids } from "./functions/getClanRaids.js";
-import { getCards } from "./functions/getCardInfo/getCards.js";
 import { getTopPlayer } from "./functions/getCardInfo/getTopPlayer.js";
 import { getMostPopularPlayer } from "./functions/getCardInfo/getMostPopularPlayer.js";
 import { getMostPopularClan } from "./functions/getCardInfo/getMostPopularClan.js";
+import { searchClan } from "./functions/search/searchClan.js";
 
 dotenv.config();
 
@@ -74,6 +74,15 @@ app.get("/clans", async (req, res) => {
   const data = await getClanInfo(clanTag);
 
   await checkData(data, res);
+});
+
+app.get("/searchclan", async (req, res) => {
+  const name = req.query.name;
+  const limit = req.query.limit;
+  const data = await searchClan(name, limit);
+
+  if (typeof data.ok === "boolean") await checkData(data, res);
+  else res.send(data);
 });
 
 app.get("/clanmembers", async (req, res) => {
