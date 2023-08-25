@@ -17,10 +17,10 @@ export const clanCardMaker = async (data) => {
   };
 
   return {
-    img: `https://flagsapi.com/${data.location.countryCode}/flat/64.png`,
+    img: `https://flagsapi.com/${data?.location?.countryCode}/flat/64.png`,
     headerCard: {
       object: {
-        img: data.badgeUrls.small,
+        img: data?.badgeUrls?.small,
         title: data.name,
         name: data.name,
         tag: data.tag,
@@ -29,8 +29,8 @@ export const clanCardMaker = async (data) => {
 
       labels: [
         {
-          img: `http://localhost:8000/public/townhall/capital/${data.clanCapital.capitalHallLevel}.png`,
-          title: `Capital level: ${data.clanCapital.capitalHallLevel}`,
+          img: `http://localhost:8000/public/townhall/capital/${data?.clanCapital?.capitalHallLevel}.png`,
+          title: `Capital level: ${data?.clanCapital?.capitalHallLevel}`,
         },
       ],
     },
@@ -49,7 +49,7 @@ export const clanCardMaker = async (data) => {
     ],
 
     labels: data.labels.map((label) => {
-      return { img: label.iconUrls.medium, title: label.name };
+      return { img: label?.iconUrls?.medium, title: label?.name };
     }),
   };
 };

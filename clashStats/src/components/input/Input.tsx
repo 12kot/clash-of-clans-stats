@@ -11,7 +11,7 @@ type Props = {
   onChange: React.Dispatch<React.SetStateAction<string>>;
   onClick: () => void;
   disabled: boolean;
-  results: SearchType[];
+  results?: SearchType[];
 };
 
 const Input = ({
@@ -36,7 +36,7 @@ const Input = ({
       </button>
 
       <div className={styles.results}>
-        <Results results={results} type={type} />
+        <Results results={results || []} type={type} />
       </div>
     </div>
   );

@@ -10,25 +10,25 @@ export const playerCardMaker = async (data) => {
 
     return [
       {
-        img: data.league.iconUrls.small,
+        img: data.league?.iconUrls?.small,
         value: data.trophies,
       },
       {
         img: "http://localhost:8000/public/trophy/versus.png",
-        value: data.builderBaseTrophies,
+        value: data?.builderBaseTrophies,
       },
       ...trophies,
     ];
   };
 
   return {
-    img: data.clan.badgeUrls.small,
+    img: data?.clan?.badgeUrls?.small,
     headerCard: {
       object: {
         img: `http://localhost:8000/public/townhall/home/${data.townHallLevel}.png`,
         title: `Townhall ${data.townHallLevel}`,
-        name: data.name,
-        tag: data.tag,
+        name: data?.name,
+        tag: data?.tag,
         type: "PLAYER",
       },
 
@@ -49,7 +49,7 @@ export const playerCardMaker = async (data) => {
     ],
 
     labels: data.labels.map((label) => {
-      return { img: label.iconUrls.medium, title: label.name };
+      return { img: label?.iconUrls?.medium, title: label?.name };
     }),
   };
 };
