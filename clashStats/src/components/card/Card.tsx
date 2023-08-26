@@ -4,9 +4,11 @@ import CardHeader from "components/card/cardHeader/CardHeader";
 import CardItems from "components/card/cardItems/CardItems";
 import Labels from "components/card/labels/Labels";
 import { CardType } from "types/cardTypes";
+import Loader from "components/loader/Loader";
 
 interface Props extends CardType {
-  header: string
+  header: string;
+  loading: boolean;
 }
 
 const Card = ({
@@ -16,6 +18,7 @@ const Card = ({
   trophies,
   otherInfo,
   labels,
+  loading,
 }: Props): ReactElement => {
   return (
     <section className={styles.container}>
@@ -24,15 +27,21 @@ const Card = ({
       </header>
 
       <main className={styles.content}>
-        <CardHeader {...headerCard} />
-        <section className={styles.values}>
-          <CardItems items={trophies} />
-        </section>
+        {loading ? (
+          <Loader size="24px" weight="3px" />
+        ) : (
+          <>
+            <CardHeader {...headerCard} />
+            <section className={styles.values}>
+              <CardItems items={trophies} />
+            </section>
 
-        <section className={styles.values}>
-          <CardItems items={otherInfo} />
-          <Labels labels={labels} />
-        </section>
+            <section className={styles.values}>
+              <CardItems items={otherInfo} />
+              <Labels labels={labels} />
+            </section>
+          </>
+        )}
       </main>
       <img src={img} alt="" className={styles.banner} />
     </section>
