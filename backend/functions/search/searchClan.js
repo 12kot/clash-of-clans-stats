@@ -1,5 +1,5 @@
 import { fetchData } from "../../fetch/fetchData.js";
-import { clanCardMaker } from "../getCardInfo/clanCardMaker.js";
+import { clanCardMaker } from "../cards/clanCardMaker.js";
 import { getClanInfo } from "../getClanInfo.js";
 
 export const searchClan = async (name, limit) => {
@@ -18,7 +18,7 @@ export const searchClan = async (name, limit) => {
     const info = await getClanInfo(name);
     if (info.ok) data.push(await info.json());
   }
-  
+
   return data.map((clan) => {
     return clanCardMaker(clan);
   });

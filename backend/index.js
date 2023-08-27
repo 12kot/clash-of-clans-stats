@@ -5,9 +5,9 @@ import dotenv from "dotenv";
 import { checkData } from "./fetch/checkData.js";
 import { getClanInfo } from "./functions/getClanInfo.js";
 import { getClanRaids } from "./functions/getClanRaids.js";
-import { getTopPlayer } from "./functions/getCardInfo/getTopPlayer.js";
-import { getMostPopularPlayer } from "./functions/getCardInfo/getMostPopularPlayer.js";
-import { getMostPopularClan } from "./functions/getCardInfo/getMostPopularClan.js";
+import { getTopPlayer } from "./functions/cards/cards/getTopPlayer.js";
+import { getMostPopularPlayer } from "./functions/cards/cards/getMostPopularPlayer.js";
+import { getMostPopularClan } from "./functions/cards/cards/getMostPopularClan.js";
 import { searchClan } from "./functions/search/searchClan.js";
 
 dotenv.config();
