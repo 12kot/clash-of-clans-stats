@@ -1,29 +1,11 @@
+import { InitSearchSlice } from "./../../types/initial/slices/searchInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getDataFromFetch } from "./getDataFromFetch";
 import { CardType } from "types/cardTypes";
+import { TSearchSlice } from "types/slices/searchTypes";
 
-interface stateType {
-  clans: {
-    list: CardType[];
-    loading: boolean;
-  };
-
-  players: {
-    list: CardType[];
-    loading: boolean;
-  };
-}
-
-const initialState: stateType = {
-  clans: {
-    list: [],
-    loading: false,
-  },
-
-  players: {
-    list: [],
-    loading: false,
-  },
+const initialState: TSearchSlice = {
+  ...InitSearchSlice,
 };
 
 export const searchPlayers = createAsyncThunk<

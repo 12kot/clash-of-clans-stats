@@ -1,13 +1,11 @@
+import { InitClanSlice } from "./../../types/initial/slices/clanInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { clanMembersInitial } from "types/initial";
+import { clanMembersInitial } from "types/initial/initial";
+import { TClanSlice } from "types/slices/clanTypes";
 import { clanMembersType } from "types/types";
 
-interface stateType {
-  clanMembers: clanMembersType;
-}
-
-const initialState: stateType = {
-  clanMembers: clanMembersInitial,
+const initialState: TClanSlice = {
+  ...InitClanSlice,
 };
 
 export const getClanMembers = createAsyncThunk<

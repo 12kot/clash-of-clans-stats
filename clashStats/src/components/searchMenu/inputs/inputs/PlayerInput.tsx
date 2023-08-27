@@ -2,10 +2,11 @@ import Input from "components/input/Input";
 import { useAppDispatch, useAppSelector } from "hooks/store";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import { searchPlayers } from "store/slices/SearchSlice";
 
 const PlayerInput = () => {
-  const players = useAppSelector((state) => state.search.players);
+  const players = useAppSelector(selectSearchPlayers);
   const dispatch = useAppDispatch();
 
   const [searchPlayer, setSearchPlayer] = useState<string>("");
@@ -24,7 +25,7 @@ const PlayerInput = () => {
 
   return (
     <Input
-      type="player"
+      type="PLAYER"
       placeholder="Player tag"
       value={searchPlayer}
       onChange={setSearchPlayer}

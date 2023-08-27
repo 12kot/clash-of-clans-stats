@@ -1,11 +1,12 @@
 import Card from "components/card/Card";
 import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
+import { selectAppPopularPlayer } from "store/selectors/appSelectors";
 
 const PopularPlayer = (): ReactElement => {
-  const card = useAppSelector((state) => state.app.cards.popularPlayer);
+  const card = useAppSelector(selectAppPopularPlayer);
 
-  return <Card {...card.player} loading={card.loading} header={"Самый популярный игрок"} />;
+  return <Card {...card.item} loading={card.loading} header={"Самый популярный игрок"} />;
 };
 
 export default PopularPlayer;

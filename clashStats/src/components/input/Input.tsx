@@ -4,9 +4,10 @@ import SearchSVG from "assets/svg/SearchSVG";
 import Results from "./results/Results";
 import { CardType } from "types/cardTypes";
 import Loader from "components/loader/Loader";
+import { TSearchButton } from "types/types";
 
 type Props = {
-  type: string;
+  type: TSearchButton;
   placeholder: string;
   value: string;
   onChange: React.Dispatch<React.SetStateAction<string>>;

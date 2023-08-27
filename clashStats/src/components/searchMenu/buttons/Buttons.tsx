@@ -1,9 +1,10 @@
 import React, { ReactElement } from "react";
 import styles from "./Buttons.module.scss";
+import { TSearchButton } from "types/types";
 
 type Props = {
-  activeButton: "PLAYER" | "CLAN";
-  setActiveButton: React.Dispatch<React.SetStateAction<"PLAYER" | "CLAN">>;
+  activeButton: TSearchButton;
+  setActiveButton: React.Dispatch<React.SetStateAction<TSearchButton>>;
 };
 
 const Buttons = ({ activeButton, setActiveButton }: Props): ReactElement => {

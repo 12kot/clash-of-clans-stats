@@ -1,44 +1,12 @@
+import { InitAppSlice } from "./../../types/initial/slices/appInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { CardType } from "types/cardTypes";
-import { initialCard } from "types/initial";
+import { InitCard } from "types/initial/initial";
 import { getDataFromFetch } from "./getDataFromFetch";
+import { TAppSlice } from "types/slices/appTypes";
 
-type InitialStateType = {
-  cards: {
-    topPlayer: {
-      player: CardType;
-      loading: boolean;
-    };
-
-    popularPlayer: {
-      player: CardType;
-      loading: boolean;
-    };
-
-    popularClan: {
-      player: CardType;
-      loading: boolean;
-    };
-  };
-};
-
-const initialState: InitialStateType = {
-  cards: {
-    topPlayer: {
-      player: initialCard,
-      loading: false,
-    },
-
-    popularPlayer: {
-      player: initialCard,
-      loading: false,
-    },
-
-    popularClan: {
-      player: initialCard,
-      loading: false,
-    },
-  },
+const initialState: TAppSlice = {
+  ...InitAppSlice,
 };
 
 export const getTopPlayer = createAsyncThunk<{ topPlayer: CardType }, void>(
@@ -81,33 +49,33 @@ const appSlice = createSlice({
         state.cards.topPlayer.loading = true;
       })
       .addCase(getTopPlayer.fulfilled, (state, action) => {
-        state.cards.topPlayer.player = action.payload.topPlayer;
+        state.cards.topPlayer.item = action.payload.topPlayer;
         state.cards.topPlayer.loading = false;
       })
       .addCase(getTopPlayer.rejected, (state) => {
-        state.cards.topPlayer.player = initialCard;
+        state.cards.topPlayer.item = InitCard;
       })
 
       .addCase(getPopularPlayer.pending, (state) => {
         state.cards.popularPlayer.loading = true;
       })
       .addCase(getPopularPlayer.fulfilled, (state, action) => {
-        state.cards.popularPlayer.player = action.payload.popularPlayer;
+        state.cards.popularPlayer.item = action.payload.popularPlayer;
         state.cards.popularPlayer.loading = false;
       })
       .addCase(getPopularPlayer.rejected, (state) => {
-        state.cards.popularPlayer.player = initialCard;
+        state.cards.popularPlayer.item = InitCard;
       })
 
       .addCase(getPopularClan.pending, (state) => {
         state.cards.popularClan.loading = true;
       })
       .addCase(getPopularClan.fulfilled, (state, action) => {
-        state.cards.popularClan.player = action.payload.popularClan;
+        state.cards.popularClan.item = action.payload.popularClan;
         state.cards.popularClan.loading = false;
       })
       .addCase(getPopularClan.rejected, (state) => {
-        state.cards.popularClan.player = initialCard;
+        state.cards.popularClan.item = InitCard;
       });
   },
 });

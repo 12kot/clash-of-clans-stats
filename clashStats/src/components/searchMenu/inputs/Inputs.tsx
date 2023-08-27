@@ -2,9 +2,10 @@ import React, { ReactElement } from "react";
 import styles from "./Inputs.module.scss";
 import PlayerInput from "./inputs/PlayerInput";
 import ClanInput from "./inputs/ClanInput";
+import { TSearchButton } from "types/types";
 
 type Props = {
-  activeButton: "PLAYER" | "CLAN";
+  activeButton: TSearchButton;
 };
 
 const Inputs = ({ activeButton }: Props): ReactElement => {

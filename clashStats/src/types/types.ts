@@ -1,3 +1,5 @@
+export type TSearchButton = "PLAYER" | "CLAN";
+
 export interface playerHouseType {
   playerHouse: {
     elements: {

@@ -1,5 +1,5 @@
-import { CardType } from "./cardTypes";
-import { clanMembersType, playerHouseType, playerType } from "./types";
+import { CardType } from "../cardTypes";
+import { clanMembersType, playerHouseType, playerType } from "../types";
 
 export const playerHouseInitial: playerHouseType = {
   playerHouse: {
@@ -39,7 +39,7 @@ export const clanMembersInitial: clanMembersType = {
   items: [playerInitial],
 };
 
-export const initialCard: CardType = {
+export const InitCard: CardType = {
   img: "",
   headerCard: {
     object: {

@@ -2,10 +2,11 @@ import Input from "components/input/Input";
 import { useAppDispatch, useAppSelector } from "hooks/store";
 import React, { ReactElement, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { selectSearchClans } from "store/selectors/searchSelectors";
 import { searchClans } from "store/slices/SearchSlice";
 
 const ClanInput = (): ReactElement => {
-  const clans = useAppSelector((state) => state.search.clans);
+  const clans = useAppSelector(selectSearchClans);
   const dispatch = useAppDispatch();
 
   const [searchClan, setSearchClan] = useState<string>("");
@@ -24,7 +25,7 @@ const ClanInput = (): ReactElement => {
 
   return (
     <Input
-      type="clan"
+      type="CLAN"
       placeholder="Clan name or tag"
       value={searchClan}
       onChange={setSearchClan}
