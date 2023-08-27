@@ -44,7 +44,7 @@ const initialState: InitialStateType = {
 export const getTopPlayer = createAsyncThunk<{ topPlayer: CardType }, void>(
   "app/getTopPlayer",
   async (_, { rejectWithValue }) => {
-    const res: CardType | Error = await getDataFromFetch(`cards/topplayer`);
+    const res: CardType | Error = await getDataFromFetch(`cards/player/top`);
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { topPlayer: res };
@@ -55,7 +55,7 @@ export const getPopularPlayer = createAsyncThunk<
   { popularPlayer: CardType },
   void
 >("app/getPopularPlayer", async (_, { rejectWithValue }) => {
-  const res: CardType | Error = await getDataFromFetch(`cards/mostpopularplayer`);
+  const res: CardType | Error = await getDataFromFetch(`cards/player/popular`);
 
   if (res instanceof Error) return rejectWithValue(res.message);
   return { popularPlayer: res };
@@ -64,7 +64,7 @@ export const getPopularPlayer = createAsyncThunk<
 export const getPopularClan = createAsyncThunk<{ popularClan: CardType }, void>(
   "app/getPopularClan",
   async (_, { rejectWithValue }) => {
-    const res: CardType | Error = await getDataFromFetch(`cards/mostpopularclan`);
+    const res: CardType | Error = await getDataFromFetch(`cards/clan/popular`);
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { popularClan: res };

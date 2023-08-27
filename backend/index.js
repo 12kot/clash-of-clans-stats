@@ -9,6 +9,7 @@ import { getTopPlayer } from "./functions/cards/cards/getTopPlayer.js";
 import { getMostPopularPlayer } from "./functions/cards/cards/getMostPopularPlayer.js";
 import { getMostPopularClan } from "./functions/cards/cards/getMostPopularClan.js";
 import { searchClan } from "./functions/search/searchClan.js";
+import { searchPlayer } from "./functions/search/searchPlayer.js";
 
 dotenv.config();
 
@@ -40,21 +41,21 @@ app.use(function (req, res, next) {
 });
 app.use("/public", express.static("public"));
 
-app.get("/cards/topplayer", async (req, res) => {
+app.get("/cards/player/top", async (req, res) => {
   const data = await getTopPlayer();
 
   if (typeof data.ok === "boolean") await checkData(data, res);
   else res.send(data);
 });
 
-app.get("/cards/mostpopularplayer", async (req, res) => {
+app.get("/cards/player/popular", async (req, res) => {
   const data = await getMostPopularPlayer();
 
   if (typeof data.ok === "boolean") await checkData(data, res);
   else res.send(data);
 });
 
-app.get("/cards/mostpopularclan", async (req, res) => {
+app.get("/cards/clan/popular", async (req, res) => {
   const data = await getMostPopularClan();
 
   if (typeof data.ok === "boolean") await checkData(data, res);
@@ -76,7 +77,7 @@ app.get("/clans", async (req, res) => {
   await checkData(data, res);
 });
 
-app.get("/searchclan", async (req, res) => {
+app.get("/search/clan", async (req, res) => {
   const name = req.query.name;
   const limit = req.query.limit;
   const data = await searchClan(name, limit);
@@ -85,7 +86,15 @@ app.get("/searchclan", async (req, res) => {
   else res.send(data);
 });
 
-app.get("/clanmembers", async (req, res) => {
+app.get("/search/player", async (req, res) => {
+  const tag = req.query.tag;
+  const data = await searchPlayer(tag);
+
+  if (typeof data.ok === "boolean") await checkData(data, res);
+  else res.send(data);
+});
+
+app.get("/clan/members", async (req, res) => {
   const clanTag = req.query.clanTag;
   const data = await getClanMembers(clanTag);
 

@@ -2,7 +2,7 @@ import Input from "components/input/Input";
 import { useAppDispatch, useAppSelector } from "hooks/store";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { searchClans } from "store/slices/SearchSlice";
+import { searchPlayers } from "store/slices/SearchSlice";
 
 const PlayerInput = () => {
   const players = useAppSelector((state) => state.search.players);
@@ -14,7 +14,7 @@ const PlayerInput = () => {
   useEffect(() => {
     if (searchPlayer.length > 3)
       setTimeout(() => {
-        dispatch(searchClans({ name: searchPlayer }));
+        dispatch(searchPlayers({ name: searchPlayer }));
       }, 300);
   }, [dispatch, searchPlayer]);
 
