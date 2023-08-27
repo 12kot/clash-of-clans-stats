@@ -1,4 +1,4 @@
-import { TSearchCard, TSearchSlice } from "types/slices/searchTypes";
+import { TSearchCard, TSearchSlice } from "types/types/slices/searchTypes";
 
 export const InitSearchCard: TSearchCard = {
   list: [],

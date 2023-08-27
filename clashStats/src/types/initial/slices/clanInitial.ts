@@ -1,6 +1,6 @@
-import { TClanSlice } from "types/slices/clanTypes";
-import { clanMembersInitial } from "../initial";
+import { TClanSlice } from "types/types/slices/clanTypes";
+import { InitClanMembers } from "../clan/clanInitial";
 
 export const InitClanSlice: TClanSlice = {
-  clanMembers: clanMembersInitial,
+  clanMembers: InitClanMembers,
 };

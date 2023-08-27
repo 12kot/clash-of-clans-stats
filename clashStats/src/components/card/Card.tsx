@@ -3,10 +3,10 @@ import styles from "./Card.module.scss";
 import CardHeader from "components/card/cardHeader/CardHeader";
 import CardItems from "components/card/cardItems/CardItems";
 import Labels from "components/labels/Labels";
-import { CardType } from "types/cardTypes";
 import Loader from "components/loader/Loader";
+import { TCard } from "types/types/card/cardTypes";
 
-interface Props extends CardType {
+interface Props extends TCard {
   header: string;
   loading: boolean;
 }

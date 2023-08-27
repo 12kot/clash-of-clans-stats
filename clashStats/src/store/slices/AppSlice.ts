@@ -1,18 +1,18 @@
 import { InitAppSlice } from "./../../types/initial/slices/appInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { CardType } from "types/cardTypes";
-import { InitCard } from "types/initial/initial";
 import { getDataFromFetch } from "./getDataFromFetch";
-import { TAppSlice } from "types/slices/appTypes";
+import { TAppSlice } from "types/types/slices/appTypes";
+import { TCard } from "types/types/card/cardTypes";
+import { InitCard } from "types/initial/card/cardInitial";
 
 const initialState: TAppSlice = {
   ...InitAppSlice,
 };
 
-export const getTopPlayer = createAsyncThunk<{ topPlayer: CardType }, void>(
+export const getTopPlayer = createAsyncThunk<{ topPlayer: TCard }, void>(
   "app/getTopPlayer",
   async (_, { rejectWithValue }) => {
-    const res: CardType | Error = await getDataFromFetch(`cards/player/top`);
+    const res: TCard | Error = await getDataFromFetch(`cards/player/top`);
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { topPlayer: res };
@@ -20,19 +20,19 @@ export const getTopPlayer = createAsyncThunk<{ topPlayer: CardType }, void>(
 );
 
 export const getPopularPlayer = createAsyncThunk<
-  { popularPlayer: CardType },
+  { popularPlayer: TCard },
   void
 >("app/getPopularPlayer", async (_, { rejectWithValue }) => {
-  const res: CardType | Error = await getDataFromFetch(`cards/player/popular`);
+  const res: TCard | Error = await getDataFromFetch(`cards/player/popular`);
 
   if (res instanceof Error) return rejectWithValue(res.message);
   return { popularPlayer: res };
 });
 
-export const getPopularClan = createAsyncThunk<{ popularClan: CardType }, void>(
+export const getPopularClan = createAsyncThunk<{ popularClan: TCard }, void>(
   "app/getPopularClan",
   async (_, { rejectWithValue }) => {
-    const res: CardType | Error = await getDataFromFetch(`cards/clan/popular`);
+    const res: TCard | Error = await getDataFromFetch(`cards/clan/popular`);
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { popularClan: res };

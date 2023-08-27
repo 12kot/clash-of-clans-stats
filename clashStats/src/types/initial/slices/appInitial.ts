@@ -1,5 +1,5 @@
-import { TAppSlice, TFetchCard } from "types/slices/appTypes";
-import { InitCard } from "../initial";
+import { TAppSlice, TFetchCard } from "types/types/slices/appTypes";
+import { InitCard } from "../card/cardInitial";
 
 export const InitFetchCard: TFetchCard = {
   item: InitCard,

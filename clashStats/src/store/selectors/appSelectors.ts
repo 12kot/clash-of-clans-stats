@@ -1,4 +1,4 @@
-import { TStore } from "types/slices/storeType";
+import { TStore } from "types/types/slices/storeType";
 
 export const selectAppPopularClan = (state: TStore) =>
   state.app.cards.popularClan;

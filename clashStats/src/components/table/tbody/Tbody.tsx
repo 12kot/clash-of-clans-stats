@@ -1,11 +1,11 @@
 import React, { ReactElement } from "react";
 import styles from "./Tbody.module.scss";
 import { useAppSelector } from "hooks/store";
-import { playerType } from "types/types";
 import experience from "assets/experience.png";
 import versusrTrophy from "assets/versus-trophy.png";
+import { TPlayer } from "types/types/player/playerTypes";
 
-const getTableItems = (clanMembers: playerType[]): ReactElement[] => {
+const getTableItems = (clanMembers: TPlayer[]): ReactElement[] => {
   return clanMembers.map((member, index) => (
     <tr key={index} className={styles.row}>
       <th>

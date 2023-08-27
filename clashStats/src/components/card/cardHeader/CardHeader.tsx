@@ -1,10 +1,10 @@
 import React, { ReactElement } from "react";
 import styles from "./CardHeader.module.scss";
-import { CardHeaderType, LabelType } from "types/cardTypes";
 import { NavLink } from "react-router-dom";
 import { v4 } from "uuid";
+import { TCardHeader, TLabel } from "types/types/card/cardTypes";
 
-const getLables = (labels: LabelType[]): ReactElement[] => {
+const getLables = (labels: TLabel[]): ReactElement[] => {
   return labels.map((label) => (
     <img
       src={label.img}
@@ -16,7 +16,7 @@ const getLables = (labels: LabelType[]): ReactElement[] => {
   ));
 };
 
-const CardHeader = ({ object, labels }: CardHeaderType): ReactElement => {
+const CardHeader = ({ object, labels }: TCardHeader): ReactElement => {
   return (
     <header className={styles.nameContainer}>
       <img src={object.img} alt="" title={object.title}></img>

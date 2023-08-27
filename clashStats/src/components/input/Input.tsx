@@ -2,9 +2,9 @@ import React, { ReactElement } from "react";
 import styles from "./Input.module.scss";
 import SearchSVG from "assets/svg/SearchSVG";
 import Results from "./results/Results";
-import { CardType } from "types/cardTypes";
 import Loader from "components/loader/Loader";
 import { TSearchButton } from "types/types";
+import { TCard } from "types/types/card/cardTypes";
 
 type Props = {
   type: TSearchButton;
@@ -14,7 +14,7 @@ type Props = {
   onClick: () => void;
   disabled: boolean;
   loading: boolean;
-  results?: CardType[];
+  results?: TCard[];
 };
 
 const Input = ({

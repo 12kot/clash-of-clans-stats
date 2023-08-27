@@ -1,15 +1,15 @@
 import { InitClanSlice } from "./../../types/initial/slices/clanInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { clanMembersInitial } from "types/initial/initial";
-import { TClanSlice } from "types/slices/clanTypes";
-import { clanMembersType } from "types/types";
+import { InitClanMembers } from "types/initial/clan/clanInitial";
+import { TClanMembers } from "types/types/clan/clanTypes";
+import { TClanSlice } from "types/types/slices/clanTypes";
 
 const initialState: TClanSlice = {
   ...InitClanSlice,
 };
 
 export const getClanMembers = createAsyncThunk<
-  { clanMembers: clanMembersType },
+  { clanMembers: TClanMembers },
   { clanTag: string }
 >("clan/getClanMembers", async (props, { rejectWithValue }) => {
   const res = await fetch(
@@ -18,7 +18,7 @@ export const getClanMembers = createAsyncThunk<
 
   try {
     if (res.ok) {
-      const data: clanMembersType = await res.json();
+      const data: TClanMembers = await res.json();
       return { clanMembers: data };
     }
 
@@ -39,7 +39,7 @@ const clanSlice = createSlice({
         state.clanMembers = action.payload.clanMembers;
       })
       .addCase(getClanMembers.rejected, (state, action) => {
-        state.clanMembers = clanMembersInitial;
+        state.clanMembers = InitClanMembers;
       });
   },
 });

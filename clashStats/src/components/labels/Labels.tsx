@@ -1,16 +1,16 @@
 import React, { ReactElement } from "react";
 import styles from "./Labels.module.scss";
-import { LabelType } from "types/cardTypes";
 import { v4 } from "uuid";
+import { TLabel } from "types/types/card/cardTypes";
 
-const getLabels = (labels: LabelType[]): ReactElement[] => {
+const getLabels = (labels: TLabel[]): ReactElement[] => {
   return labels.map((label) => (
     <img src={label.img} title={label.title} alt="" className={styles.icon} key={v4()} />
   ));
 };
 
 type Props = {
-  labels: LabelType[];
+  labels: TLabel[];
 };
 
 const Labels = ({ labels }: Props): ReactElement => {

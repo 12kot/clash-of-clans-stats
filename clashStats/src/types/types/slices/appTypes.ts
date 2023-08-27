@@ -1,7 +1,7 @@
-import { CardType } from "../cardTypes";
+import { TCard } from "../card/cardTypes";
 
 export interface TFetchCard {
-  item: CardType;
+  item: TCard;
   loading: boolean;
 }
 

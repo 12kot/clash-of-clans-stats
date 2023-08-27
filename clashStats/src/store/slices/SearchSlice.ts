@@ -1,18 +1,18 @@
 import { InitSearchSlice } from "./../../types/initial/slices/searchInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getDataFromFetch } from "./getDataFromFetch";
-import { CardType } from "types/cardTypes";
-import { TSearchSlice } from "types/slices/searchTypes";
+import { TSearchSlice } from "types/types/slices/searchTypes";
+import { TCard } from "types/types/card/cardTypes";
 
 const initialState: TSearchSlice = {
   ...InitSearchSlice,
 };
 
 export const searchPlayers = createAsyncThunk<
-  { items: CardType[] },
+  { items: TCard[] },
   { name: string }
 >("clan/searchPlayers", async (props, { rejectWithValue }) => {
-  const res: CardType[] | Error = await getDataFromFetch(
+  const res: TCard[] | Error = await getDataFromFetch(
     `search/player?tag=${props.name.replaceAll("#", "")}`
   );
 
@@ -21,11 +21,11 @@ export const searchPlayers = createAsyncThunk<
 });
 
 export const searchClans = createAsyncThunk<
-  { items: CardType[] },
+  { items: TCard[] },
   { name: string }
 >("clan/searchClans", async (props, { rejectWithValue }) => {
   const limit = 10;
-  const res: CardType[] | Error = await getDataFromFetch(
+  const res: TCard[] | Error = await getDataFromFetch(
     `search/clan?name=${props.name.replaceAll("#", "")}&limit=${limit}`
   );
 

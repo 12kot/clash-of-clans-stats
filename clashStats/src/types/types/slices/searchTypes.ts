@@ -1,7 +1,7 @@
-import { CardType } from "types/cardTypes";
+import { TCard } from "../card/cardTypes";
 
 export interface TSearchCard {
-  list: CardType[];
+  list: TCard[];
   loading: boolean;
 }
 

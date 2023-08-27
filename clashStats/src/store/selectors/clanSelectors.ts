@@ -1,1 +1,1 @@
-import { TStore } from './../../types/slices/storeType';
+import { TStore } from '../../types/types/slices/storeType';

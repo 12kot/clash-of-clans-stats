@@ -1,10 +1,10 @@
 import React, { ReactElement } from "react";
 import styles from "../Results.module.scss";
 import { NavLink } from "react-router-dom";
-import { CardType } from "types/cardTypes";
+import { TCard } from "types/types/card/cardTypes";
 
 type Props = {
-  item: CardType;
+  item: TCard;
   type: string;
 };
 
