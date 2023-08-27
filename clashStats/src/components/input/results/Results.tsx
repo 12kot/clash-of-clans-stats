@@ -1,23 +1,36 @@
 import React, { ReactElement } from "react";
 import styles from "./Results.module.scss";
 import { NavLink } from "react-router-dom";
-import { v4 } from "uuid";
 import { CardType } from "types/cardTypes";
+import Item from "./item/Item";
+import { v4 } from "uuid";
 
-const Results = ({ results, type }: { results: CardType[], type: string }): ReactElement => {
-  const getResults = (): ReactElement[] => {
-    return results.map((item) => (
-      <NavLink to={`/${type}/${item.headerCard.object.tag}`} className={styles.resultItem} key={v4()}>
-        <img src={item.headerCard.object.img} alt=""></img>
-        <div className={styles.name}>
-          {item.headerCard.object.name}
-          <span className={styles.tag}>{item.headerCard.object.tag}</span>
-        </div>
-      </NavLink>
-    ));
-  };
+type Props = {
+  results: CardType[];
+  value: string;
+  type: string;
+};
 
-  return <>{getResults()}</>;
+const getResults = (results: CardType[], type: string): ReactElement[] => {
+  return results.map((item) => (
+    <Item item={item} type={type} key={v4()} />
+  ));
+};
+
+const Results = ({ results, type, value }: Props): ReactElement => {
+  return (
+    <>
+      {getResults(results, type)}
+      {results.length !== 0 && (
+        <NavLink
+          to={`/search/${type}/${value}`}
+          className={`${styles.resultItem} ${styles.fixed}`}
+        >
+          <p>All results →</p>
+        </NavLink>
+      )}
+    </>
+  );
 };
 
 export default Results;

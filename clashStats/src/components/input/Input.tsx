@@ -39,7 +39,7 @@ const Input = ({
       </button>
 
       <div className={styles.results}>
-        <Results results={results || []} type={type} />
+       {!disabled && <Results results={results || []} type={type} value={value} />}
       </div>
     </div>
   );

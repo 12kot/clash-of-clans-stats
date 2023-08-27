@@ -19,7 +19,7 @@ const PlayerInput = () => {
   }, [dispatch, searchPlayer]);
 
   const handleSearchPlayer = (): void => {
-    navigate(`/player/${searchPlayer}`);
+    navigate(`/search/player/${searchPlayer}`);
   };
 
   return (

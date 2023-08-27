@@ -19,7 +19,7 @@ const ClanInput = (): ReactElement => {
   }, [dispatch, searchClan]);
 
   const handleSearchClan = (): void => {
-    navigate(`/clan/${searchClan}`);
+    navigate(`/search/clan/${searchClan}`);
   };
 
   return (
