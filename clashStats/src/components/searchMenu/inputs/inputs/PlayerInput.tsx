@@ -30,6 +30,7 @@ const PlayerInput = () => {
       onChange={setSearchPlayer}
       onClick={handleSearchPlayer}
       disabled={searchPlayer.length <= 3 || players.loading}
+      loading={players.loading}
       results={players.list}
     />
   );

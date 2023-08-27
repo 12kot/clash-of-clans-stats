@@ -30,6 +30,7 @@ const ClanInput = (): ReactElement => {
       onChange={setSearchClan}
       onClick={handleSearchClan}
       disabled={searchClan.length <= 3 || clans.loading}
+      loading={clans.loading}
       results={clans.list}
     />
   );
