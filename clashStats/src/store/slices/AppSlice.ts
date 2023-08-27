@@ -86,7 +86,6 @@ const appSlice = createSlice({
       })
       .addCase(getTopPlayer.rejected, (state) => {
         state.cards.topPlayer.player = initialCard;
-        state.cards.topPlayer.loading = false;
       })
 
       .addCase(getPopularPlayer.pending, (state) => {
@@ -98,7 +97,6 @@ const appSlice = createSlice({
       })
       .addCase(getPopularPlayer.rejected, (state) => {
         state.cards.popularPlayer.player = initialCard;
-        state.cards.popularPlayer.loading = false;
       })
 
       .addCase(getPopularClan.pending, (state) => {
@@ -110,7 +108,6 @@ const appSlice = createSlice({
       })
       .addCase(getPopularClan.rejected, (state) => {
         state.cards.popularClan.player = initialCard;
-        state.cards.popularClan.loading = false;
       });
   },
 });

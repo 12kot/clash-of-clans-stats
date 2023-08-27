@@ -1,15 +1,25 @@
 import { fetchData } from "../../fetch/fetchData.js";
+import { clanCardMaker } from "../getCardInfo/clanCardMaker.js";
 import { getClanInfo } from "../getClanInfo.js";
-import { searchClanMaker } from "./searchClanMaker.js";
 
 export const searchClan = async (name, limit) => {
   const clans = await fetchData(`clans?name=${name}&limit=${limit}`);
   if (!clans.ok) return clans;
 
-  const data = await clans.json();
+  const res = await clans.json();
+  const data = [];
 
-  const clan = await getClanInfo(name);
-  if (clan.ok) data.items.push(await clan.json());
+  for (const clan of res.items) {
+    const info = await getClanInfo(clan.tag);
+    if (info.ok) data.push(await info.json());
+  }
 
-  return searchClanMaker((data).items);
+  if (data.length === 0) {
+    const info = await getClanInfo(name);
+    if (info.ok) data.push(await info.json());
+  }
+  
+  return data.map((clan) => {
+    return clanCardMaker(clan);
+  });
 };

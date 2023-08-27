@@ -1,13 +1,22 @@
 import Input from "components/input/Input";
-import { useAppSelector } from "hooks/store";
-import React, { useState } from "react";
+import { useAppDispatch, useAppSelector } from "hooks/store";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { searchClans } from "store/slices/SearchSlice";
 
 const PlayerInput = () => {
   const players = useAppSelector((state) => state.search.players);
+  const dispatch = useAppDispatch();
 
   const [searchPlayer, setSearchPlayer] = useState<string>("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (searchPlayer.length > 3)
+      setTimeout(() => {
+        dispatch(searchClans({ name: searchPlayer }));
+      }, 300);
+  }, [dispatch, searchPlayer]);
 
   const handleSearchPlayer = (): void => {
     navigate(`/player/${searchPlayer}`);

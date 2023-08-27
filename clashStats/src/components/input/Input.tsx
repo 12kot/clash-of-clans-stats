@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./Input.module.scss";
 import SearchSVG from "assets/svg/SearchSVG";
-import { SearchType } from "types/search";
 import Results from "./results/Results";
+import { CardType } from "types/cardTypes";
 
 type Props = {
   type: string;
@@ -11,7 +11,7 @@ type Props = {
   onChange: React.Dispatch<React.SetStateAction<string>>;
   onClick: () => void;
   disabled: boolean;
-  results?: SearchType[];
+  results?: CardType[];
 };
 
 const Input = ({

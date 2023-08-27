@@ -1,4 +1,4 @@
-export const playerCardMaker = async (data) => {
+export const playerCardMaker = (data) => {
   const getTrophies = () => {
     const trophies = [];
 

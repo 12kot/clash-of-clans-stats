@@ -1,15 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { SearchType } from "types/search";
 import { getDataFromFetch } from "./getDataFromFetch";
+import { CardType } from "types/cardTypes";
 
 interface stateType {
   clans: {
-    list: SearchType[];
+    list: CardType[];
     loading: boolean;
   };
 
   players: {
-    list: SearchType[];
+    list: CardType[];
     loading: boolean;
   };
 }
@@ -26,12 +26,25 @@ const initialState: stateType = {
   },
 };
 
-export const searchClans = createAsyncThunk<{searchClanItems: SearchType[]}, { name: string }>(
+export const searchPlayers = createAsyncThunk<{searchClanItems: CardType[]}, { name: string }>(
+  "clan/searchPlayers",
+  async (props, { rejectWithValue }) => {
+    const limit = 10;
+    const res: CardType[] | Error = await getDataFromFetch(
+      `searchclan?name=${props.name.replaceAll("#", "")}&limit=${limit}`
+    );
+
+    if (res instanceof Error) return rejectWithValue(res.message);
+    return { searchClanItems: res };
+  }
+);
+
+export const searchClans = createAsyncThunk<{searchClanItems: CardType[]}, { name: string }>(
   "clan/searchClans",
   async (props, { rejectWithValue }) => {
     const limit = 10;
-    const res: SearchType[] | Error = await getDataFromFetch(
-      `searchclan?name=${props.name}&limit=${limit}`
+    const res: CardType[] | Error = await getDataFromFetch(
+      `searchclan?name=${props.name.replaceAll("#", "")}&limit=${limit}`
     );
 
     if (res instanceof Error) return rejectWithValue(res.message);

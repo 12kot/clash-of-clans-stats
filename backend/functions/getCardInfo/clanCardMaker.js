@@ -1,4 +1,4 @@
-export const clanCardMaker = async (data) => {
+export const clanCardMaker = (data) => {
   const getTrophies = () => {
     return [
       {
@@ -16,6 +16,18 @@ export const clanCardMaker = async (data) => {
     ];
   };
 
+  const getCapitalLabel = () => {
+    if (!!data?.clanCapital?.capitalHallLevel)
+      return [
+        {
+          img: `http://localhost:8000/public/townhall/capital/${data?.clanCapital?.capitalHallLevel}.png`,
+          title: `Capital level: ${data?.clanCapital?.capitalHallLevel}`,
+        },
+      ];
+
+    return [];
+  };
+
   return {
     img: `https://flagsapi.com/${data?.location?.countryCode}/flat/64.png`,
     headerCard: {
@@ -27,12 +39,7 @@ export const clanCardMaker = async (data) => {
         type: "CLAN",
       },
 
-      labels: [
-        {
-          img: `http://localhost:8000/public/townhall/capital/${data?.clanCapital?.capitalHallLevel}.png`,
-          title: `Capital level: ${data?.clanCapital?.capitalHallLevel}`,
-        },
-      ],
+      labels: getCapitalLabel(),
     },
 
     trophies: getTrophies(),

@@ -66,7 +66,7 @@
     }
   }
 
-  input:focus ~ .results {
+  input:focus ~ .results, .results:hover {
     display: block;
   }
 }
