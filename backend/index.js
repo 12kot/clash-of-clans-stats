@@ -62,21 +62,6 @@ app.get("/cards/clan/popular", async (req, res) => {
   else res.send(data);
 });
 
-app.get("/clans/capitalraidseasons", async (req, res) => {
-  const clanTag = req.query.clanTag;
-  const count = req.query.count;
-  const data = await getClanRaids(clanTag, count);
-
-  await checkData(data, res);
-});
-
-app.get("/clans", async (req, res) => {
-  const clanTag = req.query.clanTag;
-  const data = await getClanInfo(clanTag);
-
-  await checkData(data, res);
-});
-
 app.get("/search/clan", async (req, res) => {
   const name = req.query.name;
   const limit = req.query.limit;
@@ -94,19 +79,34 @@ app.get("/search/player", async (req, res) => {
   else res.send(data);
 });
 
-app.get("/clan/members", async (req, res) => {
-  const clanTag = req.query.clanTag;
-  const data = await getClanMembers(clanTag);
+// app.get("/players", async (req, res) => {
+//   const playerTag = req.query.playerTag;
+//   const data = await getPlayerInfo(playerTag);
 
-  await checkData(data, res);
-});
+//   await checkData(data, res);
+// });
 
-app.get("/players", async (req, res) => {
-  const playerTag = req.query.playerTag;
-  const data = await getPlayerInfo(playerTag);
+// app.get("/clans", async (req, res) => {
+//   const clanTag = req.query.clanTag;
+//   const data = await getClanInfo(clanTag);
 
-  await checkData(data, res);
-});
+//   await checkData(data, res);
+// });
+
+// app.get("/clan/members", async (req, res) => {
+//   const clanTag = req.query.clanTag;
+//   const data = await getClanMembers(clanTag);
+
+//   await checkData(data, res);
+// });
+
+// app.get("/clans/capitalraidseasons", async (req, res) => {
+//   const clanTag = req.query.clanTag;
+//   const count = req.query.count;
+//   const data = await getClanRaids(clanTag, count);
+
+//   await checkData(data, res);
+// });
 
 app.listen(port, (err) => {
   if (err) return console.log(err);

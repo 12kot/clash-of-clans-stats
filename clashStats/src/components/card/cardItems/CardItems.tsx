@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
 import styles from "./CardItems.module.scss";
 import { v4 } from "uuid";
-import { TCardItems } from "types/types/card/cardTypes";
+import { TCardItem } from "types/types/card/cardTypes";
 
-const getItems = (items: TCardItems[]): ReactElement[] => {
+const getItems = (items: TCardItem[]): ReactElement[] => {
   return items.map((item) => (
     <span className={styles.valueItem} key={v4()}>
       <img src={item.img} alt="" className={styles.icon} />
@@ -13,7 +13,7 @@ const getItems = (items: TCardItems[]): ReactElement[] => {
 };
 
 type Props = {
-  items: TCardItems[];
+  items: TCardItem[];
 };
 
 const CardItems = ({ items }: Props): ReactElement => {

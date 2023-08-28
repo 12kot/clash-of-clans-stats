@@ -1,7 +1,7 @@
 import { TSearchButton } from "types/types";
 import { TLabel } from "../label/labelTypes";
 
-export interface TCardItems {
+export interface TCardItem {
   img: string;
   value: number;
 };
@@ -21,7 +21,7 @@ export interface TCardHeader {
 export interface TCard {
   img: string;
   headerCard: TCardHeader;
-  trophies: TCardItems[];
-  otherInfo: TCardItems[];
+  trophies: TCardItem[];
+  otherInfo: TCardItem[];
   labels: TLabel[];
 };
