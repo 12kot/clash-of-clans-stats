@@ -1,13 +1,9 @@
 import { TSearchButton } from "types/types";
+import { TLabel } from "../label/labelTypes";
 
 export interface TCardItems {
   img: string;
   value: number;
-};
-
-export interface TLabel {
-  img: string;
-  title: string;
 };
 
 export interface TCardHeader {

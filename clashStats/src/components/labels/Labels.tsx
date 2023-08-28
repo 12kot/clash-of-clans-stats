@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./Labels.module.scss";
 import { v4 } from "uuid";
-import { TLabel } from "types/types/card/cardTypes";
+import { TLabel } from "types/types/label/labelTypes";
 
 const getLabels = (labels: TLabel[]): ReactElement[] => {
   return labels.map((label) => (

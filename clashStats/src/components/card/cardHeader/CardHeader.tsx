@@ -2,7 +2,8 @@ import React, { ReactElement } from "react";
 import styles from "./CardHeader.module.scss";
 import { NavLink } from "react-router-dom";
 import { v4 } from "uuid";
-import { TCardHeader, TLabel } from "types/types/card/cardTypes";
+import { TCardHeader } from "types/types/card/cardTypes";
+import { TLabel } from "types/types/label/labelTypes";
 
 const getLables = (labels: TLabel[]): ReactElement[] => {
   return labels.map((label) => (
