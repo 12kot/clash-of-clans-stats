@@ -4,7 +4,7 @@ import { TLabel } from "../label/labelTypes";
 export interface TCardItem {
   img: string;
   value: number;
-};
+}
 
 export interface TCardHeader {
   object: {
@@ -13,10 +13,11 @@ export interface TCardHeader {
     name: string;
     tag: string;
     type: TSearchButton;
+    role?: string;
   };
 
   labels: TLabel[];
-};
+}
 
 export interface TCard {
   img: string;
@@ -24,4 +25,4 @@ export interface TCard {
   trophies: TCardItem[];
   otherInfo: TCardItem[];
   labels: TLabel[];
-};
+}
