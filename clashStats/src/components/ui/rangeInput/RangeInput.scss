@@ -1,6 +1,4 @@
-/* level settings 👇 */
-
-.level {
+.slider {
   /* slider */
   --slider-width: 100%;
   --slider-height: 6px;
@@ -11,13 +9,37 @@
   --level-transition-duration: 0.1s;
 }
 
-.level {
+.slider {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slider .volume {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: var(--icon-margin);
+  color: var(--icon-color);
+  width: var(--icon-size);
+  height: auto;
+}
+
+.slider .level {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   width: var(--slider-width);
   height: var(--slider-height);
-  background-color: var(--slider-bg);
+  background: var(--slider-bg);
+  overflow: hidden;
   border-radius: var(--slider-border-radius);
   -webkit-transition: height var(--level-transition-duration);
   -o-transition: height var(--level-transition-duration);
@@ -25,20 +47,18 @@
   cursor: inherit;
 }
 
-.level .thumb {
-  position: absolute;
-  top: -20px;
-  background-color: var(--button-color);
+.slider .level::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  -webkit-box-shadow: -220px 0 0 220px var(--level-color);
+  box-shadow: -220px 0 0 220px var(--level-color);
 }
 
-.level:hover,
-:active {
-  --slider-bg: var(--border-focus-color);
+.slider:hover .level {
   height: calc(var(--slider-height) * 2);
 }
-
-.level:hover,
-:active ~ .values {
+.slider:hover .values {
   color: var(--color);
 }
 
@@ -52,6 +72,10 @@
   .first {
     position: absolute;
     left: 0;
+  }
+
+  .value {
+    margin: 0 auto;
   }
 
   .second {

@@ -11,7 +11,7 @@
   width: 100%;
 
   .section {
-    flex-basis: 50%;
+    flex-basis: 45%;
 
     .details {
       width: 100%;
@@ -20,7 +20,7 @@
         width: 100%;
 
         img {
-          height: var(--card-icons-img-heigth);
+          height: var(--card-player-labels-img-heigth);
         }
 
         .input {
@@ -43,6 +43,7 @@
     @extend .flex;
   }
 
+  justify-content: space-between;
   @extend .gap;
   @extend .flex;
 }

@@ -11,6 +11,10 @@
   overflow: scroll;
   white-space: nowrap;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .main {
     padding: var(--item-padding-top) var(--item-padding-left);
     font-weight: 600;

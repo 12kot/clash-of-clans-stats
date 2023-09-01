@@ -7,7 +7,7 @@ import Loader from "components/loader/Loader";
 import { TCard } from "types/types/card/cardTypes";
 
 interface Props extends TCard {
-  header: string;
+  header?: string;
   loading: boolean;
 }
 
@@ -22,9 +22,9 @@ const Card = ({
 }: Props): ReactElement => {
   return (
     <section className={styles.container}>
-      <header className={styles.header}>
+      {!!header && <header className={styles.header}>
         <h2>{header}</h2>
-      </header>
+      </header>}
 
       <main className={styles.content}>
         {loading ? (

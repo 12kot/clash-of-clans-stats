@@ -13,5 +13,15 @@
 
   padding: var(--page-padding-top) var(--page-padding-left);
 
+  .cards {
+    padding-top: var(--items-gap);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: var(--items-gap);
+  }
+
   @extend .flex;
 }

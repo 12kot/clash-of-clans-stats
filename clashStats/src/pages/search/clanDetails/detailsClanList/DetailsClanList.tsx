@@ -5,7 +5,6 @@ import TT from "assets/svg/trophy.png";
 import versus from "assets/svg/versus.png";
 import exp from "assets/svg/exp.png";
 import vv from "assets/svg/1v.png";
-import vv10 from "assets/svg/10v.png";
 import RangeInput from "components/ui/rangeInput/RangeInput";
 
 const DetailsClanList = () => {
@@ -58,13 +57,6 @@ const DetailsClanList = () => {
           </li>
           <li className={styles.detailsItem}>
             <img src={vv} alt=""></img>
-            <span className={styles.input}>
-              <RangeInput />
-            </span>
-            <img src={vv10} alt=""></img>
-          </li>
-          <li className={styles.detailsItem}>
-            <img src={exp} alt=""></img>
             <span className={styles.input}>
               <RangeInput />
             </span>

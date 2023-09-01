@@ -8,13 +8,7 @@ const SearchHeader = () => {
         <p className={styles.main}>SEARCH CLAN</p>
         <ul className={styles.buttons}>
           <li className={styles.item}>
-            <NavLink to="/search/clan">CLANS</NavLink>
-          </li>
-          <li className={styles.item}>
-            <NavLink to="/search/clan">CLANS</NavLink>
-          </li>
-          <li className={styles.item}>
-            <NavLink to="/search/clan">CLANS</NavLink>
+            <NavLink to="/search/clan">Search Players</NavLink>
           </li>
         </ul>
       </header>
