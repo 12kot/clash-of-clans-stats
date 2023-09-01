@@ -39,6 +39,10 @@ a, a:active, a:hover, a:focus, a:visited {
   color: var(--font-color);
 }
 
+ul {
+  list-style: none;
+}
+
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;

@@ -1,0 +1,38 @@
+.flex {
+  display: flex;
+}
+
+.gap {
+  gap: var(--items-gap);
+}
+
+.details {
+  .detailsItem {
+    flex-basis: 45%;
+
+    .radioInput {
+      img {
+        max-width: 30px;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      @extend .gap;
+      @extend .flex;
+    }
+
+    .label {
+      justify-content: center;
+      display: flex;
+
+      color: var(--second-font-color);
+    }
+  }
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @extend .gap;
+  @extend .flex;
+}

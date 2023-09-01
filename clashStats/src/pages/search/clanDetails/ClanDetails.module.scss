@@ -1,0 +1,36 @@
+.flex {
+  display: flex;
+}
+
+.gap {
+  gap: var(--items-gap);
+}
+
+.detailsContainer {
+  min-height: 300px;
+  width: 100%;
+
+  padding: var(--item-padding-top) var(--item-padding-left);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+
+  &:hover {
+    box-shadow: var(--box-shadow-focus);
+  }
+
+  .inputContainer {
+    flex-basis: 70%;
+
+    flex-direction: column;
+
+    @extend .gap;
+    @extend .flex;
+  }
+
+  .labels {
+    flex-basis: 30%;
+  }
+
+  @extend .gap;
+  @extend .flex;
+}

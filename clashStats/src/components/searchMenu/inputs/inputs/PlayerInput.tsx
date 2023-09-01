@@ -5,7 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import { searchPlayers } from "store/slices/SearchSlice";
 
-const PlayerInput = () => {
+type Props = {
+  onResults: boolean;
+}
+
+const PlayerInput = ({onResults}: Props) => {
   const players = useAppSelector(selectSearchPlayers);
   const dispatch = useAppDispatch();
 
@@ -13,11 +17,11 @@ const PlayerInput = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (searchPlayer.length > 3)
+    if (searchPlayer.length > 3 && onResults)
       setTimeout(() => {
         dispatch(searchPlayers({ name: searchPlayer }));
       }, 300);
-  }, [dispatch, searchPlayer]);
+  }, [dispatch, searchPlayer, onResults]);
 
   const handleSearchPlayer = (): void => {
     navigate(`/search/player/${searchPlayer}`);

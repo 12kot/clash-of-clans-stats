@@ -5,7 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { selectSearchClans } from "store/selectors/searchSelectors";
 import { searchClans } from "store/slices/SearchSlice";
 
-const ClanInput = (): ReactElement => {
+type Props = { onResults: boolean };
+
+const ClanInput = ({ onResults }: Props): ReactElement => {
   const clans = useAppSelector(selectSearchClans);
   const dispatch = useAppDispatch();
 
@@ -13,11 +15,11 @@ const ClanInput = (): ReactElement => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (searchClan.length > 3)
+    if (searchClan.length > 3 && onResults)
       setTimeout(() => {
         dispatch(searchClans({ name: searchClan }));
       }, 300);
-  }, [dispatch, searchClan]);
+  }, [dispatch, searchClan, onResults]);
 
   const handleSearchClan = (): void => {
     navigate(`/search/clan/${searchClan}`);

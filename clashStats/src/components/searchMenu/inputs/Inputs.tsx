@@ -10,9 +10,9 @@ type Props = {
 
 const Inputs = ({ activeButton }: Props): ReactElement => {
   const getInput = (type: string): ReactElement => {
-    if (type === "PLAYER") return <PlayerInput />;
+    if (type === "PLAYER") return <PlayerInput onResults={true} />;
 
-    return <ClanInput />;
+    return <ClanInput onResults={true} />;
   };
 
   return <section className={styles.input}>{getInput(activeButton)}</section>;

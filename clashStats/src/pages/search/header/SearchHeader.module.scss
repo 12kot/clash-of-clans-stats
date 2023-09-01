@@ -1,0 +1,32 @@
+.flex {
+  display: flex;
+}
+
+.gap {
+  gap: var(--items-gap);
+}
+
+.header {
+  width: 100%;
+
+  .main {
+    padding: var(--item-padding-top) var(--item-padding-left);
+    font-weight: 600;
+  }
+
+  .buttons {
+    .item {
+      padding: var(--item-padding-top) var(--item-padding-left);
+
+      &:hover {
+        background-color: var(--focus-color);
+      }
+    }
+
+    @extend .gap;
+    @extend .flex;
+  }
+
+  @extend .gap;
+  @extend .flex;
+}

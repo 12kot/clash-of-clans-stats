@@ -1,0 +1,17 @@
+.flex {
+  display: flex;
+}
+
+.gap {
+  gap: var(--items-gap);
+}
+
+.container {
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
+
+  padding: var(--page-padding-top) var(--page-padding-left);
+
+  @extend .flex;
+}
