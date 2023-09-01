@@ -33,4 +33,8 @@
 
   @extend .gap;
   @extend .flex;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }

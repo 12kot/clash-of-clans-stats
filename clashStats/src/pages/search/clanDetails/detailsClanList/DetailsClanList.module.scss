@@ -6,33 +6,43 @@
   gap: var(--items-gap);
 }
 
-.details {
-  .detailsItem {
-    flex-basis: 45%;
+.container {
+  height: 100%;
+  width: 100%;
 
-    .radioInput {
-      img {
-        max-width: 30px;
-      }
+  .section {
+    flex-basis: 50%;
 
-      input {
+    .details {
+      width: 100%;
+
+      .detailsItem {
         width: 100%;
+
+        img {
+          height: var(--card-icons-img-heigth);
+        }
+
+        .input {
+          width: 100%;
+        }
+
+        gap: calc(var(--items-gap) / 2);
+        align-items: center;
+        justify-content: center;
+        @extend .flex;
       }
 
+      flex-direction: column;
       @extend .gap;
       @extend .flex;
     }
 
-    .label {
-      justify-content: center;
-      display: flex;
-
-      color: var(--second-font-color);
-    }
+    flex-direction: column;
+    @extend .gap;
+    @extend .flex;
   }
 
-  flex-wrap: wrap;
-  justify-content: space-between;
   @extend .gap;
   @extend .flex;
 }

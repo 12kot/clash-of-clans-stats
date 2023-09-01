@@ -1,0 +1,61 @@
+/* level settings 👇 */
+
+.level {
+  /* slider */
+  --slider-width: 100%;
+  --slider-height: 6px;
+  --slider-bg: var(--border-color);
+  --slider-border-radius: var(--border-radius);
+  /* level */
+  --level-color: var(--button-color);
+  --level-transition-duration: 0.1s;
+}
+
+.level {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  background-color: var(--slider-bg);
+  border-radius: var(--slider-border-radius);
+  -webkit-transition: height var(--level-transition-duration);
+  -o-transition: height var(--level-transition-duration);
+  transition: height var(--level-transition-duration);
+  cursor: inherit;
+}
+
+.level .thumb {
+  position: absolute;
+  top: -20px;
+  background-color: var(--button-color);
+}
+
+.level:hover,
+:active {
+  --slider-bg: var(--border-focus-color);
+  height: calc(var(--slider-height) * 2);
+}
+
+.level:hover,
+:active ~ .values {
+  color: var(--color);
+}
+
+.values {
+  display: flex;
+  position: relative;
+
+  font-size: calc(var(--font-size) - 3px);
+  color: var(--border-focus-color);
+
+  .first {
+    position: absolute;
+    left: 0;
+  }
+
+  .second {
+    position: absolute;
+    right: 0;
+  }
+}

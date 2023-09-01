@@ -24,8 +24,7 @@
     rgba(0, 0, 0, 0.2) 100%
   );
 
-  --box-shadow: 0 1px 3px 0 var(--border-color),
-    0 0 0 1px var(--border-color);
+  --box-shadow: 0 1px 3px 0 var(--border-color), 0 0 0 1px var(--border-color);
   --box-shadow-focus: 0 1px 3px 0 var(--border-focus-color),
     0 0 0 1px var(--border-focus-color);
 
@@ -67,6 +66,9 @@
   --card-icons-img-heigth: 20px;
   --card-labels-img-heigth: 30px;
 
+  //SEARCHPAGE
+  --radio-width: 250px;
+
   @media screen and (max-width: 1024px) {
     --font-size: 15px;
     --h1-size: 35px;
@@ -86,6 +88,9 @@
     --card-player-labels-img-heigth: 25px;
     --card-icons-img-heigth: 18px;
     --card-labels-img-heigth: 28px;
+
+    //SEARCHPAGE
+    --radio-width: 215px;
   }
 
   @media screen and (max-width: 768px) {
@@ -107,6 +112,9 @@
     --card-player-labels-img-heigth: 25px;
     --card-icons-img-heigth: 18px;
     --card-labels-img-heigth: 26px;
+
+    //SEARCHPAGE
+    --radio-width: 180px;
   }
 
   @media screen and (max-width: 480px) {
@@ -128,6 +136,9 @@
     --card-player-labels-img-heigth: 25px;
     --card-icons-img-heigth: 18px;
     --card-labels-img-heigth: 26px;
+
+    //SEARCHPAGE
+    --radio-width: 100%;
   }
 
   @media screen and (max-width: 320px) {
@@ -146,5 +157,8 @@
     --card-player-labels-img-heigth: 18px;
     --card-icons-img-heigth: 14px;
     --card-labels-img-heigth: 24px;
+
+    //SEARCHPAGE
+    --radio-width: 100%;
   }
 }

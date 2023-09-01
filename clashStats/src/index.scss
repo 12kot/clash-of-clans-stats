@@ -43,6 +43,10 @@ ul {
   list-style: none;
 }
 
+h2 {
+  font-size: var(--h2-size);
+}
+
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;

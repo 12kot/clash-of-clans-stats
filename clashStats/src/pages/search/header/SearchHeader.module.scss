@@ -8,6 +8,8 @@
 
 .header {
   width: 100%;
+  overflow: scroll;
+  white-space: nowrap;
 
   .main {
     padding: var(--item-padding-top) var(--item-padding-left);
