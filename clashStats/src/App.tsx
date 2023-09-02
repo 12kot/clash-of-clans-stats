@@ -25,7 +25,7 @@ const App = (): ReactElement => {
       <Header />
       <Routes>
         <Route path="/*" element={<Main />} />
-        <Route path="/search/*" element={<Search />} />
+        <Route path="/search/:type/*" element={<Search />} />
       </Routes>
     </>
   );
