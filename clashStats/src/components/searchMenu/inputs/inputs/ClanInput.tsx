@@ -22,7 +22,7 @@ const ClanInput = ({ onResults }: Props): ReactElement => {
   }, [dispatch, searchClan]);
 
   const handleSearchClan = (): void => {
-    navigate(`/search/clan/${searchClan}`);
+    navigate(`/search/clan?tag=${searchClan}`);
   };
 
   return (

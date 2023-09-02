@@ -6,7 +6,7 @@ import { useAppSelector } from "hooks/store";
 import { selectSearchClans } from "store/selectors/searchSelectors";
 import { useParams, useSearchParams } from "react-router-dom";
 import SearchHeader from "components/search/header/SearchHeader";
-import ClanFilters from "components/search/clanFilters/ClanFilters";
+import ClanFilters from "components/search/filters/clanFilters/ClanFilters";
 
 const Search = (): ReactElement => {
   const clans = useAppSelector(selectSearchClans);

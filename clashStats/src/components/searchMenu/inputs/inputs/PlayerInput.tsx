@@ -24,7 +24,7 @@ const PlayerInput = ({onResults}: Props) => {
   }, [dispatch, searchPlayer, onResults]);
 
   const handleSearchPlayer = (): void => {
-    navigate(`/search/player/${searchPlayer}`);
+    navigate(`/search/player?tag=${searchPlayer}`);
   };
 
   return (
