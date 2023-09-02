@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./DetailsLabels.module.scss";
+import styles from "./AllLabels.module.scss";
 
 const onClick = (
   active: number[],
@@ -33,7 +33,7 @@ const getLabels = (
   ));
 };
 
-const DetailsLabels = () => {
+const AllLabels = () => {
   const [active, setActive] = useState<number[]>([]);
 
   return (
@@ -43,4 +43,4 @@ const DetailsLabels = () => {
   );
 };
 
-export default DetailsLabels;
+export default AllLabels;

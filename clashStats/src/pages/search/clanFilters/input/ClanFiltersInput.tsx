@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./ClanDetailsInput.module.scss";
+import styles from "./ClanFiltersInput.module.scss";
 import ClanInput from "components/searchMenu/inputs/inputs/ClanInput";
 
-const ClanDetailsInput = () => {
+const ClanFiltersInput = () => {
   return (
     <span className={styles.input}>
       <ClanInput onResults={false} />
@@ -10,4 +10,4 @@ const ClanDetailsInput = () => {
   );
 };
 
-export default ClanDetailsInput;
+export default ClanFiltersInput;

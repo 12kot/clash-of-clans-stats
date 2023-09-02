@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./DetailsClanList.module.scss";
+import styles from "./FiltersClanList.module.scss";
 import im1 from "assets/svg/1.png";
 import TT from "assets/svg/trophy.png";
 import versus from "assets/svg/versus.png";
@@ -7,7 +7,7 @@ import exp from "assets/svg/exp.png";
 import vv from "assets/svg/1v.png";
 import RangeInput from "components/ui/rangeInput/RangeInput";
 
-const DetailsClanList = () => {
+const FiltersClanList = () => {
   return (
     <div className={styles.container}>
       <section className={styles.section}>
@@ -67,4 +67,4 @@ const DetailsClanList = () => {
   );
 };
 
-export default DetailsClanList;
+export default FiltersClanList;
