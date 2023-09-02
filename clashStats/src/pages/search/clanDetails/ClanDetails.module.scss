@@ -8,6 +8,9 @@
 
 .detailsContainer {
   min-height: 300px;
+  max-height: 400px;
+  overflow-y: scroll;
+
   width: 100%;
   background-color: var(--bg-color);
 
@@ -20,7 +23,7 @@
   }
 
   .inputContainer {
-    flex-basis: 70%;
+    flex-basis: 100%;
 
     flex-direction: column;
 
@@ -29,7 +32,9 @@
   }
 
   .labels {
-    flex-basis: 30%;
+    max-width: calc(
+      (var(--items-gap) / 2) * 3 + var(--card-labels-img-heigth) * 4
+    );
   }
 
   @extend .gap;
@@ -37,5 +42,9 @@
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+
+    .labels {
+      max-width: 100%;
+    }
   }
 }

@@ -15,11 +15,11 @@ const ClanInput = ({ onResults }: Props): ReactElement => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (searchClan.length > 3 && onResults)
+    if (searchClan.length > 3)
       setTimeout(() => {
         dispatch(searchClans({ name: searchClan }));
       }, 300);
-  }, [dispatch, searchClan, onResults]);
+  }, [dispatch, searchClan]);
 
   const handleSearchClan = (): void => {
     navigate(`/search/clan/${searchClan}`);
@@ -34,7 +34,7 @@ const ClanInput = ({ onResults }: Props): ReactElement => {
       onClick={handleSearchClan}
       disabled={searchClan.length <= 3 || clans.loading}
       loading={clans.loading}
-      results={clans.list}
+      results={onResults ? clans.list : undefined}
     />
   );
 };

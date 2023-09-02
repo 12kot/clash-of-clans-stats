@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: calc(var(--items-gap) / 2);
+  justify-content: flex-start;
+
+  .button {
+    margin: 0 auto;
+
+    height: fit-content;
+    width: fit-content;
+
+    .icon {
+      cursor: pointer;
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
+      padding: 3px;
+
+      height: var(--card-labels-img-heigth) !important;
+    }
+
+    .active {
+      background-color: var(--button-color);
+    }
+  }
+}

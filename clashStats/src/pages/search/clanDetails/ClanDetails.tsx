@@ -4,7 +4,6 @@ import ClanDetailsInput from "./input/ClanDetailsInput";
 import DetailsClanList from "./detailsClanList/DetailsClanList";
 import DetailsLabels from "./detailsLabels/DetailsLabels";
 
-
 const ClanDetails = () => {
   return (
     <article className={styles.detailsContainer}>
