@@ -31,7 +31,11 @@ const RangeInput = ({ min, max, minImg, maxImg, ...restProps }: Props) => {
         <p className="value">
           {value}-{max}
         </p>
-        {maxImg ? <img src={maxImg} alt={max + ""} className="second" /> : max}
+        {maxImg ? (
+          <img src={maxImg} alt={max + ""} className="second" />
+        ) : (
+          <p className="second">{max}</p>
+        )}
       </div>
     </div>
   );

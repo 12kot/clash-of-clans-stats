@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import styles from "./Search.module.scss";
+import banner from "assets/img/clanCapitalBanner.jpg";
 
 import Card from "components/card/Card";
 import { useAppSelector } from "hooks/store";
@@ -14,20 +15,23 @@ const Search = (): ReactElement => {
   const [searchParams] = useSearchParams();
 
   return (
-    <main className={styles.container}>
-      <SearchHeader active={params.type} />
-      
-      {params.type?.toLowerCase() === "clan" ? (
-        <ClanFilters />
-      ) : (
-        <p>{searchParams.get("tag")} </p>
-      )}
-      <article className={styles.cards}>
-        {clans.list.map((clan) => (
-          <Card {...clan} loading={clans.loading} />
-        ))}
-      </article>
-    </main>
+    <>
+      <img src={banner} alt="" className={styles.banner}></img>
+      <main className={styles.container}>
+        <SearchHeader active={params.type} />
+
+        {params.type?.toLowerCase() === "clan" ? (
+          <ClanFilters />
+        ) : (
+          <p>{searchParams.get("tag")} </p>
+        )}
+        <article className={styles.cards}>
+          {clans.list.map((clan) => (
+            <Card {...clan} loading={clans.loading} />
+          ))}
+        </article>
+      </main>
+    </>
   );
 };
 

@@ -28,14 +28,24 @@ body {
 }
 
 button,
-a, input {
+a,
+input {
   outline: 0;
   border: none;
   background-color: initial;
   text-decoration: none;
 }
 
-a, a:active, a:hover, a:focus, a:visited {
+button,
+a {
+  cursor: pointer;
+}
+
+a,
+a:active,
+a:hover,
+a:focus,
+a:visited {
   color: var(--font-color);
 }
 

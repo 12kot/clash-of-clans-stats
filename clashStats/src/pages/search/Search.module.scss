@@ -6,15 +6,37 @@
   gap: var(--items-gap);
 }
 
+.banner {
+  position: absolute;
+  z-index: 1;
+
+  width: 100%;
+  height: calc(
+    var(--filters-container-heigth) + var(--header-height) +
+      var(--item-padding-top) * 3 + var(--items-gap)
+  );
+  object-fit: cover;
+  filter: brightness(90%);
+
+  @media screen and (max-width: 768px) {
+    height: calc(
+    var(--filters-container-heigth) + var(--header-height) +
+      var(--item-padding-top) * 3 + 3px
+  );
+  }
+}
+
 .container {
   position: relative;
   flex-direction: column;
   min-height: 100vh;
 
   padding: var(--page-padding-top) var(--page-padding-left);
+  background-color: #f0f2f5;
 
   .cards {
     padding-top: var(--items-gap);
+    height: fit-content;
 
     display: flex;
     flex-direction: row;

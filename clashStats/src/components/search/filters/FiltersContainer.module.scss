@@ -7,7 +7,9 @@
 }
 
 .detailsContainer {
-  max-height: 300px;
+  z-index: 2;
+
+  max-height: var(--filters-container-heigth);
   overflow-y: scroll;
 
   width: 100%;
@@ -25,6 +27,24 @@
     flex-basis: 100%;
 
     flex-direction: column;
+
+    .input {
+      white-space: nowrap;
+
+      .button {
+        padding: 0 var(--item-padding-left);
+        background-color: var(--button-color);
+        border-radius: var(--border-radius);
+        color: var(--button-font-color);
+
+        &:hover {
+          opacity: 0.95;
+        }
+      }
+
+      @extend .gap;
+      @extend .flex;
+    }
 
     @extend .gap;
     @extend .flex;
@@ -47,12 +67,15 @@
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    max-height: fit-content;
     height: fit-content;
 
     .labels {
       max-width: 100%;
       overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: block;
+      }
     }
   }
 }

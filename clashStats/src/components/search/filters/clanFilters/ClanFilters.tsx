@@ -8,7 +8,10 @@ const ClanFilters = (): ReactElement => {
   return (
     <article className={styles.detailsContainer}>
       <section className={styles.inputContainer}>
-        <ClanFiltersInput />
+        <span className={styles.input}>
+          <button className={styles.button}>Apply Filters</button>
+          <ClanFiltersInput />
+        </span>
         <FiltersClanList />
       </section>
       <span className={styles.labels}>

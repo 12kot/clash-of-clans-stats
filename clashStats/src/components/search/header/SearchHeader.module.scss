@@ -11,6 +11,13 @@
   overflow: scroll;
   white-space: nowrap;
 
+  z-index: 2;
+
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.5),
+    -1px 1px 0 rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.3),
+    2px 2px 2px rgba(0, 0, 0, 0.3), -2px 2px 2px rgba(0, 0, 0, 0.3);
+  color: var(--negative-color) !important;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -23,6 +30,10 @@
   .buttons {
     .item {
       padding: var(--item-padding-top) var(--item-padding-left);
+
+      p {
+        color: var(--negative-color) !important;
+      }
 
       &:hover {
         background-color: var(--focus-color);
