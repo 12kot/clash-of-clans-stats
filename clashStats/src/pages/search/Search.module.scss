@@ -8,21 +8,22 @@
 
 .banner {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
 
   width: 100%;
   height: calc(
     var(--filters-container-heigth) + var(--header-height) +
       var(--item-padding-top) * 3 + var(--items-gap)
   );
+
   object-fit: cover;
   filter: brightness(90%);
 
   @media screen and (max-width: 768px) {
     height: calc(
-    var(--filters-container-heigth) + var(--header-height) +
-      var(--item-padding-top) * 3 + 3px
-  );
+      var(--filters-container-heigth) + var(--header-height) +
+        var(--item-padding-top) * 3 + 3px
+    );
   }
 }
 
@@ -32,7 +33,11 @@
   min-height: 100vh;
 
   padding: var(--page-padding-top) var(--page-padding-left);
-  background-color: #f0f2f5;
+  
+  //background-color: #f0f2f5;
+  background: var(--banner-webkit-background-gradient);
+  background: var(--banner-moz-background-gradient);
+  background: var(--banner-background-gradient);
 
   .cards {
     padding-top: var(--items-gap);

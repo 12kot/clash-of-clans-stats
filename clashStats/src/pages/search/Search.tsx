@@ -8,6 +8,12 @@ import { selectSearchClans } from "store/selectors/searchSelectors";
 import { useParams, useSearchParams } from "react-router-dom";
 import SearchHeader from "components/search/header/SearchHeader";
 import ClanFilters from "components/search/filters/clanFilters/ClanFilters";
+import { TSearchCard } from "types/types/slices/searchTypes";
+import { v4 } from "uuid";
+
+const getClans = (clans: TSearchCard) => {
+  return clans.list.map((clan) => <Card {...clan} loading={clans.loading} key={v4()} />);
+};
 
 const Search = (): ReactElement => {
   const clans = useAppSelector(selectSearchClans);
@@ -25,11 +31,7 @@ const Search = (): ReactElement => {
         ) : (
           <p>{searchParams.get("tag")} </p>
         )}
-        <article className={styles.cards}>
-          {clans.list.map((clan) => (
-            <Card {...clan} loading={clans.loading} />
-          ))}
-        </article>
+        <article className={styles.cards}>{getClans(clans)}</article>
       </main>
     </>
   );
