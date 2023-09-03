@@ -16,23 +16,6 @@
     .details {
       width: 100%;
 
-      .detailsItem {
-        width: 100%;
-
-        img {
-          height: var(--card-player-labels-img-heigth);
-        }
-
-        .input {
-          width: 100%;
-        }
-
-        gap: calc(var(--items-gap) / 2);
-        align-items: center;
-        justify-content: center;
-        @extend .flex;
-      }
-
       flex-direction: column;
       @extend .gap;
       @extend .flex;

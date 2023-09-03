@@ -1,0 +1,16 @@
+.flex {
+  display: flex;
+}
+
+.detailsItem {
+  width: 100%;
+
+  .input {
+    width: 100%;
+  }
+
+  gap: calc(var(--items-gap) / 2);
+  align-items: center;
+  justify-content: center;
+  @extend .flex;
+}

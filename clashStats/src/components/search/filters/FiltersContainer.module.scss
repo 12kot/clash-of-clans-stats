@@ -7,8 +7,7 @@
 }
 
 .detailsContainer {
-  min-height: 300px;
-  max-height: 400px;
+  max-height: 300px;
   overflow-y: scroll;
 
   width: 100%;
@@ -32,9 +31,15 @@
   }
 
   .labels {
+    padding: 1px;
     max-width: calc(
-      (var(--items-gap) / 2) * 3 + var(--card-labels-img-heigth) * 4
+      (var(--items-gap) / 2) * 1 + var(--card-labels-img-heigth) * 2 + 2px
     );
+
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   @extend .gap;
@@ -42,9 +47,12 @@
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    max-height: fit-content;
+    height: fit-content;
 
     .labels {
       max-width: 100%;
+      overflow-x: scroll;
     }
   }
 }
