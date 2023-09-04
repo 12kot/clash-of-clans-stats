@@ -8,6 +8,7 @@ import TownhallFilter from "../filterList/townhall/TownhallFilter";
 import VersusTownhallFilter from "../filterList/townhall/VersusTownhallFilter";
 import LevelFilter from "../filterList/level/LevelFilter";
 import MainLegendTrophiesFilter from "../filterList/trophy/MainLegendTrophiesFilter";
+import VersusLegendTrophiesFilter from "../filterList/trophy/VersusLegendTrophies";
 
 const FiltersPlayerList = () => {
   const playerFilters = useAppSelector((state) => state.filter.player);
@@ -33,7 +34,7 @@ const FiltersPlayerList = () => {
             <VersusTrophiesFilter item={playerFilters.details.versusTrophy} max={10000} />
           </span>
           <span className={styles.detailsItem}>
-            <MainLegendTrophiesFilter item={playerFilters.details.legendaryVersusTrophy} max={70000} />
+            <VersusLegendTrophiesFilter item={playerFilters.details.legendaryVersusTrophy} max={70000} />
           </span>
           <span className={styles.detailsItem}>
             <LevelFilter item={playerFilters.details.level} max={500} />

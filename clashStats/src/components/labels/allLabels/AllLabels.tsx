@@ -1,31 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./AllLabels.module.scss";
+import { useAppDispatch, useAppSelector } from "hooks/store";
+import { addLabel } from "store/slices/FilterSlice";
 
-const onClick = (
-  active: number[],
-  setActive: React.Dispatch<React.SetStateAction<number[]>>,
-  index: number
-) => {
-  if (active.includes(index)) setActive(active.filter((i) => i !== index));
-  else if (active.length === 3) setActive([...active.slice(1), index]);
-  else setActive([...active, index]);
-};
-
-const getLabels = (
-  active: number[],
-  setActive: React.Dispatch<React.SetStateAction<number[]>>
-) => {
+const getLabels = (active: number[], onClick: (n: number) => void) => {
   return [...Array(26)].map((label, index) => (
     <button
       key={index}
       className={styles.button}
-      onClick={() => onClick(active, setActive, index)}
+      onClick={() => onClick(index)}
     >
       <img
         src={
           "https://api-assets.clashofclans.com/labels/128/hM7SHnN0x7syFa-s6fE7LzeO5yWG2sfFpZUHuzgMwQg.png"
         }
-        title={"label.title"}
+        title={index+""}
         alt=""
         className={`${styles.icon} ${active.includes(index) && styles.active}`}
       />
@@ -34,12 +23,15 @@ const getLabels = (
 };
 
 const AllLabels = () => {
-  const [active, setActive] = useState<number[]>([]);
+  const active = useAppSelector((state) => state.filter.labels);
+  const dispatch = useAppDispatch();
+
+  const onClick = (index: number) => {
+    dispatch(addLabel(index));
+  };
 
   return (
-    <section className={styles.container}>
-      {getLabels(active, setActive)}
-    </section>
+    <section className={styles.container}>{getLabels(active, onClick)}</section>
   );
 };
 

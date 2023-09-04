@@ -25,6 +25,8 @@ export interface TClanFIlterSlice {
       level: TFilterItem;
     };
   };
+
+  labels: number[]
 }
 
 export interface TFilterItem {

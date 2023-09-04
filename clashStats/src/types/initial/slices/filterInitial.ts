@@ -68,4 +68,6 @@ export const InitFilter: TClanFIlterSlice = {
       },
     },
   },
+
+  labels: []
 };

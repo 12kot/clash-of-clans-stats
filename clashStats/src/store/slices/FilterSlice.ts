@@ -57,9 +57,19 @@ const FilterSlice = createSlice({
           break;
       }
     },
+
+    addLabel(state, action: PayloadAction<number>) {
+      const index = action.payload;
+
+      if (state.labels.includes(index))
+        state.labels = state.labels.filter((i) => i !== index);
+      else if (state.labels.length === 3)
+        state.labels = [...state.labels.slice(1), index];
+      else state.labels.push(index);
+    },
   },
   extraReducers: (builder) => {},
 });
 
 export default FilterSlice;
-export const { addFilter } = FilterSlice.actions;
+export const { addFilter, addLabel } = FilterSlice.actions;
