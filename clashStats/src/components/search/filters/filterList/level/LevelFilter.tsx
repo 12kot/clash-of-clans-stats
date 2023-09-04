@@ -5,10 +5,11 @@ import { TFilterItem } from "types/types/slices/filterTypes";
 
 type Props = {
   item: TFilterItem;
+  max: number;
 };
 
-const CLanLevelFilter = ({item}: Props) => {
-  return <FilterContainer min={1} max={500} minImg={exp} item={item} />;
+const LevelFilter = ({item, max}: Props) => {
+  return <FilterContainer min={1} max={max} minImg={exp} item={item} />;
 };
 
-export default CLanLevelFilter;
+export default LevelFilter;

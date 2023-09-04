@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../FiltersContainer.module.scss";
-import PlayerFiltersInput from "./input/SearchFiltersInput";
-import ClanFiltersInput from "./input/ClanFiltersInput";
-import FiltersPlayerList from "./filtersClanList/FiltersPlayerList";
-import FiltersClanList from "./filtersClanList/FiltersClanList";
+import styles from "./FiltersContainer.module.scss";
+import PlayerFiltersInput from "./filters/inputs/PlayerFiltersInput";
+import FiltersPlayerList from "./filters/FiltersPlayerList";
+import FiltersClanList from "./filters/FiltersClanList";
 import AllLabels from "components/labels/allLabels/AllLabels";
+import ClanFiltersInput from "./filters/inputs/ClanFiltersInput";
 
 type Props = {
   type: "clan" | "player";

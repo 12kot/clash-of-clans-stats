@@ -29,7 +29,7 @@ export const InitFilter: TClanFIlterSlice = {
         type: "clan_versusTrophy",
         value: 0,
       },
-      clanLevel: {
+      level: {
         type: "clan_level",
         value: 0,
       },
@@ -47,22 +47,22 @@ export const InitFilter: TClanFIlterSlice = {
         value: 0,
       },
       trophy: {
-        type: "player_versusTrophy",
+        type: "player_trophy",
         value: 0,
       },
       versusTrophy: {
-        type: "player_legendaryTrophy",
+        type: "player_versusTrophy",
         value: 0,
       },
       legendaryTrophy: {
-        type: "player_legendaryVersusTrophy",
+        type: "player_legendaryTrophy",
         value: 0,
       },
       legendaryVersusTrophy: {
         type: "player_legendaryVersusTrophy",
         value: 0,
       },
-      playerLevel: {
+      level: {
         type: "player_level",
         value: 0,
       },

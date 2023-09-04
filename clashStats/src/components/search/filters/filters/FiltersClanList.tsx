@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./FiltersList.module.scss";
-import TownhallFilter from "../../filterList/townhall/TownhallFilter";
-import MainTrophiesFilter from "../../filterList/clan/trophy/MainTrophiesFilter";
-import VersusTrophiesFilter from "../../filterList/clan/trophy/VersusTrophiesFilter";
-import CLanLevelFilter from "../../filterList/clan/level/CLanLevelFilter";
-import CapitalFilter from "../../filterList/clan/townhall/CapitalFilter";
-import ReqVersusTrophiesFilter from "../../filterList/clan/required/ReqVersusTrophiesFilter";
-import ReqMainTrophiesFilter from "../../filterList/clan/required/ReqMainTrophiesFilter";
+import TownhallFilter from "../filterList/townhall/TownhallFilter";
+import MainTrophiesFilter from "../filterList/trophy/MainTrophiesFilter";
+import VersusTrophiesFilter from "../filterList/trophy/VersusTrophiesFilter";
+import CapitalFilter from "../filterList/clan/townhall/CapitalFilter";
+import ReqVersusTrophiesFilter from "../filterList/clan/required/ReqVersusTrophiesFilter";
+import ReqMainTrophiesFilter from "../filterList/clan/required/ReqMainTrophiesFilter";
 import { useAppSelector } from "hooks/store";
+import LevelFilter from "../filterList/level/LevelFilter";
 
 const FiltersClanList = () => {
   const state = useAppSelector((state) => state.filter.clan);
@@ -26,9 +26,9 @@ const FiltersClanList = () => {
         <h2>Details</h2>
         <ul className={styles.details}>
           <CapitalFilter item={state.details.capitalTownhall} />
-          <MainTrophiesFilter item={state.details.trophy} />
-          <VersusTrophiesFilter item={state.details.versusTrophy} />
-          <CLanLevelFilter item={state.details.clanLevel} />
+          <MainTrophiesFilter item={state.details.trophy} max={70000} />
+          <VersusTrophiesFilter item={state.details.versusTrophy} max={70000} />
+          <LevelFilter item={state.details.level} max={30} />
         </ul>
       </section>
     </div>

@@ -5,7 +5,7 @@ import { selectSearchPlayers } from 'store/selectors/searchSelectors';
 import { TSearchCard } from 'types/types/slices/searchTypes';
 import { v4 } from 'uuid';
 import styles from "./Search.module.scss"
-import PlayerFilters from 'components/search/filters/clanFilters/PlayerFilters';
+import PlayerFilters from 'components/search/filters/PlayerFilters';
 
 const getPlayers = (clans: TSearchCard) => {
     return clans.list.map((clan) => (

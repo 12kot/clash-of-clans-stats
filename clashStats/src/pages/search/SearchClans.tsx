@@ -3,9 +3,9 @@ import styles from "./Search.module.scss";
 import Card from "components/card/Card";
 import { v4 } from "uuid";
 import { TSearchCard } from "types/types/slices/searchTypes";
-import ClanFilters from "components/search/filters/clanFilters/ClanFilters";
 import { useAppSelector } from "hooks/store";
 import { selectSearchClans } from "store/selectors/searchSelectors";
+import ClanFilters from "components/search/filters/ClanFilters";
 
 const getClans = (clans: TSearchCard) => {
   return clans.list.map((clan) => (

@@ -10,7 +10,7 @@ export interface TClanFIlterSlice {
       capitalTownhall: TFilterItem;
       trophy: TFilterItem;
       versusTrophy: TFilterItem;
-      clanLevel: TFilterItem;
+      level: TFilterItem;
     };
   };
 
@@ -22,7 +22,7 @@ export interface TClanFIlterSlice {
       versusTrophy: TFilterItem;
       legendaryTrophy: TFilterItem;
       legendaryVersusTrophy: TFilterItem;
-      playerLevel: TFilterItem;
+      level: TFilterItem;
     };
   };
 }

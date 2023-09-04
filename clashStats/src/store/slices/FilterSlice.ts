@@ -1,9 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { InitFilter } from "types/initial/slices/filterInitial";
-import {
-  TClanFIlterSlice,
-  TFilterItem,
-} from "types/types/slices/filterTypes";
+import { TClanFIlterSlice, TFilterItem } from "types/types/slices/filterTypes";
 
 const initialState: TClanFIlterSlice = {
   ...InitFilter,
@@ -34,7 +31,29 @@ const FilterSlice = createSlice({
           state.clan.details.versusTrophy.value = action.payload.value;
           break;
         case "clan_level":
-          state.clan.details.clanLevel.value = action.payload.value;
+          state.clan.details.level.value = action.payload.value;
+          break;
+        case "player_townhall":
+          state.player.details.townhall.value = action.payload.value;
+          break;
+        case "player_versusTownhall":
+          state.player.details.versusTownhall.value = action.payload.value;
+          break;
+        case "player_trophy":
+          state.player.details.trophy.value = action.payload.value;
+          break;
+        case "player_versusTrophy":
+          state.player.details.versusTrophy.value = action.payload.value;
+          break;
+        case "player_legendaryTrophy":
+          state.player.details.legendaryTrophy.value = action.payload.value;
+          break;
+        case "player_legendaryVersusTrophy":
+          state.player.details.legendaryVersusTrophy.value =
+            action.payload.value;
+          break;
+        case "player_level":
+          state.player.details.level.value = action.payload.value;
           break;
       }
     },
