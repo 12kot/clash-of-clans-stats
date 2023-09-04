@@ -7,14 +7,20 @@
 }
 
 .container {
-  height: 100%;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 
   .section {
+    //overflow: scroll;
     flex-basis: 45%;
 
     .details {
       width: 100%;
+
+      .detailsItem {
+        width: 100%;
+      }
 
       flex-direction: column;
       @extend .gap;
@@ -24,6 +30,21 @@
     flex-direction: column;
     @extend .gap;
     @extend .flex;
+  }
+
+  .active {
+    width: 100% !important;
+    flex-basis: 100%!important;
+
+    .details {
+      .detailsItem {
+        width: 45%;
+      }
+
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: row !important;
+    }
   }
 
   justify-content: space-between;

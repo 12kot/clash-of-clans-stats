@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./RangeInput.scss";
 
 interface Props
@@ -10,26 +10,38 @@ interface Props
   max: number;
   minImg: string;
   maxImg?: string;
+  onChangeValue: (number: number) => void;
+  currentValue: number;
 }
 
-const RangeInput = ({ min, max, minImg, maxImg, ...restProps }: Props) => {
-  const [value, setValue] = useState<number>(0);
+const RangeInput = ({
+  min,
+  max,
+  minImg,
+  maxImg,
+  onChangeValue,
+  currentValue,
+  ...restProps
+}: Props) => {
+  const onChange = (value: number) => {
+    onChangeValue(value);
+  };
 
   return (
     <div className="slider">
       <input
         className="level"
         type="range"
-        onChange={(e) => setValue(+e.target.value)}
+        onChange={(e) => onChange(+e.target.value)}
         min={min}
         max={max}
+        value={currentValue}
         {...restProps}
-        defaultValue={0}
       />
       <div className="values">
         <img src={minImg} alt={min + ""} className="first" />
         <p className="value">
-          {value}-{max}
+          {currentValue}-{max}
         </p>
         {maxImg ? (
           <img src={maxImg} alt={max + ""} className="second" />

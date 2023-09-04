@@ -17,7 +17,7 @@ const PlayerInput = ({onResults}: Props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (searchPlayer.length > 3 && onResults)
+    if (searchPlayer.length > 3)
       setTimeout(() => {
         dispatch(searchPlayers({ name: searchPlayer }));
       }, 300);
@@ -36,7 +36,7 @@ const PlayerInput = ({onResults}: Props) => {
       onClick={handleSearchPlayer}
       disabled={searchPlayer.length <= 3 || players.loading}
       loading={players.loading}
-      results={players.list}
+      results={onResults ? players.list : undefined}
     />
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ClanFiltersInput.module.scss";
+import styles from "./FiltersInput.module.scss";
 import ClanInput from "components/searchMenu/inputs/inputs/ClanInput";
 
 const ClanFiltersInput = () => {
