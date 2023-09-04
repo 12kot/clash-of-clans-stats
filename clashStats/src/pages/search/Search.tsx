@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import styles from "./Search.module.scss";
-import banner from "assets/img/clanCapitalBanner.jpg";
+import banner from "assets/img/searchBack2.png";
 
 import Card from "components/card/Card";
 import { useAppSelector } from "hooks/store";
@@ -12,7 +12,9 @@ import { TSearchCard } from "types/types/slices/searchTypes";
 import { v4 } from "uuid";
 
 const getClans = (clans: TSearchCard) => {
-  return clans.list.map((clan) => <Card {...clan} loading={clans.loading} key={v4()} />);
+  return clans.list.map((clan) => (
+    <Card {...clan} loading={clans.loading} key={v4()} />
+  ));
 };
 
 const Search = (): ReactElement => {
@@ -22,10 +24,11 @@ const Search = (): ReactElement => {
 
   return (
     <>
+      <div className={styles.menu}>
+        <SearchHeader active={params.type} />
+      </div>
       <img src={banner} alt="" className={styles.banner}></img>
       <main className={styles.container}>
-        <SearchHeader active={params.type} />
-
         {params.type?.toLowerCase() === "clan" ? (
           <ClanFilters />
         ) : (

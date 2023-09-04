@@ -17,7 +17,7 @@ const getOtherText = (active?: TActive): string => {
 const SearchHeader = ({ active }: Props): ReactElement => {
   return (
     <header className={styles.header}>
-      <p className={styles.main}>SEARCH {active && active.toUpperCase()}</p>
+      <p className={styles.main}>{active && active.toUpperCase()}</p>
       <ul className={styles.buttons}>
         <li className={styles.item}>
           <NavLink to={`/search/${getOtherText(active)}`}>

@@ -6,38 +6,56 @@
   gap: var(--items-gap);
 }
 
+.button {
+  border-radius: var(--border-radius);
+  padding: 0 calc(var(--item-padding-left));
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--button-font-color) !important;
+  height: 100%;
+
+  &:hover {
+    background-color: var(--focus-color);
+  }
+}
+
 .header {
+  padding: 0 calc(var(--page-padding-left));
+
+  z-index: 2;
   width: 100%;
+  height: 100%;
+
   overflow: scroll;
   white-space: nowrap;
+  align-items: center;
 
   z-index: 2;
 
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.5),
-    -1px 1px 0 rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.3),
-    2px 2px 2px rgba(0, 0, 0, 0.3), -2px 2px 2px rgba(0, 0, 0, 0.3);
-  color: var(--negative-color) !important;
+  // text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.5),
+  //   -1px 1px 0 rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.3),
+  //   2px 2px 2px rgba(0, 0, 0, 0.3), -2px 2px 2px rgba(0, 0, 0, 0.3);
 
   &::-webkit-scrollbar {
     display: none;
   }
 
   .main {
-    padding: var(--item-padding-top) var(--item-padding-left);
     font-weight: 600;
+    @extend .button;
   }
 
   .buttons {
+    height: 100%;
     .item {
-      padding: var(--item-padding-top) var(--item-padding-left);
-
       p {
-        color: var(--negative-color) !important;
+        color: var(--button-font-color) !important;
       }
 
-      &:hover {
-        background-color: var(--focus-color);
-      }
+      @extend .button;
     }
 
     @extend .gap;
