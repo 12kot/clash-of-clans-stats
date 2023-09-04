@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { InitFilter } from "types/initial/slices/filterInitial";
-import { TClanFIlterSlice, TFilterItem } from "types/types/slices/filterTypes";
+import { TFIlterSlice, TFilterItem } from "types/types/slices/filterTypes";
 
-const initialState: TClanFIlterSlice = {
+const initialState: TFIlterSlice = {
   ...InitFilter,
 };
 

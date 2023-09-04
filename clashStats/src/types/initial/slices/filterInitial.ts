@@ -1,5 +1,5 @@
-import { TClanFIlterSlice } from "types/types/slices/filterTypes";
-export const InitFilter: TClanFIlterSlice = {
+import { TFIlterSlice } from "types/types/slices/filterTypes";
+export const InitFilter: TFIlterSlice = {
   clan: {
     required: {
       townhall: {

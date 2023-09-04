@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./AllLabels.module.scss";
 import { useAppDispatch, useAppSelector } from "hooks/store";
 import { addLabel } from "store/slices/FilterSlice";
+import { selectFilterLabels } from "store/selectors/filterSelectors";
 
 const getLabels = (active: number[], onClick: (n: number) => void) => {
   return [...Array(26)].map((label, index) => (
@@ -23,7 +24,7 @@ const getLabels = (active: number[], onClick: (n: number) => void) => {
 };
 
 const AllLabels = () => {
-  const active = useAppSelector((state) => state.filter.labels);
+  const active = useAppSelector(selectFilterLabels);
   const dispatch = useAppDispatch();
 
   const onClick = (index: number) => {

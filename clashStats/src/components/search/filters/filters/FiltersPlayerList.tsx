@@ -9,9 +9,10 @@ import VersusTownhallFilter from "../filterList/townhall/VersusTownhallFilter";
 import LevelFilter from "../filterList/level/LevelFilter";
 import MainLegendTrophiesFilter from "../filterList/trophy/MainLegendTrophiesFilter";
 import VersusLegendTrophiesFilter from "../filterList/trophy/VersusLegendTrophies";
+import { selectFilterPlayer } from "store/selectors/filterSelectors";
 
 const FiltersPlayerList = () => {
-  const playerFilters = useAppSelector((state) => state.filter.player);
+  const playerFilters = useAppSelector(selectFilterPlayer);
 
   return (
     <div className={styles.container}>
@@ -25,16 +26,28 @@ const FiltersPlayerList = () => {
             <VersusTownhallFilter item={playerFilters.details.versusTownhall} />
           </span>
           <span className={styles.detailsItem}>
-            <MainTrophiesFilter item={playerFilters.details.trophy} max={9000} />
+            <MainTrophiesFilter
+              item={playerFilters.details.trophy}
+              max={9000}
+            />
           </span>
           <span className={styles.detailsItem}>
-            <MainLegendTrophiesFilter item={playerFilters.details.legendaryTrophy} max={70000} />
+            <MainLegendTrophiesFilter
+              item={playerFilters.details.legendaryTrophy}
+              max={70000}
+            />
           </span>
           <span className={styles.detailsItem}>
-            <VersusTrophiesFilter item={playerFilters.details.versusTrophy} max={10000} />
+            <VersusTrophiesFilter
+              item={playerFilters.details.versusTrophy}
+              max={10000}
+            />
           </span>
           <span className={styles.detailsItem}>
-            <VersusLegendTrophiesFilter item={playerFilters.details.legendaryVersusTrophy} max={70000} />
+            <VersusLegendTrophiesFilter
+              item={playerFilters.details.legendaryVersusTrophy}
+              max={70000}
+            />
           </span>
           <span className={styles.detailsItem}>
             <LevelFilter item={playerFilters.details.level} max={500} />

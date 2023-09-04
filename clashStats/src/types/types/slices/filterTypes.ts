@@ -1,4 +1,4 @@
-export interface TClanFIlterSlice {
+export interface TFIlterSlice {
   clan: {
     required: {
       townhall: TFilterItem;

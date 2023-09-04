@@ -8,9 +8,10 @@ import ReqVersusTrophiesFilter from "../filterList/clan/required/ReqVersusTrophi
 import ReqMainTrophiesFilter from "../filterList/clan/required/ReqMainTrophiesFilter";
 import { useAppSelector } from "hooks/store";
 import LevelFilter from "../filterList/level/LevelFilter";
+import { selectFilterClan } from "store/selectors/filterSelectors";
 
 const FiltersClanList = () => {
-  const state = useAppSelector((state) => state.filter.clan);
+  const state = useAppSelector(selectFilterClan);
 
   return (
     <div className={styles.container}>
