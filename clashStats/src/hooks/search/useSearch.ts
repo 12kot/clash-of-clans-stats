@@ -15,12 +15,11 @@ export const useSearch = (
 ) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
   const debounce = useDebounce(value, 500);
 
   useEffect(() => {
     if (value.length > 3 && debounce) dispatch(func({ name: value }));
-  }, [dispatch, debounce]);
+  }, [dispatch, debounce, func]);
 
   const OnClick = (): void => {
     navigate(`/search/clan?tag=${value}`);

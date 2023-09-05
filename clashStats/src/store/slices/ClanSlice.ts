@@ -8,6 +8,8 @@ const initialState: TClanSlice = {
   ...InitClanSlice,
 };
 
+
+//ТУТ ВСЁ ИЗМЕНИТЬ В СООТВЕТСТИВИИ СО СТАНДАРТАМИ
 export const getClanMembers = createAsyncThunk<
   { clanMembers: TClanMembers },
   { clanTag: string }
