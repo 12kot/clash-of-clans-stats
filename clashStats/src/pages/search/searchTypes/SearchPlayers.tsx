@@ -10,7 +10,7 @@ import { InitCard } from "types/initial/card/cardInitial";
 
 const getPlayers = (players: TSearchCard): ReactElement[] | ReactElement => {
   if (players.loading)
-    return [...Array(3)].map(() => <Card {...InitCard} loading={true} />);
+    return [...Array(3)].map(() => <Card {...InitCard} loading={true} key={v4()}/>);
   if (players.list.length === 0)
     return <h1 className={styles.emptyList}>There's nothing here</h1>;
 

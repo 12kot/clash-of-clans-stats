@@ -10,7 +10,7 @@ import { InitCard } from "types/initial/card/cardInitial";
 
 const getClans = (clans: TSearchCard) => {
   if (clans.loading)
-    return [...Array(3)].map(() => <Card {...InitCard} loading={true} />);
+    return [...Array(3)].map(() => <Card {...InitCard} loading={true} key={v4()} />);
   if (clans.list.length === 0)
     return <h1 className={styles.emptyList}>There's nothing here</h1>;
 

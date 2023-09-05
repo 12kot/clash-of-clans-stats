@@ -11,7 +11,7 @@ const initialState: TSearchSlice = {
 export const searchPlayers = createAsyncThunk<
   { items: TCard[] },
   { name: string }
->("clan/searchPlayers", async (props, { rejectWithValue }) => {
+  >("clan/searchPlayers", async (props, { rejectWithValue }) => {
   const res: TCard[] | Error = await getDataFromFetch(
     `search/player?tag=${props.name.replaceAll("#", "")}`
   );

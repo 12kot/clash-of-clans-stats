@@ -6,41 +6,38 @@ import Loader from "components/loader/Loader";
 import { TSearchButton } from "types/types";
 import { TCard } from "types/types/card/cardTypes";
 
-type Props = {
+interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>{
   type: TSearchButton;
-  placeholder: string;
-  value: string;
-  onChange: React.Dispatch<React.SetStateAction<string>>;
-  onClick: () => void;
-  disabled: boolean;
   loading: boolean;
-  results?: TCard[];
+  value: string
+  
+  disabledButton: boolean;
+  onClickButton: () => void
+  
+  result?: TCard[];
 };
 
 const Input = ({
   type,
-  placeholder,
+  loading,
+  disabledButton,
+  onClickButton,
+  result,
   value,
-  onChange,
-  onClick,
-  disabled,
-  results,
-  loading
+  ...restProps
 }: Props): ReactElement => {
   return (
     <div className={styles.container}>
       <input
         className={styles.input}
-        placeholder={placeholder}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+        {...restProps}
       />
-      <button className={styles.icon} onClick={onClick} disabled={disabled}>
+      <button className={styles.icon} onClick={onClickButton} disabled={disabledButton}>
         {loading ? <Loader /> : <SearchSVG />}
       </button>
 
       <div className={styles.results}>
-       {!disabled && <Results results={results || []} type={type} value={value} />}
+       {!disabledButton && <Results results={result || []} type={type} value={value} />}
       </div>
     </div>
   );
