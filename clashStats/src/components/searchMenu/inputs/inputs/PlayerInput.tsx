@@ -6,9 +6,7 @@ import React, { ReactElement } from "react";
 import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import { searchPlayers } from "store/slices/SearchSlice";
 
-type Props = {
-  onResults: boolean;
-};
+type Props = { onResults: boolean };
 
 const PlayerInput = ({ onResults }: Props): ReactElement => {
   const players = useAppSelector(selectSearchPlayers);
@@ -20,12 +18,10 @@ const PlayerInput = ({ onResults }: Props): ReactElement => {
       placeholder="Player tag"
       value={value}
       onChange={onChange}
-
       type="PLAYER"
       onClickButton={OnClick}
       disabledButton={value.length <= 3 || players.loading}
       loading={players.loading}
-
       result={onResults ? players.list : undefined}
     />
   );
