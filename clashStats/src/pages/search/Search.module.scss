@@ -9,7 +9,7 @@
 .menu {
   margin: var(--header-height) 0 0;
   height: var(--header-height);
-  
+
   z-index: 3;
   background-color: var(--button-color);
 }
@@ -33,31 +33,4 @@
         var(--item-padding-top) * 3 + 3px
     );
   }
-}
-
-.container {
-  position: relative;
-  flex-direction: column;
-  min-height: 100vh;
-  z-index: 2;
-
-  padding: var(--items-gap) var(--page-padding-left) var(--page-padding-top);
-  
-  //background-color: #f0f2f5;
-  background: var(--banner-webkit-background-gradient);
-  background: var(--banner-moz-background-gradient);
-  background: var(--banner-background-gradient);
-
-  .cards {
-    padding-top: var(--items-gap);
-    height: fit-content;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    gap: var(--items-gap);
-  }
-
-  @extend .flex;
 }

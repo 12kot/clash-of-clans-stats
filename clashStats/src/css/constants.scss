@@ -26,30 +26,18 @@
 
   --banner-background-gradient: linear-gradient(
     180deg,
-    rgb(255, 255, 255, 0) calc(var(--filters-container-heigth) / 3),
-    #f0f2f5
-      calc(
-        var(--filters-container-heigth) + var(--header-height) +
-          var(--item-padding-top)
-      )
+    rgb(255, 255, 255, 0) calc(var(--filters-container-heigth) / 10),
+    #f0f2f5 calc(var(--filters-container-heigth) + var(--header-height))
   );
   --banner-moz-background-gradient: -moz-linear-gradient(
     180deg,
-    rgb(255, 255, 255, 0) calc(var(--filters-container-heigth) / 3),
-    #f0f2f5
-      calc(
-        var(--filters-container-heigth) + var(--header-height) +
-          var(--item-padding-top)
-      )
+    rgb(255, 255, 255, 0) calc(var(--filters-container-heigth) / 10),
+    #f0f2f5 calc(var(--filters-container-heigth) + var(--header-height))
   );
   --banner-webkit-background-gradient: -moz-linear-gradient(
     180deg,
-    rgb(255, 255, 255, 0) calc(var(--filters-container-heigth) / 3),
-    #f0f2f5
-      calc(
-        var(--filters-container-heigth) + var(--header-height) +
-          var(--item-padding-top)
-      )
+    rgb(255, 255, 255, 0) calc(var(--filters-container-heigth) / 10),
+    #f0f2f5 calc(var(--filters-container-heigth) + var(--header-height))
   );
 
   --box-shadow: 0 1px 3px 0 var(--border-color), 0 0 0 1px var(--border-color);

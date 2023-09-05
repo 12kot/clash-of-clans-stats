@@ -4,8 +4,8 @@ import banner from "assets/img/searchBack2.png";
 
 import { useParams } from "react-router-dom";
 import SearchHeader from "components/search/header/SearchHeader";
-import SearchClans from "./SearchClans";
-import SearchPlayers from "./SearchPlayers";
+import SearchClans from "./searchTypes/SearchClans";
+import SearchPlayers from "./searchTypes/SearchPlayers";
 
 const Search = (): ReactElement => {
   const params = useParams<{ type: string; tag: string }>();
