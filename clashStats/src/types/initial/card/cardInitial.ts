@@ -1,20 +1,62 @@
-import { TCard } from "types/types/card/cardTypes";
+import {
+  TCard,
+  TCardClan,
+  TCardItem,
+  TCardPlayer,
+  TCardTrophies,
+} from "types/types/card/cardTypes";
 
 export const InitCard: TCard = {
-    img: "",
-    headerCard: {
-      object: {
-        title: "",
-        img: "",
-        name: "",
-        tag: "",
-        type: "PLAYER"
-      },
-  
-      labels: [],
+  img: "",
+  headerCard: {
+    object: {
+      title: "",
+      img: "",
+      name: "",
+      tag: "",
+      type: "PLAYER",
     },
-    trophies: [],
-    otherInfo: [],
+
     labels: [],
-  };
-  
+  },
+  labels: [],
+};
+
+export const InitCardItem: TCardItem = {
+  img: "",
+  value: 0,
+};
+
+export const InitCardTrophies: TCardTrophies = {
+  main: InitCardItem,
+  versus: InitCardItem,
+};
+
+export const InitCardPlayer: TCardPlayer = {
+  ...InitCard,
+  trophies: {
+    ...InitCardTrophies,
+    mainLegend: InitCardItem,
+  },
+
+  otherInfo: {
+    level: InitCardItem,
+    stars: InitCardItem,
+    clan: {
+      role: "Member",
+      warPreference: InitCardItem,
+    },
+  },
+};
+export const InitCardClan: TCardClan = {
+  ...InitCard,
+  trophies: {
+    ...InitCardTrophies,
+    capital: InitCardItem,
+  },
+
+  otherInfo: {
+    level: InitCardItem,
+    members: InitCardItem,
+  },
+};

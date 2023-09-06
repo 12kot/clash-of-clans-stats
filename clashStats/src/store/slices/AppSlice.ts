@@ -2,17 +2,17 @@ import { InitAppSlice } from "./../../types/initial/slices/appInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getDataFromServer } from "./getDataFromServer";
 import { TAppSlice } from "types/types/slices/appTypes";
-import { TCard } from "types/types/card/cardTypes";
-import { InitCard } from "types/initial/card/cardInitial";
+import { TCardClan, TCardPlayer } from "types/types/card/cardTypes";
+import { InitCardClan, InitCardPlayer } from "types/initial/card/cardInitial";
 
 const initialState: TAppSlice = {
   ...InitAppSlice,
 };
 
-export const getTopPlayer = createAsyncThunk<{ topPlayer: TCard }, void>(
+export const getTopPlayer = createAsyncThunk<{ topPlayer: TCardPlayer }, void>(
   "app/getTopPlayer",
   async (_, { rejectWithValue }) => {
-    const res: TCard | Error = await getDataFromServer(`cards/player/top`);
+    const res: TCardPlayer | Error = await getDataFromServer(`cards/player/top`);
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { topPlayer: res };
@@ -20,19 +20,19 @@ export const getTopPlayer = createAsyncThunk<{ topPlayer: TCard }, void>(
 );
 
 export const getPopularPlayer = createAsyncThunk<
-  { popularPlayer: TCard },
+  { popularPlayer: TCardPlayer },
   void
 >("app/getPopularPlayer", async (_, { rejectWithValue }) => {
-  const res: TCard | Error = await getDataFromServer(`cards/player/popular`);
+  const res: TCardPlayer | Error = await getDataFromServer(`cards/player/popular`);
 
   if (res instanceof Error) return rejectWithValue(res.message);
   return { popularPlayer: res };
 });
 
-export const getPopularClan = createAsyncThunk<{ popularClan: TCard }, void>(
+export const getPopularClan = createAsyncThunk<{ popularClan: TCardClan }, void>(
   "app/getPopularClan",
   async (_, { rejectWithValue }) => {
-    const res: TCard | Error = await getDataFromServer(`cards/clan/popular`);
+    const res: TCardClan | Error = await getDataFromServer(`cards/clan/popular`);
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { popularClan: res };
@@ -53,7 +53,7 @@ const appSlice = createSlice({
         state.cards.topPlayer.loading = false;
       })
       .addCase(getTopPlayer.rejected, (state) => {
-        state.cards.topPlayer.item = InitCard;
+        state.cards.topPlayer.item = InitCardPlayer;
       })
 
       .addCase(getPopularPlayer.pending, (state) => {
@@ -64,7 +64,7 @@ const appSlice = createSlice({
         state.cards.popularPlayer.loading = false;
       })
       .addCase(getPopularPlayer.rejected, (state) => {
-        state.cards.popularPlayer.item = InitCard;
+        state.cards.popularPlayer.item = InitCardPlayer;
       })
 
       .addCase(getPopularClan.pending, (state) => {
@@ -75,7 +75,7 @@ const appSlice = createSlice({
         state.cards.popularClan.loading = false;
       })
       .addCase(getPopularClan.rejected, (state) => {
-        state.cards.popularClan.item = InitCard;
+        state.cards.popularClan.item = InitCardClan;
       });
   },
 });

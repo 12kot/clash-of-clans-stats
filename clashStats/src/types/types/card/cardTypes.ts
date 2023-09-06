@@ -1,6 +1,12 @@
 import { TSearchButton } from "types/types";
 import { TLabel } from "../label/labelTypes";
 
+export interface TCard {
+  img: string;
+  headerCard: TCardHeader;
+  labels: TLabel[];
+}
+
 export interface TCardItem {
   img: string;
   value: number;
@@ -13,16 +19,49 @@ export interface TCardHeader {
     name: string;
     tag: string;
     type: TSearchButton;
-    role?: string;
   };
 
   labels: TLabel[];
 }
 
-export interface TCard {
-  img: string;
-  headerCard: TCardHeader;
-  trophies: TCardItem[];
-  otherInfo: TCardItem[];
-  labels: TLabel[];
+export interface TCardTrophies {
+  main: TCardItem;
+  versus: TCardItem;
+}
+
+export interface TCardPlayerTrophies extends TCardTrophies {
+  mainLegend: TCardItem;
+}
+
+export interface TCardOtherInfo {
+  level: TCardItem;
+}
+
+export interface TCardPlayerOtherInfo extends TCardOtherInfo {
+  stars: TCardItem;
+  clan: {
+    role: "Member" | "Elder" | "Co-leader" | "Leader";
+    warPreference: TCardItem; //0 - net; 1 - da
+  };
+}
+
+//ЭТИ ШТУКИ БУДУТ ИДТИ ДОБАВКОМ
+export interface TCardPlayer extends TCard {
+  trophies: TCardPlayerTrophies;
+  otherInfo: TCardPlayerOtherInfo;
+}
+
+//------
+  
+export interface TCardClanTrophies extends TCardTrophies {
+  capital: TCardItem;
+}
+
+export interface TCardClanOtherInfo extends TCardOtherInfo {
+  members: TCardItem;
+}
+
+export interface TCardClan extends TCard {
+  trophies: TCardClanTrophies;
+  otherInfo: TCardClanOtherInfo;
 }
