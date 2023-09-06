@@ -1,19 +1,19 @@
 export const clanCardMaker = (data) => {
   const getTrophies = () => {
-    return [
-      {
+    return {
+      main: {
         img: "http://localhost:8000/public/trophy/trophy.png",
         value: data.clanPoints,
       },
-      {
+      versus: {
         img: "http://localhost:8000/public/trophy/versus.png",
         value: data.clanBuilderBasePoints,
       },
-      {
+      capital: {
         img: "http://localhost:8000/public/trophy/capital.webp",
         value: data.clanCapitalPoints,
       },
-    ];
+    };
   };
 
   const getCapitalLabel = () => {
@@ -44,16 +44,16 @@ export const clanCardMaker = (data) => {
 
     trophies: getTrophies(),
 
-    otherInfo: [
-      {
+    otherInfo: {
+      level: {
         img: "http://localhost:8000/public/icons/exp.png",
         value: data.clanLevel,
       },
-      {
+      members: {
         img: "http://localhost:8000/public/icons/players.webp",
         value: data.members,
       },
-    ],
+    },
 
     labels: data.labels.map((label) => {
       return { img: label?.iconUrls?.medium, title: label?.name };

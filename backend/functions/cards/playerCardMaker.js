@@ -1,24 +1,26 @@
 export const playerCardMaker = (data) => {
   const getTrophies = () => {
-    const trophies = [];
+    const getT = () => {
+      if (!!data.legendStatistics?.legendTrophies)
+        return {
+          mainLegend: {
+            img: "http://localhost:8000/public/trophy/legend.png",
+            value: data.legendStatistics?.legendTrophies,
+          },
+        };
+    };
 
-    if (!!data.legendStatistics?.legendTrophies)
-      trophies.push({
-        img: "http://localhost:8000/public/trophy/legend.png",
-        value: data.legendStatistics?.legendTrophies,
-      });
-
-    return [
-      {
+    return {
+      main: {
         img: data.league?.iconUrls?.small,
         value: data.trophies,
       },
-      {
+      versus: {
         img: "http://localhost:8000/public/trophy/versus.png",
         value: data?.builderBaseTrophies,
       },
-      ...trophies,
-    ];
+      ...getT()
+    };
   };
 
   return {
@@ -37,16 +39,24 @@ export const playerCardMaker = (data) => {
 
     trophies: getTrophies(),
 
-    otherInfo: [
-      {
+    otherInfo: {
+      level: {
         img: "http://localhost:8000/public/icons/exp.png",
         value: data.expLevel,
       },
-      {
+      stars: {
         img: "http://localhost:8000/public/icons/star.png",
         value: data.warStars,
       },
-    ],
+    },
+
+    clan: {
+      role: "member",
+      warPreference: {
+        img: "http://localhost:8000/public/icons/star.png",
+        value: data.warStars,
+      },
+    },
 
     labels: data.labels.map((label) => {
       return { img: label?.iconUrls?.medium, title: label?.name };
