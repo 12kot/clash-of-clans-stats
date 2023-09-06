@@ -43,12 +43,13 @@ export const InitCardPlayer: TCardPlayer = {
     level: InitCardItem,
     stars: InitCardItem,
   },
-  
+
   clan: {
     role: "Member",
     warPreference: InitCardItem,
   },
 };
+
 export const InitCardClan: TCardClan = {
   ...InitCard,
   trophies: {

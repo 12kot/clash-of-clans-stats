@@ -50,14 +50,16 @@ export interface TCardClanOtherInfo extends TCardOtherInfo {
 }
 
 //ЭТИ ШТУКИ БУДУТ ИДТИ ДОБАВКОМ
+
+export interface TCardPlayerClan {
+  role: "Member" | "Elder" | "Co-leader" | "Leader";
+  warPreference: TCardItem; //0 - net; 1 - da
+}
+
 export interface TCardPlayer extends TCard {
   trophies: TCardPlayerTrophies;
   otherInfo: TCardPlayerOtherInfo;
-
-  clan: {
-    role: "Member" | "Elder" | "Co-leader" | "Leader";
-    warPreference: TCardItem; //0 - net; 1 - da
-  };
+  clan: TCardPlayerClan;
 }
 
 export interface TCardClan extends TCard {

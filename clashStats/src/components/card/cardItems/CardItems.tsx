@@ -8,6 +8,14 @@ import {
   TCardPlayerTrophies,
 } from "types/types/card/cardTypes";
 
+type Props = {
+  items:
+    | TCardPlayerTrophies
+    | TCardPlayerOtherInfo
+    | TCardClanTrophies
+    | TCardClanOtherInfo;
+};
+
 const getItems = ({ items }: Props): ReactElement[] => {
   const result = [];
   for (const item of Object.values(items)) {
@@ -20,14 +28,6 @@ const getItems = ({ items }: Props): ReactElement[] => {
   }
 
   return result;
-};
-
-type Props = {
-  items:
-    | TCardPlayerTrophies
-    | TCardPlayerOtherInfo
-    | TCardClanTrophies
-    | TCardClanOtherInfo;
 };
 
 const CardItems = ({ items }: Props): ReactElement => {
