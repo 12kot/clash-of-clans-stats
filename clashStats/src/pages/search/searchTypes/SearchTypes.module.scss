@@ -18,9 +18,14 @@
   background: var(--banner-webkit-background-gradient);
   background: var(--banner-moz-background-gradient);
   background: var(--banner-background-gradient);
+  gap: var(--items-gap);
+
+  .displaySettings {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .cards {
-    padding-top: var(--items-gap);
     min-height: calc(
       100vh - var(--filters-container-heigth) - var(--header-height) * 2 -
         var(--items-gap) * 3

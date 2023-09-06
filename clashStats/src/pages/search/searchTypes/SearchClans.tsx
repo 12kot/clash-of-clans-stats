@@ -11,7 +11,13 @@ const SearchClans = (): ReactElement => {
   return (
     <main className={styles.container}>
       <ClanFilters />
-      <article className={styles.cards}>{getSearchCards(clans, styles.emptyList)}</article>
+      {clans.list.length !== 0 && <section className={styles.displaySettings}>
+        <p>Sort by name</p>
+        <p>Cubes</p>
+      </section>}
+      <article className={styles.cards}>
+        {getSearchCards(clans, styles.emptyList)}
+      </article>
     </main>
   );
 };
