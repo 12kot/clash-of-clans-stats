@@ -33,32 +33,31 @@ export interface TCardPlayerTrophies extends TCardTrophies {
   mainLegend: TCardItem;
 }
 
+export interface TCardClanTrophies extends TCardTrophies {
+  capital: TCardItem;
+}
+
 export interface TCardOtherInfo {
   level: TCardItem;
 }
 
 export interface TCardPlayerOtherInfo extends TCardOtherInfo {
   stars: TCardItem;
-  clan: {
-    role: "Member" | "Elder" | "Co-leader" | "Leader";
-    warPreference: TCardItem; //0 - net; 1 - da
-  };
+}
+
+export interface TCardClanOtherInfo extends TCardOtherInfo {
+  members: TCardItem;
 }
 
 //ЭТИ ШТУКИ БУДУТ ИДТИ ДОБАВКОМ
 export interface TCardPlayer extends TCard {
   trophies: TCardPlayerTrophies;
   otherInfo: TCardPlayerOtherInfo;
-}
 
-//------
-  
-export interface TCardClanTrophies extends TCardTrophies {
-  capital: TCardItem;
-}
-
-export interface TCardClanOtherInfo extends TCardOtherInfo {
-  members: TCardItem;
+  clan: {
+    role: "Member" | "Elder" | "Co-leader" | "Leader";
+    warPreference: TCardItem; //0 - net; 1 - da
+  };
 }
 
 export interface TCardClan extends TCard {

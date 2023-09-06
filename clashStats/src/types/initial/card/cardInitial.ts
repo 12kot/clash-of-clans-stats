@@ -42,10 +42,11 @@ export const InitCardPlayer: TCardPlayer = {
   otherInfo: {
     level: InitCardItem,
     stars: InitCardItem,
-    clan: {
-      role: "Member",
-      warPreference: InitCardItem,
-    },
+  },
+  
+  clan: {
+    role: "Member",
+    warPreference: InitCardItem,
   },
 };
 export const InitCardClan: TCardClan = {

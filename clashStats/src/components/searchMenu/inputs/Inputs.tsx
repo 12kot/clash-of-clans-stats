@@ -8,12 +8,13 @@ type Props = {
   activeButton: TSearchButton;
 };
 
-const Inputs = ({ activeButton }: Props): ReactElement => {
-  const getInput = (type: string): ReactElement => {
-    if (type === "PLAYER") return <PlayerInput onResults={true} />;
+const getInput = (type: string): ReactElement => {
+  if (type === "PLAYER") return <PlayerInput onResults={true} />;
 
-    return <ClanInput onResults={true} />;
-  };
+  return <ClanInput onResults={true} />;
+};
+
+const Inputs = ({ activeButton }: Props): ReactElement => {
 
   return <section className={styles.input}>{getInput(activeButton)}</section>;
 };

@@ -4,11 +4,13 @@ import CardHeader from "components/card/cardHeader/CardHeader";
 import CardItems from "components/card/cardItems/CardItems";
 import Labels from "components/labels/Labels";
 import Loader from "components/loader/Loader";
-import { TCard } from "types/types/card/cardTypes";
+import { TCard, TCardClanOtherInfo, TCardClanTrophies, TCardPlayerOtherInfo, TCardPlayerTrophies } from "types/types/card/cardTypes";
 
 interface Props extends TCard {
   header?: string;
   loading: boolean;
+  trophies: TCardPlayerTrophies | TCardClanTrophies;
+  otherInfo: TCardPlayerOtherInfo | TCardClanOtherInfo;
 }
 
 const Card = ({
