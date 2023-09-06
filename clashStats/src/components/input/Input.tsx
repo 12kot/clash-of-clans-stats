@@ -4,7 +4,7 @@ import SearchSVG from "assets/svg/SearchSVG";
 import Results from "./results/Results";
 import Loader from "components/loader/Loader";
 import { TSearchButton } from "types/types";
-import { TCard } from "types/types/card/cardTypes";
+import { TCardClan, TCardPlayer } from "types/types/card/cardTypes";
 
 interface Props
   extends React.DetailedHTMLProps<
@@ -17,7 +17,7 @@ interface Props
   disabledButton: boolean;
   onClickButton: () => void;
 
-  result?: TCard[];
+  result?: TCardPlayer[] | TCardClan[];
 }
 
 const Input = ({

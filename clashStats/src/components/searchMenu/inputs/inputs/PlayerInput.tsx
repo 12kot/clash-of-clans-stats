@@ -5,13 +5,14 @@ import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
 import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import { searchPlayers } from "store/slices/SearchSlice";
+import { TCardPlayer } from "types/types/card/cardTypes";
 
 type Props = { onResults: boolean };
 
 const PlayerInput = ({ onResults }: Props): ReactElement => {
   const players = useAppSelector(selectSearchPlayers);
   const { value, onChange } = useInput("");
-  const { OnClick } = useSearch(value, searchPlayers);
+  const { OnClick } = useSearch<TCardPlayer>(value, searchPlayers);
 
   return (
     <Input

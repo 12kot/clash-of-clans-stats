@@ -5,13 +5,14 @@ import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
 import { selectSearchClans } from "store/selectors/searchSelectors";
 import { searchClans } from "store/slices/SearchSlice";
+import { TCardClan } from "types/types/card/cardTypes";
 
 type Props = { onResults: boolean };
 
 const ClanInput = ({ onResults }: Props): ReactElement => {
   const clans = useAppSelector(selectSearchClans);
   const { value, onChange } = useInput("");
-  const { OnClick } = useSearch(value, searchClans);
+  const { OnClick } = useSearch<TCardClan>(value, searchClans);
 
   return (
     <Input

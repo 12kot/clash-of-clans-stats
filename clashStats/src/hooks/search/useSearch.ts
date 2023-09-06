@@ -9,9 +9,9 @@ type AsyncThunkConfig = {
   dispatch?: Dispatch;
 };
 
-export const useSearch = (
+export const useSearch = <T>(
   value: string,
-  func: AsyncThunk<{ items: TCard[] }, { name: string }, AsyncThunkConfig>
+  func: AsyncThunk<{ items: T[] }, { name: string }, AsyncThunkConfig>
 ) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
