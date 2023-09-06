@@ -1,18 +1,23 @@
 import Input from "components/input/Input";
 import { useInput } from "hooks/input/useInput";
 import { useSearch } from "hooks/search/useSearch";
-import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
+import { useNavigate } from "react-router-dom";
 import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import { searchPlayers } from "store/slices/SearchSlice";
 import { TCardPlayer } from "types/types/card/cardTypes";
+import { TSearchCardPlayer } from "types/types/slices/searchTypes";
 
 type Props = { onResults: boolean };
 
 const PlayerInput = ({ onResults }: Props): ReactElement => {
-  const players = useAppSelector(selectSearchPlayers);
+  const navigate = useNavigate();
   const { value, onChange } = useInput("");
-  const { OnClick } = useSearch<TCardPlayer>(value, searchPlayers);
+  const { data } = useSearch<TCardPlayer, TSearchCardPlayer>(value, searchPlayers, selectSearchPlayers);
+
+  const OnClick = (): void => {
+    navigate(`/search/player?tag=${value}`);
+  };
 
   return (
     <Input
@@ -21,9 +26,9 @@ const PlayerInput = ({ onResults }: Props): ReactElement => {
       onChange={onChange}
       type="PLAYER"
       onClickButton={OnClick}
-      disabledButton={value.length <= 3 || players.loading}
-      loading={players.loading}
-      result={onResults ? players.list : undefined}
+      disabledButton={value.length <= 3 || data.loading}
+      loading={data.loading}
+      result={onResults ? data.list : undefined}
     />
   );
 };

@@ -49,10 +49,8 @@ export interface TCardClanOtherInfo extends TCardOtherInfo {
   members: TCardItem;
 }
 
-//ЭТИ ШТУКИ БУДУТ ИДТИ ДОБАВКОМ
-
 export interface TCardPlayerClan {
-  role: "Member" | "Elder" | "Co-leader" | "Leader";
+  role: "Member" | "Elder" | "Co-leader" | "Leader" | "without";
   warPreference: TCardItem; //0 - net; 1 - da
 }
 

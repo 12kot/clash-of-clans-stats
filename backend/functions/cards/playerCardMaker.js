@@ -19,7 +19,7 @@ export const playerCardMaker = (data) => {
         img: "http://localhost:8000/public/trophy/versus.png",
         value: data?.builderBaseTrophies,
       },
-      ...getT()
+      ...getT(),
     };
   };
 
@@ -34,7 +34,12 @@ export const playerCardMaker = (data) => {
         type: "PLAYER",
       },
 
-      labels: [],
+      labels: [
+        {
+          img: "http://localhost:8000/public/icons/war.webp",
+          title: "In war",
+        },
+      ],
     },
 
     trophies: getTrophies(),

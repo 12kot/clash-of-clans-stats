@@ -1,29 +1,26 @@
 import { AsyncThunk, Dispatch } from "@reduxjs/toolkit";
 import { useDebounce } from "hooks/debounce/useDebounce";
-import { useAppDispatch } from "hooks/store";
+import { useAppDispatch, useAppSelector } from "hooks/store";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { TCard } from "types/types/card/cardTypes";
+import { TStore } from "types/types/slices/storeType";
 
 type AsyncThunkConfig = {
   dispatch?: Dispatch;
 };
 
-export const useSearch = <T>(
+export const useSearch = <TFunc, Tdata>(
   value: string,
-  func: AsyncThunk<{ items: T[] }, { name: string }, AsyncThunkConfig>
+  func: AsyncThunk<{ items: TFunc[] }, { name: string }, AsyncThunkConfig>,
+  path: (state: TStore) => Tdata
 ) => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+  const data = useAppSelector(path);
+  
   const debounce = useDebounce(value, 500);
 
   useEffect(() => {
     if (value.length > 3 && debounce) dispatch(func({ name: value }));
   }, [dispatch, debounce, func]);
 
-  const OnClick = (): void => {
-    navigate(`/search/clan?tag=${value}`);
-  };
-
-  return { OnClick };
+  return { data };
 };

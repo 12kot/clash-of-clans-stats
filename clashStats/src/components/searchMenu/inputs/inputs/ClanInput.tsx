@@ -1,18 +1,27 @@
 import Input from "components/input/Input";
 import { useInput } from "hooks/input/useInput";
 import { useSearch } from "hooks/search/useSearch";
-import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
+import { useNavigate } from "react-router-dom";
 import { selectSearchClans } from "store/selectors/searchSelectors";
 import { searchClans } from "store/slices/SearchSlice";
 import { TCardClan } from "types/types/card/cardTypes";
+import { TSearchCardClan } from "types/types/slices/searchTypes";
 
 type Props = { onResults: boolean };
 
 const ClanInput = ({ onResults }: Props): ReactElement => {
-  const clans = useAppSelector(selectSearchClans);
+  const navigate = useNavigate();
   const { value, onChange } = useInput("");
-  const { OnClick } = useSearch<TCardClan>(value, searchClans);
+  const { data } = useSearch<TCardClan, TSearchCardClan>(
+    value,
+    searchClans,
+    selectSearchClans
+  );
+
+  const OnClick = (): void => {
+    navigate(`/search/clan?tag=${value}`);
+  };
 
   return (
     <Input
@@ -21,9 +30,9 @@ const ClanInput = ({ onResults }: Props): ReactElement => {
       onChange={onChange}
       type="CLAN"
       onClickButton={OnClick}
-      disabledButton={value.length <= 3 || clans.loading}
-      loading={clans.loading}
-      result={onResults ? clans.list : undefined}
+      disabledButton={value.length <= 3 || data.loading}
+      loading={data.loading}
+      result={onResults ? data.list : undefined}
     />
   );
 };
