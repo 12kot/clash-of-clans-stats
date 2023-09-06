@@ -1,11 +1,20 @@
-import { TSearchCard, TSearchSlice } from "types/types/slices/searchTypes";
+import { TSearchCard, TSearchCardClan, TSearchCardPlayer, TSearchSlice } from "types/types/slices/searchTypes";
 
 export const InitSearchCard: TSearchCard = {
-  list: [],
   loading: false,
 };
 
+export const InitSearchCardPlayer: TSearchCardPlayer = {
+  list: [],
+  ...InitSearchCard
+};
+
+export const InitSearchCardClan: TSearchCardClan = {
+  list: [],
+  ...InitSearchCard
+};
+
 export const InitSearchSlice: TSearchSlice = {
-  clans: InitSearchCard,
-  players: InitSearchCard,
+  players: InitSearchCardPlayer,
+  clans: InitSearchCardClan,
 }
