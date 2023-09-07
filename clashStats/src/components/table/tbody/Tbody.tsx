@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./Tbody.module.scss";
 import { useAppSelector } from "hooks/store";
-import experience from "assets/experience.png";
-import versusrTrophy from "assets/versus-trophy.png";
+//import experience from "assets/experience.png";
+//import versusrTrophy from "assets/versus-trophy.png";
 import { TPlayer } from "types/types/player/playerTypes";
 
 const getTableItems = (clanMembers: TPlayer[]): ReactElement[] => {
@@ -20,7 +20,7 @@ const getTableItems = (clanMembers: TPlayer[]): ReactElement[] => {
       <td>
         <div className={styles.cell}>
           <span>{member.expLevel}</span>
-          <img src={experience} alt={"experience"} />
+          <img src={"experience"} alt={"experience"} />
         </div>
       </td>
       <td>
@@ -32,7 +32,7 @@ const getTableItems = (clanMembers: TPlayer[]): ReactElement[] => {
       <td>
         <div className={styles.cell}>
           <span>{member.builderBaseTrophies}</span>
-          <img src={versusrTrophy} alt={"versusTrophy"} />
+          <img src={"versusrTrophy"} alt={"versusTrophy"} />
         </div>
       </td>
       <td>

@@ -1,26 +1,19 @@
 import React, { ReactElement } from "react";
 import styles from "./Card.module.scss";
-import CardHeader from "components/card/cardHeader/CardHeader";
+import CardHeader from "components/card/basicCard/cardHeader/CardHeader";
 import CardItems from "components/card/cardItems/CardItems";
 import Labels from "components/labels/Labels";
 import Loader from "components/loader/Loader";
-import { TCard, TCardClanOtherInfo, TCardClanTrophies, TCardPlayerOtherInfo, TCardPlayerTrophies } from "types/types/card/cardTypes";
+import { TCardClan, TCardPlayer } from "types/types/card/cardTypes";
 
-interface Props extends TCard {
+interface Props {
   header?: string;
+  card: TCardClan | TCardPlayer;
   loading: boolean;
-  trophies: TCardPlayerTrophies | TCardClanTrophies;
-  otherInfo: TCardPlayerOtherInfo | TCardClanOtherInfo;
 }
 
 const Card = ({
-  header,
-  img,
-  headerCard,
-  trophies,
-  otherInfo,
-  labels,
-  loading,
+  card, loading, header
 }: Props): ReactElement => {
   return (
     <section className={styles.container}>
@@ -33,19 +26,19 @@ const Card = ({
           <Loader size="24px" weight="3px" />
         ) : (
           <>
-            <CardHeader {...headerCard} />
+            <CardHeader {...card.headerCard} />
             <section className={styles.values}>
-              <CardItems items={trophies} />
+              <CardItems items={card.trophies} />
             </section>
 
             <section className={styles.values}>
-              <CardItems items={otherInfo} />
-              <Labels labels={labels} />
+              <CardItems items={card.otherInfo} />
+              <Labels labels={card.labels} />
             </section>
           </>
         )}
       </main>
-      <img src={img} alt="" className={styles.banner} />
+      <img src={card.img} alt="" className={styles.banner} />
     </section>
   );
 };

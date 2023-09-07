@@ -31,16 +31,11 @@
         var(--items-gap) * 3
     );
 
-    .emptyList {
-      margin: auto;
-      font-size: var(--h1-size);
-    }
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
-    gap: var(--items-gap);
+    gap: calc(var(--items-gap) / 2);
   }
 
   @extend .flex;

@@ -1,21 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./CardHeader.module.scss";
 import { NavLink } from "react-router-dom";
-import { v4 } from "uuid";
 import { TCardHeader } from "types/types/card/cardTypes";
-import { TLabel } from "types/types/label/labelTypes";
-
-const getLables = (labels: TLabel[]): ReactElement[] => {
-  return labels.map((label) => (
-    <img
-      src={label.img}
-      alt={label.title}
-      title={label.title}
-      className={styles.icon}
-      key={v4()}
-    ></img>
-  ));
-};
+import Labels from "components/labels/Labels";
 
 const CardHeader = ({ object, labels }: TCardHeader): ReactElement => {
   return (
@@ -25,7 +12,7 @@ const CardHeader = ({ object, labels }: TCardHeader): ReactElement => {
         <span className={styles.clanName}>{object.name}</span>
         <span className={styles.tag}>{object.tag}</span>
       </NavLink>
-      {getLables(labels)}
+      <Labels labels={labels} />
     </header>
   );
 };

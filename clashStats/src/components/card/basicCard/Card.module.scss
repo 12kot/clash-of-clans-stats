@@ -1,23 +1,14 @@
+@import "../CardStyles.module.scss";
+
 .container {
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-  position: relative;
-
-  background-color: var(--bg-color);
-
   flex-basis: 32%;
   min-width: var(--card-min-width);
   //max-width: var(--card-max-width);
   flex-grow: 1;
-  overflow: hidden;
-
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-
-  &:hover {
-    box-shadow: var(--box-shadow-focus);
-  }
+ 
+  display: flex;
+  flex-direction: column;
+  @extend .cardContainer;
 
   .header {
     padding: var(--item-padding-top) var(--item-padding-left) 0;

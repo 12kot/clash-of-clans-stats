@@ -1,0 +1,15 @@
+.cardContainer {
+  height: fit-content;
+  position: relative;
+
+  background-color: var(--bg-color);
+
+  overflow: hidden;
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+
+  &:hover {
+    box-shadow: var(--box-shadow-focus);
+  }
+}

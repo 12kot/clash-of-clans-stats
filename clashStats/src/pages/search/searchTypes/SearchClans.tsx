@@ -3,7 +3,7 @@ import styles from "./SearchTypes.module.scss";
 import { useAppSelector } from "hooks/store";
 import { selectSearchClans } from "store/selectors/searchSelectors";
 import ClanFilters from "components/search/filters/ClanFilters";
-import { getSearchCards } from "../search.service";
+import { getSearchCards } from "../service/search.service";
 
 const SearchClans = (): ReactElement => {
   const clans = useAppSelector(selectSearchClans);
@@ -16,7 +16,7 @@ const SearchClans = (): ReactElement => {
         <p>Cubes</p>
       </section>}
       <article className={styles.cards}>
-        {getSearchCards(clans, styles.emptyList)}
+        {getSearchCards(clans)}
       </article>
     </main>
   );
