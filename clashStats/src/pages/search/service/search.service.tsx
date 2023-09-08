@@ -4,7 +4,7 @@ import {
   TSearchCardClan,
   TSearchCardPlayer,
 } from "types/types/slices/searchTypes";
-import { InitCardPlayer } from "types/initial/card/cardInitial";
+import { InitCardPlayer } from "types/initial/card/basic/basicCardInitial";
 import Card from "components/card/basicCard/Card";
 import LineCard from "components/card/lineCard/LineCard";
 import styles from "./SearchService.module.scss";
@@ -21,6 +21,6 @@ export const getSearchCards = (
     return <h1 className={styles.emptyList}>There's nothing here</h1>;
 
   return items.list.map((item) => (
-    <LineCard card={item} loading={items.loading} key={v4()} />
+    <Card card={item} loading={items.loading} key={v4()} />
   ));
 };

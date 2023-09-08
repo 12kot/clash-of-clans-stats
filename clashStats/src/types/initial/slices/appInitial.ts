@@ -4,7 +4,7 @@ import {
   TFetchCardClan,
   TFetchCardPlayer,
 } from "types/types/slices/appTypes";
-import { InitCardClan, InitCardPlayer } from "../card/cardInitial";
+import { InitCardClan, InitCardPlayer } from "../card/basic/basicCardInitial";
 
 export const InitFetchCard: TFetchCard = {
   loading: false,

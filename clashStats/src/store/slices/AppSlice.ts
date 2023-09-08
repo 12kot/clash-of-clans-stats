@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getDataFromServer } from "./getDataFromServer";
 import { TAppSlice } from "types/types/slices/appTypes";
 import { TCardClan, TCardPlayer } from "types/types/card/cardTypes";
-import { InitCardClan, InitCardPlayer } from "types/initial/card/cardInitial";
+import { InitCardClan, InitCardPlayer } from "types/initial/card/basic/basicCardInitial";
 
 const initialState: TAppSlice = {
   ...InitAppSlice,
