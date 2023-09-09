@@ -4,17 +4,18 @@ import { NavLink } from "react-router-dom";
 import Item from "./item/Item";
 import { v4 } from "uuid";
 import { TSearchButton } from "types/types";
-import { TCardClan, TCardPlayer } from "types/types/card/cardTypes";
+import { TBasicCardPlayer } from "types/types/card/basic/player/basicPlayerCardTypes";
+import { TBasicCardClan } from "types/types/card/basic/clan/basicClanCardTypes";
 
 type Props = {
-  results: TCardPlayer[] | TCardClan[];
+  results: TBasicCardPlayer[] | TBasicCardClan[];
   value: string;
   type: TSearchButton;
 };
 
-const getResults = (results: TCardPlayer[] | TCardClan[], type: string): ReactElement[] => {
+const getResults = (results: TBasicCardPlayer[] | TBasicCardClan[], type: string): ReactElement[] => {
   return results.map((item) => (
-    <Item item={item.headerCard} type={type} key={v4()} />
+    <Item item={item.mainInfo} type={type} key={v4()} />
   ));
 };
 

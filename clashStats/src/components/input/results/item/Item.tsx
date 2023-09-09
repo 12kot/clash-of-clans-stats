@@ -1,23 +1,41 @@
 import React, { ReactElement } from "react";
 import styles from "../Results.module.scss";
 import { NavLink } from "react-router-dom";
-import { TCardHeader } from "types/types/card/cardTypes";
+import { TBasicCardClanMainInfo } from "types/types/card/basic/clan/basicClanCardTypes";
+import { TBasicCardPlayerMainInfo } from "types/types/card/basic/player/basicPlayerCardTypes";
 
 type Props = {
-  item: TCardHeader;
+  item: TBasicCardClanMainInfo | TBasicCardPlayerMainInfo;
   type: string;
+};
+
+const getImg = (item: TBasicCardClanMainInfo | TBasicCardPlayerMainInfo) => {
+  if (item.clanBanner)
+    return (
+      <img
+        src={item.clanBanner.img}
+        alt={item.clanBanner.title}
+        title={item.clanBanner.title}
+      ></img>
+    );
+
+  if (item.townHall)
+    return (
+      <img
+        src={item.townHall.img}
+        alt={item.townHall.title}
+        title={item.townHall.title}
+      ></img>
+    );
 };
 
 const Item = ({ item, type }: Props): ReactElement => {
   return (
-    <NavLink
-      to={`/${type}/${item.object.tag}`}
-      className={styles.resultItem}
-    >
-      <img src={item.object.img} alt=""></img>
+    <NavLink to={`/${type}/${item.tag}`} className={styles.resultItem}>
+      {getImg(item)}
       <div className={styles.name}>
-        {item.object.name}
-        <span className={styles.tag}>{item.object.tag}</span>
+        {item.name}
+        <span className={styles.tag}>{item.tag}</span>
       </div>
     </NavLink>
   );

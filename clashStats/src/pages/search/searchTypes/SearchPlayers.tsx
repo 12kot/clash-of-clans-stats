@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import styles from "./SearchTypes.module.scss";
 import PlayerFilters from "components/search/filters/PlayerFilters";
-import { getSearchCards } from "../service/search.service";
+import { getSearchPlayers } from "../service/search.service";
 
 const SearchPlayers = (): ReactElement => {
   const players = useAppSelector(selectSearchPlayers);
@@ -11,7 +11,7 @@ const SearchPlayers = (): ReactElement => {
   return (
     <main className={styles.container}>
       <PlayerFilters />
-      <article className={styles.cards}>{getSearchCards(players)}</article>
+      <article className={styles.cards}>{getSearchPlayers(players)}</article>
     </main>
   );
 };

@@ -17,11 +17,7 @@ export interface TBasicCardClanOtherInfo extends TCardOther {
 export interface TBasicCardClanMainInfo extends TCardMain {
   clanBanner: TCardItem;
   capital: TCardItem;
-  country: {
-    img: string;
-    code: string;
-    title: string;
-  };
+  country: TCardItem
 }
 
 export interface TBasicCardClan extends TCard {

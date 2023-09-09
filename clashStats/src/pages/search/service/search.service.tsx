@@ -4,23 +4,40 @@ import {
   TSearchCardClan,
   TSearchCardPlayer,
 } from "types/types/slices/searchTypes";
-import { InitCardPlayer } from "types/initial/card/basic/basicCardInitial";
-import Card from "components/card/basicCard/Card";
-import LineCard from "components/card/lineCard/LineCard";
+import LineCard from "components/card/basicCard/clan/lineCard/LineCard";
 import styles from "./SearchService.module.scss";
+import CardLoader from "components/loader/cardLoader/CardLoader";
+import BasicClanCard from "components/card/basicCard/clan/blockCard/Card";
 
 export const getSearchCards = (
-  items: TSearchCardPlayer | TSearchCardClan
-): ReactElement[] | ReactElement => {
-  if (items.loading)
+  loading: boolean,
+  isEmpty: boolean
+): ReactElement[] | ReactElement | undefined => {
+  if (loading)
     return [...Array(3)].map(() => (
-      <Card card={InitCardPlayer} loading={true} key={v4()} />
+      <CardLoader key={v4()} />
     ));
 
-  if (items.list.length === 0)
+  if (isEmpty)
     return <h1 className={styles.emptyList}>There's nothing here</h1>;
+};
+
+export const getSearchPlayers = (items: TSearchCardPlayer): ReactElement[] | ReactElement => {
+  const data = getSearchCards(items.loading, items.list.length === 0);
+
+  if (data) return data;
 
   return items.list.map((item) => (
-    <Card card={item} loading={items.loading} key={v4()} />
+    <Card card={item} key={v4()} />
   ));
-};
+}
+
+export const getSearchClans = (items: TSearchCardClan): ReactElement[] | ReactElement => {
+  const data = getSearchCards(items.loading, items.list.length === 0);
+
+  if (data) return data;
+
+  return items.list.map((item) => (
+    <BasicClanCard card={item} key={v4()} />
+  ));
+}

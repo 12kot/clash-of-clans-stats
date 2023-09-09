@@ -14,12 +14,8 @@ export interface TBasicCardPlayerOtherInfo extends TCardOther {
 }
 
 export interface TBasicCardPlayerMainInfo extends TCardMain {
+  clan: TCardItem;
   townHall: TCardItem;
-  clanBanner: {
-    img: string;
-    code: string;
-    title: string;
-  };
 }
 
 export interface TBasicCardPlayer extends TCard {

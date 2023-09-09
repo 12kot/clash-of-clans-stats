@@ -23,11 +23,7 @@ export const InitBasicCardPlayerOtherInfo: TBasicCardPlayerOtherInfo = {
 
 export const InitBasicCardPlayerMainInfo: TBasicCardPlayerMainInfo = {
   townHall: InitCardItem,
-  clanBanner: {
-    img: "",
-    code: "",
-    title: "",
-  },
+  clan: InitCardItem,
   ...InitCardMain,
 };
 

@@ -25,11 +25,7 @@ export const InitBasicCardClanOtherInfo: TBasicCardClanOtherInfo = {
 export const InitBasicCardClanMainInfo: TBasicCardClanMainInfo = {
   clanBanner: InitCardItem,
   capital: InitCardItem,
-  country: {
-    img: "",
-    code: "",
-    title: "",
-  },
+  country: InitCardItem,
   ...InitCardMain,
 };
 

@@ -4,7 +4,7 @@ import Loader from "components/loader/Loader";
 import { TCardClan, TCardPlayer } from "types/types/card/cardTypes";
 import { NavLink } from "react-router-dom";
 import Labels from "components/labels/Labels";
-import CardItems from "../cardItems/CardItems";
+import CardItems from "../../../cardElementItem/CardElementItem";
 
 type Props = {
   card: TCardClan | TCardPlayer;
