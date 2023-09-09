@@ -2,9 +2,9 @@ import React, { ReactElement } from "react";
 import styles from "./BlockCardHeader.module.scss";
 import { NavLink } from "react-router-dom";
 import Labels from "components/labels/Labels";
-import { TBasicCardClanMainInfo } from "types/types/card/basic/clan/cardBasicClanTypes";
+import { TCardBasicClanMainInfo } from "types/types/card/basic/clan/cardBasicClanTypes";
 
-const CardBasicClanHeader = ({ clanBanner, capital, name, tag }: TBasicCardClanMainInfo): ReactElement => {
+const CardBasicClanHeader = ({ clanBanner, capital, name, tag }: TCardBasicClanMainInfo): ReactElement => {
   return (
     <header className={styles.item}>
       <img src={clanBanner.img} alt={clanBanner.title} title={clanBanner.title}></img>

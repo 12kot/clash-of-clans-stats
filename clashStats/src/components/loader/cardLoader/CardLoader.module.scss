@@ -1,4 +1,16 @@
 .container {
-  width: 100%;
   height: var(--card-height);
+
+  flex-basis: 32%;
+  flex-grow: 1;
+  min-width: var(--card-min-width);
+
+  background-color: var(--bg-color);
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+
+  &:hover {
+    box-shadow: var(--box-shadow-focus);
+  }
 }

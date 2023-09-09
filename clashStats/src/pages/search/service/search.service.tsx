@@ -8,6 +8,8 @@ import LineCard from "components/card/basicCard/clan/lineCard/LineCard";
 import styles from "./SearchService.module.scss";
 import CardLoader from "components/loader/cardLoader/CardLoader";
 import CardBasicClan from "components/card/basicCard/clan/blockCard/Card";
+import { InitCardBasic } from "types/initial/card/basic/cardBasicInitial";
+import { InitCardBasicClan } from "types/initial/card/basic/clan/cardBasicClanInitial";
 
 export const getSearchCards = (
   loading: boolean,
@@ -15,7 +17,7 @@ export const getSearchCards = (
 ): ReactElement[] | ReactElement | undefined => {
   if (loading)
     return [...Array(3)].map(() => (
-      <CardLoader key={v4()} />
+      <CardLoader key={v4()}  />
     ));
 
   if (isEmpty)
@@ -32,12 +34,14 @@ export const getSearchCards = (
 //   ));
 // }
 
-export const getSearchClans = (items: TSearchCardClan): ReactElement[] | ReactElement => {
+export const getSearchClans = (
+  items: TSearchCardClan
+): ReactElement[] | ReactElement => {
   const data = getSearchCards(items.loading, items.list.length === 0);
 
   if (data) return data;
 
   return items.list.map((item) => (
-    <CardBasicClan card={item} key={v4()} />
+    <CardBasicClan card={item} key={v4()} loading={items.loading} />
   ));
-}
+};

@@ -6,7 +6,7 @@ import { selectAppPopularClan } from "store/selectors/appSelectors";
 const PopularClan = (): ReactElement => {
   const card = useAppSelector(selectAppPopularClan);
 
-  return <CardBasicClan card={card.item} header={"Самый популярный клан"} />;
+  return <CardBasicClan card={card.item} header={"Самый популярный клан"} loading={card.loading} />;
 };
 
 export default PopularClan;

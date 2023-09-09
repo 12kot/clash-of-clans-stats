@@ -1,12 +1,12 @@
 import React, { ReactElement } from "react";
 import styles from "./LineCard.module.scss";
 import Labels from "components/labels/Labels";
-import { TBasicCardClan } from "types/types/card/basic/clan/cardBasicClanTypes";
+import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
 import LineCardBasicClandHeader from "./cardHeader/LineCardHeader";
 import CardElementItem from "../../../cardElementItem/CardElementItem";
 
 type Props = {
-  card: TBasicCardClan;
+  card: TCardBasicClan;
 };
 
 const LineCardBasicClan = ({ card }: Props): ReactElement => {

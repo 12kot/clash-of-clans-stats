@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import styles from "./CardElementItem.module.scss";
+import styles from "./CardItem.module.scss";
 import { v4 } from "uuid";
 import { TCardItem } from "types/types/card/basic/cardBasicTypes";
 
