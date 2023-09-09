@@ -1,20 +1,14 @@
-.nameContainer {
+.item {
   display: flex;
-  gap: var(--items-gap);
-  width: fit-content;
   align-items: center;
-  margin-bottom: 5px;
+  gap: calc(var(--items-gap));
 
-  img {
-    height: var(--card-player-img-heigth);
-  }
-
-  .name {
+  .cardInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    .clanName {
+    .name {
       font-weight: 600;
     }
 
@@ -22,9 +16,5 @@
       color: var(--second-font-color);
       font-size: calc(var(--font-size) - 2px);
     }
-  }
-
-  .icon {
-    height: var(--card-player-labels-img-heigth) !important;
   }
 }

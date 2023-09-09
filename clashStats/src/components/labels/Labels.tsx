@@ -5,7 +5,7 @@ import { TLabel } from "types/types/label/labelTypes";
 
 const getLabels = (labels: TLabel[]): ReactElement[] => {
   return labels.map((label) => (
-    <img src={label.img} title={label.title} alt="" className={styles.icon} key={v4()} />
+    <img src={label.img} title={label.title} alt={label.title} className={styles.icon} key={v4()} />
   ));
 };
 

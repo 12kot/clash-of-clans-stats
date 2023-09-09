@@ -7,7 +7,7 @@ import {
 import LineCard from "components/card/basicCard/clan/lineCard/LineCard";
 import styles from "./SearchService.module.scss";
 import CardLoader from "components/loader/cardLoader/CardLoader";
-import BasicClanCard from "components/card/basicCard/clan/blockCard/Card";
+import CardBasicClan from "components/card/basicCard/clan/blockCard/Card";
 
 export const getSearchCards = (
   loading: boolean,
@@ -38,6 +38,6 @@ export const getSearchClans = (items: TSearchCardClan): ReactElement[] | ReactEl
   if (data) return data;
 
   return items.list.map((item) => (
-    <BasicClanCard card={item} key={v4()} />
+    <CardBasicClan card={item} key={v4()} />
   ));
 }

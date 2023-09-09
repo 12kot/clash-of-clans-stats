@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import styles from "./Card.module.scss";
-import BasicClanCardHeader from "components/card/basicCard/clan/blockCard/cardHeader/CardHeader";
+import BasicClanCardHeader from "components/card/basicCard/clan/blockCard/cardHeader/BlockCardHeader";
 import Labels from "components/labels/Labels";
 import { TBasicCardClan } from "types/types/card/basic/clan/basicClanCardTypes";
 import CardElementItem from "components/card/cardElementItem/CardElementItem";
@@ -11,7 +11,7 @@ interface Props {
   card: TBasicCardClan;
 }
 
-const BasicClanCard = ({ card, header }: Props): ReactElement => {
+const CardBasicClan = ({ card, header }: Props): ReactElement => {
   return (
     <section className={styles.container}>
       {!!header && (
@@ -39,4 +39,4 @@ const BasicClanCard = ({ card, header }: Props): ReactElement => {
   );
 };
 
-export default BasicClanCard;
+export default CardBasicClan;

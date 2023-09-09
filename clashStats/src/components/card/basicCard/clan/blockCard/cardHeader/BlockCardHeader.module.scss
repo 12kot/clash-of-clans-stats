@@ -1,0 +1,14 @@
+@import url("../../cardHeader/CardHeader.module.scss");
+
+.item {
+  width: fit-content;
+  margin-bottom: 5px;
+
+  img {
+    height: var(--card-player-img-heigth);
+  }
+
+  .icon {
+    height: var(--card-player-labels-img-heigth) !important;
+  }
+}

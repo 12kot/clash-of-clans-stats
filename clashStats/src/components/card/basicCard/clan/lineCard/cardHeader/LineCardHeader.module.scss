@@ -1,0 +1,13 @@
+@import url("../../cardHeader/CardHeader.module.scss");
+
+.item {
+  margin: 0 auto 0 0;
+
+  img {
+    max-height: 40px;
+  }
+
+  .cardInfo {
+    align-items: flex-start;
+  }
+}
