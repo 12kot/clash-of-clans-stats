@@ -9,7 +9,7 @@ type Props = {
 };
 
 const getInput = (type: string): ReactElement => {
-  if (type === "PLAYER") return <PlayerInput onResults={true} />;
+  if (type === "player") return <PlayerInput onResults={true} />;
 
   return <ClanInput onResults={true} />;
 };

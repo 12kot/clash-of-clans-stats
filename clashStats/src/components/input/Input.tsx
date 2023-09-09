@@ -4,6 +4,7 @@ import SearchSVG from "assets/svg/SearchSVG";
 import { TSearchButton } from "types/types";
 import SpinLoader from "components/loader/spinLoader/Loader";
 import InputSearchResultsPlayers from "./results/ResultsPlayers";
+import InputSearchResultsClans from "./results/ResultsClan";
 
 interface Props
   extends React.DetailedHTMLProps<
@@ -19,6 +20,12 @@ interface Props
   result: boolean;
 }
 
+const getInput = (type: TSearchButton, value: string) => {
+  if (type === "player") return <InputSearchResultsPlayers value={value} />;
+
+  return <InputSearchResultsClans value={value} />;
+};
+
 const Input = ({
   type,
   loading,
@@ -27,11 +34,11 @@ const Input = ({
   result,
   ...restProps
 }: Props): ReactElement => {
-  const value = { ...restProps };
+  const { value } = { ...restProps };
 
   return (
     <div className={styles.container}>
-      <input className={styles.input} {...restProps} />
+      <input className={styles.input} {...restProps} value={value}/>
       <button
         className={styles.icon}
         onClick={onClickButton}
@@ -41,9 +48,7 @@ const Input = ({
       </button>
 
       <div className={styles.results}>
-        {!disabledButton && result && (
-          <InputSearchResultsPlayers value={value + ""} />
-        )}
+        {!disabledButton && result && getInput(type, value + "")}
       </div>
     </div>
   );

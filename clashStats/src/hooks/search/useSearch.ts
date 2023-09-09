@@ -11,10 +11,10 @@ type AsyncThunkConfig = {
 export const useSearch = <TFunc, Tdata>(
   value: string,
   func: AsyncThunk<{ items: TFunc[] }, { name: string }, AsyncThunkConfig>,
-  path: (state: TStore) => Tdata
+  selector: (state: TStore) => Tdata
 ) => {
   const dispatch = useAppDispatch();
-  const data = useAppSelector(path);
+  const data = useAppSelector(selector);
   
   const debounce = useDebounce(value, 500);
 
