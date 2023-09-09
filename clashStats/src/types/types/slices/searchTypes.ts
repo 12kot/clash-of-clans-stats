@@ -17,3 +17,8 @@ export interface TSearchSlice {
   players: TSearchCardPlayer;
   clans: TSearchCardClan;
 }
+
+export interface TSearchSlice {
+  players: TSearchCardPlayer;
+  clans: TSearchCardClan;
+}

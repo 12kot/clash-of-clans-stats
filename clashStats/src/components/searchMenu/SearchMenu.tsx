@@ -5,7 +5,7 @@ import Inputs from "./inputs/Inputs";
 import { TSearchButton } from "types/types";
 
 const SearchMenu = (): ReactElement => {
-  const [activeButton, setActiveButton] = useState<TSearchButton>("PLAYER");
+  const [activeButton, setActiveButton] = useState<TSearchButton>("player");
 
   return (
     <article className={styles.search}>

@@ -1,1 +1,1 @@
-export type TSearchButton = "PLAYER" | "CLAN";
+export type TSearchButton = "player" | "clan";

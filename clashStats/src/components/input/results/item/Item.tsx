@@ -1,44 +1,35 @@
 import React, { ReactElement } from "react";
 import styles from "../Results.module.scss";
 import { NavLink } from "react-router-dom";
-import { TCardBasicClanMainInfo } from "types/types/card/basic/clan/cardBasicClanTypes";
-import { TCardBasicPlayerMainInfo } from "types/types/card/basic/player/cardBasicPlayerTypes";
+import { TCardItem } from "types/types/card/basic/cardBasicTypes";
 
 type Props = {
-  item: TCardBasicClanMainInfo | TCardBasicPlayerMainInfo;
-  type: string;
+  item: TCardItem;
+  name: string;
+  tag: string
+  link: string
 };
 
-const getImg = (item: TCardBasicClanMainInfo | TCardBasicPlayerMainInfo) => {
-  if (item)
-    return (
-      <img
-        src={item.clanBanner.img}
-        alt={item.clanBanner.title}
-        title={item.clanBanner.title}
-      ></img>
-    );
-
-  if (item.townHall)
-    return (
-      <img
-        src={item.townHall.img}
-        alt={item.townHall.title}
-        title={item.townHall.title}
-      ></img>
-    );
-};
-
-const Item = ({ item, type }: Props): ReactElement => {
+const getImg = (item: TCardItem) => {
   return (
-    <NavLink to={`/${type}/${item.tag}`} className={styles.resultItem}>
+    <img
+      src={item.img}
+      alt={item.title}
+      title={item.title}
+    ></img>
+  );
+};
+
+const InputSearchResultItem = ({ item, name, tag, link}: Props): ReactElement => {
+  return (
+    <NavLink to={`/${link}`} className={styles.resultItem}>
       {getImg(item)}
       <div className={styles.name}>
-        {item.name}
-        <span className={styles.tag}>{item.tag}</span>
+        {name}
+        <span className={styles.tag}>{tag}</span>
       </div>
     </NavLink>
   );
 };
 
-export default Item;
+export default InputSearchResultItem;

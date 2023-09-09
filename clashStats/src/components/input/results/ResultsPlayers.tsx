@@ -1,37 +1,31 @@
 import React, { ReactElement } from "react";
-import styles from "./Results.module.scss";
-import { NavLink } from "react-router-dom";
-import Item from "./item/Item";
-import { v4 } from "uuid";
-import { TSearchButton } from "types/types";
+import InputSearchResults from "./Results";
 import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
+import { TMiniCard } from "types/types/card/cardTypes";
+import { useAppSelector } from "hooks/store";
+import { selectSearchPlayers } from "store/selectors/searchSelectors";
 
 type Props = {
-  results: TCardBasicPlayer[] ;
   value: string;
-  type: TSearchButton;
 };
 
-const getResults = (results: TCardBasicPlayer[], type: string): ReactElement[] => {
-  return results.map((item) => (
-    <Item item={item.mainInfo} type={type} key={v4()} />
-  ));
+const getResObj = (items: TCardBasicPlayer[]): TMiniCard[] => {
+  return items.map((item) => {
+    return {
+      img: item.mainInfo.townHall,
+      name: item.mainInfo.name,
+      tag: item.mainInfo.tag,
+    };
+  });
 };
 
-const Results = ({ results, type, value }: Props): ReactElement => {
+const InputSearchResultsPlayers = ({ value }: Props): ReactElement => {
+  const data = useAppSelector(selectSearchPlayers);
+  
+
   return (
-    <>
-      {getResults(results, type)}
-      {results.length !== 0 && (
-        <NavLink
-          to={`/search/${type}/${value}`}
-          className={`${styles.resultItem} ${styles.fixed}`}
-        >
-          <p>All results →</p>
-        </NavLink>
-      )}
-    </>
+    <InputSearchResults items={getResObj(data.list)} link={"player"} value={value} />
   );
 };
 
-export default Results;
+export default InputSearchResultsPlayers;

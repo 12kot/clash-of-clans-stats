@@ -12,15 +12,15 @@ const Buttons = ({ activeButton, setActiveButton }: Props): ReactElement => {
     <section className={styles.items}>
       <button
         className={`${styles.item} ${
-          activeButton === "PLAYER" && styles.active
+          activeButton === "player" && styles.active
         }`}
-        onClick={() => setActiveButton("PLAYER")}
+        onClick={() => setActiveButton("player")}
       >
         Player
       </button>
       <button
-        className={`${styles.item} ${activeButton === "CLAN" && styles.active}`}
-        onClick={() => setActiveButton("CLAN")}
+        className={`${styles.item} ${activeButton === "clan" && styles.active}`}
+        onClick={() => setActiveButton("clan")}
       >
         Clan
       </button>

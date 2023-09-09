@@ -28,11 +28,11 @@ const ClanInput = ({ onResults }: Props): ReactElement => {
       placeholder="Clan name or tag"
       value={value}
       onChange={onChange}
-      type="CLAN"
+      type="clan"
       onClickButton={OnClick}
       disabledButton={value.length <= 3 || data.loading}
       loading={data.loading}
-      result={onResults ? data.list : undefined}
+      result={onResults}
     />
   );
 };

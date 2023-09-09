@@ -1,37 +1,34 @@
 import React, { ReactElement } from "react";
-import styles from "./Results.module.scss";
-import { NavLink } from "react-router-dom";
-import Item from "./item/Item";
-import { v4 } from "uuid";
-import { TSearchButton } from "types/types";
 import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
+import InputSearchResults from "./Results";
+import { TMiniCard } from "types/types/card/cardTypes";
+import { useAppSelector } from "hooks/store";
+import { selectSearchClans } from "store/selectors/searchSelectors";
 
 type Props = {
-  results: TCardBasicClan[];
   value: string;
-  type: TSearchButton;
 };
 
-const getResults = (results: TCardBasicClan[], type: string): ReactElement[] => {
-  return results.map((item) => (
-    <Item item={item.mainInfo} type={type} key={v4()} />
-  ));
+const getResObj = (items: TCardBasicClan[]): TMiniCard[] => {
+  return items.map((item) => {
+    return {
+      img: item.mainInfo.clanBanner,
+      name: item.mainInfo.name,
+      tag: item.mainInfo.tag,
+    };
+  });
 };
 
-const Results = ({ results, type, value }: Props): ReactElement => {
+const InputSearchResultsClans = ({ value }: Props): ReactElement => {
+  const data = useAppSelector(selectSearchClans);
+
   return (
-    <>
-      {getResults(results, type)}
-      {results.length !== 0 && (
-        <NavLink
-          to={`/search/${type}/${value}`}
-          className={`${styles.resultItem} ${styles.fixed}`}
-        >
-          <p>All results →</p>
-        </NavLink>
-      )}
-    </>
+    <InputSearchResults
+      items={getResObj(data.list)}
+      link={"clan"}
+      value={value}
+    />
   );
 };
 
-export default Results;
+export default InputSearchResultsClans;

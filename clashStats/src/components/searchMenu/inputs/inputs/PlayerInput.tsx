@@ -24,11 +24,11 @@ const PlayerInput = ({ onResults }: Props): ReactElement => {
       placeholder="Player tag"
       value={value}
       onChange={onChange}
-      type="PLAYER"
+      type="player"
       onClickButton={OnClick}
       disabledButton={value.length <= 3 || data.loading}
       loading={data.loading}
-      result={onResults ? data.list : undefined}
+      result={onResults}
     />
   );
 };
