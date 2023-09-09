@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./LineCardHeader.module.scss";
 import { NavLink } from "react-router-dom";
-import { TBasicCardClanMainInfo } from "types/types/card/basic/clan/basicClanCardTypes";
+import { TBasicCardClanMainInfo } from "types/types/card/basic/clan/cardBasicClanTypes";
 
 const LineCardBasicClandHeader = ({ clanBanner, name, tag }: TBasicCardClanMainInfo): ReactElement => {
   return (

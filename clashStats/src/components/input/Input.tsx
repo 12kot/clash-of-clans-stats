@@ -1,11 +1,11 @@
 import React, { ReactElement } from "react";
 import styles from "./Input.module.scss";
 import SearchSVG from "assets/svg/SearchSVG";
-import Results from "./results/Results";
-import Loader from "components/loader/Loader";
+import Results from "./results/ResultsPlayers";
 import { TSearchButton } from "types/types";
-import { TBasicCardPlayer } from "types/types/card/basic/player/basicPlayerCardTypes";
-import { TBasicCardClan } from "types/types/card/basic/clan/basicClanCardTypes";
+import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
+import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
+import SpinLoader from "components/loader/spinLoader/Loader";
 
 interface Props
   extends React.DetailedHTMLProps<
@@ -18,7 +18,7 @@ interface Props
   disabledButton: boolean;
   onClickButton: () => void;
 
-  result?: TBasicCardPlayer[] | TBasicCardClan[];
+  result?: TCardBasicPlayer[] | TCardBasicClan[];
 }
 
 const Input = ({
@@ -39,7 +39,7 @@ const Input = ({
         onClick={onClickButton}
         disabled={disabledButton}
       >
-        {loading ? <Loader /> : <SearchSVG />}
+        {loading ? <SpinLoader /> : <SearchSVG />}
       </button>
 
       <div className={styles.results}>

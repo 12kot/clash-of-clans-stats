@@ -2,18 +2,18 @@ import { InitSearchSlice } from "./../../types/initial/slices/searchInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getDataFromServer } from "./getDataFromServer";
 import { TSearchSlice } from "types/types/slices/searchTypes";
-import { TBasicCardPlayer } from "types/types/card/basic/player/basicPlayerCardTypes";
-import { TBasicCardClan } from "types/types/card/basic/clan/basicClanCardTypes";
+import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
+import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
 
 const initialState: TSearchSlice = {
   ...InitSearchSlice,
 };
 
 export const searchPlayers = createAsyncThunk<
-  { items: TBasicCardPlayer[] },
+  { items: TCardBasicPlayer[] },
   { name: string }
 >("clan/searchPlayers", async (props, { rejectWithValue }) => {
-  const res: TBasicCardPlayer[] | Error = await getDataFromServer(
+  const res: TCardBasicPlayer[] | Error = await getDataFromServer(
     `search/player?tag=${props.name.replaceAll("#", "")}`
   );
 
@@ -22,11 +22,11 @@ export const searchPlayers = createAsyncThunk<
 });
 
 export const searchClans = createAsyncThunk<
-  { items: TBasicCardClan[] },
+  { items: TCardBasicClan[] },
   { name: string }
 >("clan/searchClans", async (props, { rejectWithValue }) => {
   const limit = 10;
-  const res: TBasicCardClan[] | Error = await getDataFromServer(
+  const res: TCardBasicClan[] | Error = await getDataFromServer(
     `search/clan?name=${props.name.replaceAll("#", "")}&limit=${limit}`
   );
 

@@ -1,16 +1,16 @@
 import React, { ReactElement } from "react";
 import styles from "../Results.module.scss";
 import { NavLink } from "react-router-dom";
-import { TBasicCardClanMainInfo } from "types/types/card/basic/clan/basicClanCardTypes";
-import { TBasicCardPlayerMainInfo } from "types/types/card/basic/player/basicPlayerCardTypes";
+import { TCardBasicClanMainInfo } from "types/types/card/basic/clan/cardBasicClanTypes";
+import { TCardBasicPlayerMainInfo } from "types/types/card/basic/player/cardBasicPlayerTypes";
 
 type Props = {
-  item: TBasicCardClanMainInfo | TBasicCardPlayerMainInfo;
+  item: TCardBasicClanMainInfo | TCardBasicPlayerMainInfo;
   type: string;
 };
 
-const getImg = (item: TBasicCardClanMainInfo | TBasicCardPlayerMainInfo) => {
-  if (item.clanBanner)
+const getImg = (item: TCardBasicClanMainInfo | TCardBasicPlayerMainInfo) => {
+  if (item)
     return (
       <img
         src={item.clanBanner.img}

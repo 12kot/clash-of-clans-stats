@@ -1,4 +1,4 @@
-import Card from "components/card/basicCard/Card";
+import CardBasicClan from "components/card/basicCard/clan/blockCard/Card";
 import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
 import { selectAppPopularClan } from "store/selectors/appSelectors";
@@ -6,7 +6,7 @@ import { selectAppPopularClan } from "store/selectors/appSelectors";
 const PopularClan = (): ReactElement => {
   const card = useAppSelector(selectAppPopularClan);
 
-  return <Card card={card.item} loading={card.loading} header={"Самый популярный клан"} />;
+  return <CardBasicClan card={card.item} header={"Самый популярный клан"} />;
 };
 
 export default PopularClan;

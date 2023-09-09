@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./Card.module.scss";
-import BasicClanCardHeader from "components/card/basicCard/clan/blockCard/cardHeader/BlockCardHeader";
+import CardBasicClanHeader from "components/card/basicCard/clan/blockCard/cardHeader/BlockCardHeader";
 import Labels from "components/labels/Labels";
-import { TBasicCardClan } from "types/types/card/basic/clan/basicClanCardTypes";
+import { TBasicCardClan } from "types/types/card/basic/clan/cardBasicClanTypes";
 import CardElementItem from "components/card/cardElementItem/CardElementItem";
 import AbsoluteImage from "components/card/absoluteImage/AbsoluteImage";
 
@@ -21,7 +21,7 @@ const CardBasicClan = ({ card, header }: Props): ReactElement => {
       )}
 
       <main className={styles.content}>
-        <BasicClanCardHeader {...card.mainInfo} />
+        <CardBasicClanHeader {...card.mainInfo} />
         <section className={styles.values}>
           <CardElementItem item={card.trophies.main} />
           <CardElementItem item={card.trophies.versus} />

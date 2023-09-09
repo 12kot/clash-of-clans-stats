@@ -1,16 +1,16 @@
-import { TBasicCardClan } from "../card/basic/clan/basicClanCardTypes";
-import { TBasicCardPlayer } from "../card/basic/player/basicPlayerCardTypes";
+import { TCardBasicClan } from "../card/basic/clan/cardBasicClanTypes";
+import { TCardBasicPlayer } from "../card/basic/player/cardBasicPlayerTypes";
 
 export interface TFetchCard {
   loading: boolean;
 }
 
 export interface TFetchCardPlayer extends TFetchCard {
-  item: TBasicCardPlayer;
+  item: TCardBasicPlayer;
 }
 
 export interface TFetchCardClan extends TFetchCard {
-  item: TBasicCardClan;
+  item: TCardBasicClan;
 }
 
 export interface TAppSlice {

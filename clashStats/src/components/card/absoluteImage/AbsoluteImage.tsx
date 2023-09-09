@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import styles from "./AbsoluteImage.module.scss";
-import { TCardItem } from "types/types/card/basic/basicCardTypes";
+import { TCardItem } from "types/types/card/basic/cardBasicTypes";
 
 const AbsoluteImage = ({ img, title }: TCardItem): ReactElement => {
   return (

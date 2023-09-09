@@ -5,7 +5,7 @@ import React, { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { selectSearchClans } from "store/selectors/searchSelectors";
 import { searchClans } from "store/slices/SearchSlice";
-import { TBasicCardClan } from "types/types/card/basic/clan/basicClanCardTypes";
+import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
 import { TSearchCardClan } from "types/types/slices/searchTypes";
 
 type Props = { onResults: boolean };
@@ -13,7 +13,7 @@ type Props = { onResults: boolean };
 const ClanInput = ({ onResults }: Props): ReactElement => {
   const navigate = useNavigate();
   const { value, onChange } = useInput("");
-  const { data } = useSearch<TBasicCardClan, TSearchCardClan>(
+  const { data } = useSearch<TCardBasicClan, TSearchCardClan>(
     value,
     searchClans,
     selectSearchClans

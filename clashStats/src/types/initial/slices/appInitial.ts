@@ -4,20 +4,20 @@ import {
   TFetchCardClan,
   TFetchCardPlayer,
 } from "types/types/slices/appTypes";
-import { InitBasicCardPlayer } from "../card/basic/player/basicPlayerCardInitial";
-import { InitBasicCardClan } from "../card/basic/clan/basicClanCardInitial";
+import { InitCardBasicPlayer } from "../card/basic/player/cardBasicPlayerInitial";
+import { InitCardBasicClan } from "../card/basic/clan/cardBasicClanInitial";
 
 export const InitFetchCard: TFetchCard = {
   loading: false,
 };
 
 export const InitFetchCardPlayer: TFetchCardPlayer = {
-  item: InitBasicCardPlayer,
+  item: InitCardBasicPlayer,
   ...InitFetchCard,
 };
 
 export const InitFetchCardClan: TFetchCardClan = {
-  item: InitBasicCardClan,
+  item: InitCardBasicClan,
   ...InitFetchCard,
 };
 

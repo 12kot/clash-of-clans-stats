@@ -5,7 +5,7 @@ import React, { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import { searchPlayers } from "store/slices/SearchSlice";
-import { TBasicCardPlayer } from "types/types/card/basic/player/basicPlayerCardTypes";
+import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
 import { TSearchCardPlayer } from "types/types/slices/searchTypes";
 
 type Props = { onResults: boolean };
@@ -13,7 +13,7 @@ type Props = { onResults: boolean };
 const PlayerInput = ({ onResults }: Props): ReactElement => {
   const navigate = useNavigate();
   const { value, onChange } = useInput("");
-  const { data } = useSearch<TBasicCardPlayer, TSearchCardPlayer>(value, searchPlayers, selectSearchPlayers);
+  const { data } = useSearch<TCardBasicPlayer, TSearchCardPlayer>(value, searchPlayers, selectSearchPlayers);
 
   const OnClick = (): void => {
     navigate(`/search/player?tag=${value}`);

@@ -6,7 +6,7 @@ type Props = {
   weight?: string;
 };
 
-const Loader = ({ size, weight }: Props): ReactElement => {
+const SpinLoader = ({ size, weight }: Props): ReactElement => {
   return (
     <div className={styles.container}>
       <div
@@ -21,4 +21,4 @@ const Loader = ({ size, weight }: Props): ReactElement => {
   );
 };
 
-export default Loader;
+export default SpinLoader;

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./LineCard.module.scss";
 import Labels from "components/labels/Labels";
-import { TBasicCardClan } from "types/types/card/basic/clan/basicClanCardTypes";
+import { TBasicCardClan } from "types/types/card/basic/clan/cardBasicClanTypes";
 import LineCardBasicClandHeader from "./cardHeader/LineCardHeader";
 import CardElementItem from "../../../cardElementItem/CardElementItem";
 

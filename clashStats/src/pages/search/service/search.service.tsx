@@ -22,15 +22,15 @@ export const getSearchCards = (
     return <h1 className={styles.emptyList}>There's nothing here</h1>;
 };
 
-export const getSearchPlayers = (items: TSearchCardPlayer): ReactElement[] | ReactElement => {
-  const data = getSearchCards(items.loading, items.list.length === 0);
+// export const getSearchPlayers = (items: TSearchCardPlayer): ReactElement[] | ReactElement => {
+//   const data = getSearchCards(items.loading, items.list.length === 0);
 
-  if (data) return data;
+//   if (data) return data;
 
-  return items.list.map((item) => (
-    <Card card={item} key={v4()} />
-  ));
-}
+//   return items.list.map((item) => (
+//     <Card card={item} key={v4()} />
+//   ));
+// }
 
 export const getSearchClans = (items: TSearchCardClan): ReactElement[] | ReactElement => {
   const data = getSearchCards(items.loading, items.list.length === 0);

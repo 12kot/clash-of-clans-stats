@@ -2,19 +2,19 @@ import { InitAppSlice } from "./../../types/initial/slices/appInitial";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getDataFromServer } from "./getDataFromServer";
 import { TAppSlice } from "types/types/slices/appTypes";
-import { TBasicCardPlayer } from "types/types/card/basic/player/basicPlayerCardTypes";
-import { TBasicCardClan } from "types/types/card/basic/clan/basicClanCardTypes";
-import { InitBasicCardPlayer } from "types/initial/card/basic/player/basicPlayerCardInitial";
-import { InitBasicCardClan } from "types/initial/card/basic/clan/basicClanCardInitial";
+import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
+import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
+import { InitCardBasicPlayer } from "types/initial/card/basic/player/cardBasicPlayerInitial";
+import { InitCardBasicClan } from "types/initial/card/basic/clan/cardBasicClanInitial";
 
 const initialState: TAppSlice = {
   ...InitAppSlice,
 };
 
-export const getTopPlayer = createAsyncThunk<{ topPlayer: TBasicCardPlayer }, void>(
+export const getTopPlayer = createAsyncThunk<{ topPlayer: TCardBasicPlayer }, void>(
   "app/getTopPlayer",
   async (_, { rejectWithValue }) => {
-    const res: TBasicCardPlayer | Error = await getDataFromServer(`cards/player/top`);
+    const res: TCardBasicPlayer | Error = await getDataFromServer(`cards/player/top`);
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { topPlayer: res };
@@ -22,19 +22,19 @@ export const getTopPlayer = createAsyncThunk<{ topPlayer: TBasicCardPlayer }, vo
 );
 
 export const getPopularPlayer = createAsyncThunk<
-  { popularPlayer: TBasicCardPlayer },
+  { popularPlayer: TCardBasicPlayer },
   void
 >("app/getPopularPlayer", async (_, { rejectWithValue }) => {
-  const res: TBasicCardPlayer | Error = await getDataFromServer(`cards/player/popular`);
+  const res: TCardBasicPlayer | Error = await getDataFromServer(`cards/player/popular`);
 
   if (res instanceof Error) return rejectWithValue(res.message);
   return { popularPlayer: res };
 });
 
-export const getPopularClan = createAsyncThunk<{ popularClan: TBasicCardClan }, void>(
+export const getPopularClan = createAsyncThunk<{ popularClan: TCardBasicClan }, void>(
   "app/getPopularClan",
   async (_, { rejectWithValue }) => {
-    const res: TBasicCardClan | Error = await getDataFromServer(`cards/clan/popular`);
+    const res: TCardBasicClan | Error = await getDataFromServer(`cards/clan/popular`);
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { popularClan: res };
@@ -55,7 +55,7 @@ const appSlice = createSlice({
         state.cards.topPlayer.loading = false;
       })
       .addCase(getTopPlayer.rejected, (state) => {
-        state.cards.topPlayer.item = InitBasicCardPlayer;
+        state.cards.topPlayer.item = InitCardBasicPlayer;
       })
 
       .addCase(getPopularPlayer.pending, (state) => {
@@ -66,7 +66,7 @@ const appSlice = createSlice({
         state.cards.popularPlayer.loading = false;
       })
       .addCase(getPopularPlayer.rejected, (state) => {
-        state.cards.popularPlayer.item = InitBasicCardPlayer;
+        state.cards.popularPlayer.item = InitCardBasicPlayer;
       })
 
       .addCase(getPopularClan.pending, (state) => {
@@ -77,7 +77,7 @@ const appSlice = createSlice({
         state.cards.popularClan.loading = false;
       })
       .addCase(getPopularClan.rejected, (state) => {
-        state.cards.popularClan.item = InitBasicCardClan;
+        state.cards.popularClan.item = InitCardBasicClan;
       });
   },
 });

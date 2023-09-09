@@ -4,9 +4,9 @@ import {
   TCardMain,
   TCardOther,
   TCardTrophies,
-} from "types/types/card/basic/basicCardTypes";
+} from "types/types/card/basic/cardBasicTypes";
 
-export const InitBasicCard: TCard = { labels: [] };
+export const InitCardBasic: TCard = { labels: [] };
 
 export const InitCardItem: TCardItem = {
   img: "",

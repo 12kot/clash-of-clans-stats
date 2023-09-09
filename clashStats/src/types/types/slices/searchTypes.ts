@@ -1,16 +1,16 @@
-import { TBasicCardClan } from "../card/basic/clan/basicClanCardTypes";
-import { TBasicCardPlayer } from "../card/basic/player/basicPlayerCardTypes";
+import { TCardBasicClan } from "../card/basic/clan/cardBasicClanTypes";
+import { TCardBasicPlayer } from "../card/basic/player/cardBasicPlayerTypes";
 
 export interface TSearchCard {
   loading: boolean;
 }
 
 export interface TSearchCardPlayer extends TSearchCard {
-  list: TBasicCardPlayer[];
+  list: TCardBasicPlayer[];
 }
 
 export interface TSearchCardClan extends TSearchCard {
-  list: TBasicCardClan[];
+  list: TCardBasicClan[];
 }
 
 export interface TSearchSlice {
