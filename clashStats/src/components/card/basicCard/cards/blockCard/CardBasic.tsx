@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./CardBasic.module.scss";
 import CardTitle from "components/card/elements/header/CardTitle";
-import CardBasicHeader from "../../clan/blockCard/cardHeader/BlockCardHeader";
+import CardHeader from "../../../elements/cardHeader/CardHeader";
 import Labels from "components/labels/Labels";
 import CardElementItem from "components/card/elements/cardElementItem/CardElementItem";
 import AbsoluteImage from "components/card/elements/absoluteImage/AbsoluteImage";
@@ -10,11 +10,11 @@ import {
   TCardItem,
 } from "types/types/card/basic/cardBasicTypes";
 import { v4 } from "uuid";
-import CardLoader from "components/loader/cardLoader/CardLoader";
+import { TSearchButton } from "types/types";
 
 interface Props extends TCardBasicGeneralized {
   header?: string;
-  loading: boolean;
+  type: TSearchButton;
 }
 
 const getCardElements = (items: TCardItem[]): ReactElement[] => {
@@ -26,32 +26,26 @@ const CardBasic = ({
   head,
   trophies,
   otherInfo,
-  loading,
   labels,
   absoluteImg,
+  type,
 }: Props): ReactElement => {
   return (
     <section className={styles.container}>
       {!!header && <CardTitle header={header} />}
 
-      {loading ? (
-        <CardLoader />
-      ) : (
-        <main className={styles.content}>
-          <span className={styles.head}>
-            <CardBasicHeader {...head.info} />
-            <Labels labels={head.labels} />
-          </span>
-          <section className={styles.values}>
-            {getCardElements(trophies)}
-          </section>
+      <main className={styles.content}>
+        <span className={styles.head}>
+          <CardHeader {...head.info} link={type} viewType="block" />
+          <Labels labels={head.labels} />
+        </span>
+        <section className={styles.values}>{getCardElements(trophies)}</section>
 
-          <section className={styles.values}>
-            {getCardElements(otherInfo)}
-            <Labels labels={labels} />
-          </section>
-        </main>
-      )}
+        <section className={styles.values}>
+          {getCardElements(otherInfo)}
+          <Labels labels={labels} />
+        </section>
+      </main>
 
       <AbsoluteImage {...absoluteImg} />
     </section>

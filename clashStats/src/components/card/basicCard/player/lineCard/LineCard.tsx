@@ -1,37 +1,18 @@
 import React, { ReactElement } from "react";
-import styles from "./LineCard.module.scss";
-import Labels from "components/labels/Labels";
-import LineCardBasicPlayerdeader from "./cardHeader/LineCardHeader";
-import CardElementItem from "../../../elements/cardElementItem/CardElementItem";
 import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
+import { getPlayerGeneralizedObj } from "../CardBasicPlayer.service";
+import LineCardBasic from "../../cards/lineCard/LineCardBasic";
+import LineCardLoader from "components/loader/cardLoader/lineCard/LineCardLoader";
 
-type Props = {
+interface Props {
+  loading: boolean;
   card: TCardBasicPlayer;
-};
+}
 
-const LineCardBasicPlayer = ({ card }: Props): ReactElement => {
-  return (
-    <div className={styles.container}>
-      <span className={styles.item}>
-        <LineCardBasicPlayerdeader {...card.mainInfo} />
-      </span>
-      <span className={styles.item}>
-        <Labels labels={[{...card.mainInfo.clan, id: 0}]} />
-      </span>
-      <span className={styles.item}>
-        <CardElementItem item={card.otherInfo.level} />
-        <CardElementItem item={card.otherInfo.stars} />
-      </span>
-      <span className={styles.item}>
-        <CardElementItem item={card.trophies.main} />
-        <CardElementItem item={card.trophies.versus} />
-        <CardElementItem item={card.trophies.mainLegend} />
-      </span>
-      <span className={`${styles.item} ${styles.last}`}>
-        <Labels labels={card.labels} />
-      </span>
-    </div>
-  );
+const LineCardBasicPlayer = ({ card, loading, ...restProps }: Props): ReactElement => {
+  if (loading) return <LineCardLoader />;
+
+  return <LineCardBasic {...restProps} {...getPlayerGeneralizedObj(card)} type={"player"} />;
 };
 
 export default LineCardBasicPlayer;

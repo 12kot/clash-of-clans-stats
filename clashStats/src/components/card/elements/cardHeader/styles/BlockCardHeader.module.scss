@@ -1,0 +1,10 @@
+@import "./CardHeader.module.scss";
+
+.item {
+  width: fit-content;
+  //margin-bottom: 5px;
+
+  img {
+    height: var(--card-player-img-heigth);
+  }
+}

@@ -1,10 +1,4 @@
 .container {
-  height: var(--card-height);
-
-  flex-basis: 32%;
-  flex-grow: 1;
-  min-width: var(--card-min-width);
-
   background-color: var(--bg-color);
 
   border-radius: var(--border-radius);
