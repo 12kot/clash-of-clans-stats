@@ -11,9 +11,11 @@ import {
 } from "types/types/card/basic/cardBasicTypes";
 import { v4 } from "uuid";
 import { TSearchButton } from "types/types";
+import SpinLoader from "components/loader/spinLoader/Loader";
 
 interface Props extends TCardBasicGeneralized {
   header?: string;
+  loading: boolean;
   type: TSearchButton;
 }
 
@@ -26,6 +28,7 @@ const CardBasic = ({
   head,
   trophies,
   otherInfo,
+  loading,
   labels,
   absoluteImg,
   type,
@@ -34,20 +37,30 @@ const CardBasic = ({
     <section className={styles.container}>
       {!!header && <CardTitle header={header} />}
 
-      <main className={styles.content}>
-        <span className={styles.head}>
-          <CardHeader {...head.info} link={type} viewType="block" />
-          <Labels labels={head.labels} />
-        </span>
-        <section className={styles.values}>{getCardElements(trophies)}</section>
+      {loading ? (
+        <div className={styles.content}>
+          <SpinLoader size="24px" weight="3px" />
+        </div>
+      ) : (
+        <>
+          <main className={styles.content}>
+            <span className={styles.head}>
+              <CardHeader {...head.info} link={type} viewType="block" />
+              <Labels labels={head.labels} />
+            </span>
+            <section className={styles.values}>
+              {getCardElements(trophies)}
+            </section>
 
-        <section className={styles.values}>
-          {getCardElements(otherInfo)}
-          <Labels labels={labels} />
-        </section>
-      </main>
+            <section className={styles.values}>
+              {getCardElements(otherInfo)}
+              <Labels labels={labels} />
+            </section>
+          </main>
 
-      <AbsoluteImage {...absoluteImg} />
+          <AbsoluteImage {...absoluteImg} />
+        </>
+      )}
     </section>
   );
 };

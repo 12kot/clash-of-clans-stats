@@ -9,15 +9,9 @@
 .container {
   position: relative;
   flex-direction: column;
-  min-height: 100vh;
   z-index: 2;
 
   padding: var(--items-gap) var(--page-padding-left) var(--page-padding-top);
-
-  //background-color: #f0f2f5;
-  background: var(--banner-webkit-background-gradient);
-  background: var(--banner-moz-background-gradient);
-  background: var(--banner-background-gradient);
   gap: var(--items-gap);
 
   .displaySettings {
@@ -30,6 +24,8 @@
       100vh - var(--filters-container-heigth) - var(--header-height) * 2 -
         var(--items-gap) * 3
     );
+    
+    height: fit-content;
 
     display: flex;
     flex-direction: row;

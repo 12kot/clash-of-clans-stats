@@ -6,4 +6,6 @@
   flex-basis: 32%;
   flex-grow: 1;
   min-width: var(--card-min-width);
+
+  @extend .cardContainer;
 }

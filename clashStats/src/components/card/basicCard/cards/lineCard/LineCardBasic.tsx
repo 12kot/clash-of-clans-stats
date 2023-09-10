@@ -9,9 +9,11 @@ import {
 } from "types/types/card/basic/cardBasicTypes";
 import { TSearchButton } from "types/types";
 import { v4 } from "uuid";
+import LineCardLoader from "components/loader/cardLoader/lineCard/LineCardLoader";
 
 interface Props extends TCardBasicGeneralized {
   type: TSearchButton;
+  loading: boolean;
 }
 
 const getCardElements = (items: TCardItem[]): ReactElement[] => {
@@ -19,6 +21,7 @@ const getCardElements = (items: TCardItem[]): ReactElement[] => {
 };
 
 const LineCardBasic = ({
+  loading,
   head,
   trophies,
   otherInfo,
@@ -26,6 +29,8 @@ const LineCardBasic = ({
   absoluteImg,
   type,
 }: Props): ReactElement => {
+  if (loading) return <LineCardLoader />;
+
   return (
     <section className={styles.container}>
       <span className={styles.item}>
@@ -33,7 +38,7 @@ const LineCardBasic = ({
       </span>
       <span className={styles.item}>
         <Labels labels={head.labels} />
-        <Labels labels={[{...absoluteImg, id: absoluteImg.value}]} />
+        <Labels labels={[{ ...absoluteImg, id: absoluteImg.value }]} />
       </span>
       <span className={styles.item}>{getCardElements(otherInfo)}</span>
       <span className={styles.item}>{getCardElements(trophies)}</span>

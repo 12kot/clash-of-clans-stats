@@ -11,7 +11,7 @@ const Search = (): ReactElement => {
   const params = useParams<{ type: string; tag: string }>();
 
   return (
-    <>
+    <main className={styles.container}>
       <div className={styles.menu}>
         <SearchHeader active={params.type} />
       </div>
@@ -22,7 +22,7 @@ const Search = (): ReactElement => {
       ) : (
         <SearchPlayers />
       )}
-    </>
+    </main>
   );
 };
 
