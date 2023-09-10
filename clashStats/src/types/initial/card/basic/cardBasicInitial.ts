@@ -9,15 +9,15 @@ import {
 export const InitCardBasic: TCard = { labels: [] };
 
 export const InitCardItem: TCardItem = {
-  img: "",
-  title: "",
+  img: "https://api-assets.clashofclans.com/badges/70/JMWw_ktbIZNzPo_0SoiNM_8YSOf9MDS1p3lC1e3QAbY.png",
+  title: "Отстранённые",
   value: 0,
 };
 
 
 export const InitCardMain: TCardMain = {
-  name: "",
-  tag: "",
+  name: "Отстранённые",
+  tag: "луораудол",
 };
 
 export const InitCardTrophies: TCardTrophies = {

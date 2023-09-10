@@ -1,31 +1,31 @@
 import React, { ReactElement } from "react";
 import styles from "./LineCard.module.scss";
 import Labels from "components/labels/Labels";
-import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
-import LineCardBasicClandHeader from "./cardHeader/LineCardHeader";
+import LineCardBasicPlayerdeader from "./cardHeader/LineCardHeader";
 import CardElementItem from "../../../elements/cardElementItem/CardElementItem";
+import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
 
 type Props = {
-  card: TCardBasicClan;
+  card: TCardBasicPlayer;
 };
 
-const LineCardBasicClan = ({ card }: Props): ReactElement => {
+const LineCardBasicPlayer = ({ card }: Props): ReactElement => {
   return (
     <div className={styles.container}>
       <span className={styles.item}>
-        <LineCardBasicClandHeader {...card.mainInfo} />
+        <LineCardBasicPlayerdeader {...card.mainInfo} />
       </span>
       <span className={styles.item}>
-        <Labels labels={[{...card.mainInfo.capital, id: 0}]} />
+        <Labels labels={[{...card.mainInfo.clan, id: 0}]} />
       </span>
       <span className={styles.item}>
         <CardElementItem item={card.otherInfo.level} />
-        <CardElementItem item={card.otherInfo.members} />
+        <CardElementItem item={card.otherInfo.stars} />
       </span>
       <span className={styles.item}>
         <CardElementItem item={card.trophies.main} />
         <CardElementItem item={card.trophies.versus} />
-        <CardElementItem item={card.trophies.capital} />
+        <CardElementItem item={card.trophies.mainLegend} />
       </span>
       <span className={`${styles.item} ${styles.last}`}>
         <Labels labels={card.labels} />
@@ -34,4 +34,4 @@ const LineCardBasicClan = ({ card }: Props): ReactElement => {
   );
 };
 
-export default LineCardBasicClan;
+export default LineCardBasicPlayer;

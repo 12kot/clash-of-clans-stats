@@ -1,0 +1,14 @@
+.header {
+  padding: var(--item-padding-top) var(--item-padding-left) 0;
+
+  h2 {
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: var(--h2-size);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

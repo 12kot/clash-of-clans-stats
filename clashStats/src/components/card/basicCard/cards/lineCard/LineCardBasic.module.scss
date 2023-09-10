@@ -1,0 +1,34 @@
+@import "../CardStyles.module.scss";
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: var(--items-gap);
+  grid-row-gap: 0px;
+}
+
+.container {
+  align-items: center;
+  overflow-x: scroll;
+
+  padding: 0 var(--item-padding-left);
+
+  flex-basis: 100%;
+  height: 45px;
+
+  &:hover {
+    box-shadow: var(--box-shadow-focus);
+  }
+
+  @extend .cardContainer;
+  @extend .parent;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .last {
+    margin: 0 0 0 auto !important;
+  }
+}

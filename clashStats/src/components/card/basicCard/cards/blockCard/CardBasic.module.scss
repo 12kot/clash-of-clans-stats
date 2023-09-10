@@ -1,0 +1,41 @@
+@import "../../CardStyles.module.scss";
+
+.container {
+  flex-basis: 32%;
+  min-width: var(--card-min-width);
+  //max-width: var(--card-max-width);
+  flex-grow: 1;
+ 
+  display: flex;
+  flex-direction: column;
+  @extend .cardContainer;
+
+  .head {
+    display: flex;
+    gap: var(--items-gap);
+    align-items: center;
+  }
+
+  .content {
+    padding: var(--item-padding-top) var(--item-padding-left);
+
+    width: 100%;
+    height: var(--card-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: var(--items-gap);
+
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .values {
+      display: flex;
+      align-items: center;
+      gap: var(--items-gap);
+    }
+  }
+}

@@ -23,3 +23,19 @@ export interface TCardTrophies {
 export interface TCardOther {
   level: TCardItem;
 }
+
+export interface TCardBasicGeneralized {
+  head: {
+    info: {
+      banner: TCardItem;
+      name: string;
+      tag: string;
+    };
+    labels: TLabel[];
+  };
+
+  trophies: TCardItem[];
+  otherInfo: TCardItem[];
+  labels: TLabel[];
+  absoluteImg: TCardItem;
+}
