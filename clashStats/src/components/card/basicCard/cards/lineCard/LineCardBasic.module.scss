@@ -8,28 +8,55 @@
   grid-row-gap: 0px;
 }
 
-.container {
-  align-items: center;
-  overflow-x: scroll;
-  padding: 0 var(--item-padding-left);
-
-  flex-basis: 100%;
-  height: 45px;
-
-  @extend .cardContainer;
-  @extend .parent;
-
-  .item {
-    justify-content: center;
-    display: flex;
-    gap: var(--items-gap);
-  }
-
+.scroll {
   &::-webkit-scrollbar {
     display: none;
   }
+}
 
-  .last {
-    margin: 0 0 0 auto !important;
+.container {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+
+  height: 100%;
+
+  @extend .cardContainer;
+  @extend .scroll;
+
+  .content {
+    height: var(--line-card-heigth);
+    align-items: center;
+    padding: 0 var(--item-padding-left);
+
+    @extend .parent;
+
+    .item {
+      //justify-content: center;
+      display: flex;
+      gap: var(--items-gap);
+    }
+
+    .header {
+      width: var(--line-card-header-width);
+      white-space: nowrap; 
+      overflow: scroll; 
+      @extend .scroll;
+    }
+    
+    .itemLabels {
+      min-width: var(--line-card-itemLabels-width);
+      justify-content: space-between;
+      width: fit-content;
+    }
+
+    .last {
+      margin: 0 0 0 auto !important;
+      justify-content: flex-end;
+      min-width: var(--line-card-labels-width);
+
+    }
+    @extend .scroll;
   }
 }

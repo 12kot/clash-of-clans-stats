@@ -2,9 +2,14 @@
   display: flex;
   align-items: center;
   gap: calc(var(--items-gap) / 2);
+
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
+
+  justify-content: space-around;
   cursor: pointer;
+
+  min-width: 85px;
 
   padding: calc(var(--item-padding-top) / 2) calc(var(--item-padding-left) / 2);
 
@@ -15,4 +20,13 @@
   .icon {
     height: var(--card-icons-img-heigth);
   }
+  
+  .value {
+    flex-basis: 40%;
+    text-align: center;
+  }
+}
+
+.other {
+  min-width: 60px;
 }

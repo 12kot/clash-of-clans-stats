@@ -16,8 +16,13 @@ interface Props extends TCardBasicGeneralized {
   loading: boolean;
 }
 
-const getCardElements = (items: TCardItem[]): ReactElement[] => {
-  return items.map((item) => <CardElementItem item={item} key={v4()} />);
+const getCardElements = (
+  items: TCardItem[],
+  isOther?: boolean
+): ReactElement[] => {
+  return items.map((item) => (
+    <CardElementItem item={item} otherInfo={isOther} key={v4()} />
+  ));
 };
 
 const LineCardBasic = ({
@@ -33,18 +38,24 @@ const LineCardBasic = ({
 
   return (
     <section className={styles.container}>
-      <span className={styles.item}>
-        <CardHeader {...head.info} link={type} viewType={"line"} />
-      </span>
-      <span className={styles.item}>
-        <Labels labels={head.labels} />
-        <Labels labels={[{ ...absoluteImg, id: absoluteImg.value }]} />
-      </span>
-      <span className={styles.item}>{getCardElements(otherInfo)}</span>
-      <span className={styles.item}>{getCardElements(trophies)}</span>
-      <span className={`${styles.item} ${styles.last}`}>
-        <Labels labels={labels} />
-      </span>
+      <div className={styles.content}>
+        <span className={`${styles.item} ${styles.header}`}>
+          <CardHeader {...head.info} link={type} viewType={"line"} />
+        </span>
+        <span className={`${styles.item} ${styles.itemLabels}`}>
+          <Labels labels={head.labels} />
+          {absoluteImg.img && (
+            <Labels labels={[{ ...absoluteImg, id: absoluteImg.value }]} />
+          )}
+        </span>
+        <span className={`${styles.item}`}>
+          {getCardElements(otherInfo, true)}
+        </span>
+        <span className={`${styles.item}`}>{getCardElements(trophies)}</span>
+        <span className={`${styles.item} ${styles.last}`}>
+          <Labels labels={labels} />
+        </span>
+      </div>
     </section>
   );
 };

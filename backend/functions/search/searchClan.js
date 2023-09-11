@@ -20,6 +20,7 @@ export const searchClan = async (name, limit) => {
   }
 
   return data.map((clan) => {
+    //return clan
     return clanCardMaker(clan);
   });
 };

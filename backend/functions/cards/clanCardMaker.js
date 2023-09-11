@@ -18,32 +18,33 @@ export const clanCardMaker = (data) => {
 
   const getCapitalLabel = () => {
     if (!!data?.clanCapital?.capitalHallLevel)
-      return [
-        {
-          img: `http://localhost:8000/public/townhall/capital/${data?.clanCapital?.capitalHallLevel}.png`,
-          title: `Capital level: ${data?.clanCapital?.capitalHallLevel}`,
-        },
-      ];
+      return {
+        img: `http://localhost:8000/public/townhall/capital/${data?.clanCapital?.capitalHallLevel}.png`,
+        value: data?.clanCapital?.capitalHallLevel,
+        title: `Capital level: ${data?.clanCapital?.capitalHallLevel}`,
+      };
 
-    return [];
+    return {};
   };
 
   return {
-    img: `https://flagsapi.com/${data?.location?.countryCode}/flat/64.png`,
-    headerCard: {
-      object: {
+    mainInfo: {
+      clanBanner: {
         img: data?.badgeUrls?.small,
         title: data.name,
-        name: data.name,
-        tag: data.tag,
-        type: "CLAN",
+        value: data.clanLevel,
       },
-
-      labels: getCapitalLabel(),
+      capital: getCapitalLabel(),
+      country: {
+        img: `${data?.location?.countryCode ? `https://flagsapi.com/${data?.location?.countryCode}/flat/64.png` : ""}`,
+        title: data?.location?.name,
+        value: data?.location?.id,
+      },
+      name: data.name,
+      tag: data.tag
     },
 
     trophies: getTrophies(),
-
     otherInfo: {
       level: {
         img: "http://localhost:8000/public/icons/exp.png",
@@ -56,7 +57,11 @@ export const clanCardMaker = (data) => {
     },
 
     labels: data.labels.map((label) => {
-      return { img: label?.iconUrls?.medium, title: label?.name };
+      return {
+        img: label?.iconUrls?.medium,
+        title: label?.name,
+        id: label?.id,
+      };
     }),
   };
 };

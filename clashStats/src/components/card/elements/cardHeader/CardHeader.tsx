@@ -20,8 +20,8 @@ const CardHeader = ({ banner, name, tag, link, viewType }: Props): ReactElement 
     <header className={styles.item}>
       <img src={banner.img} alt={banner.title} title={banner.title}></img>
       <NavLink to={`/${link}/${tag}`} className={styles.cardInfo}>
-        <span className={styles.name}>{name}</span>
-        <span className={styles.tag}>{tag}</span>
+        <p className={styles.name}>{name}</p>
+        <p className={styles.tag}>{tag}</p>
       </NavLink>
     </header>
   );

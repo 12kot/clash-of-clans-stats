@@ -24,40 +24,28 @@ export const playerCardMaker = (data) => {
   };
 
   return {
-    img: data?.clan?.badgeUrls?.small,
-    headerCard: {
-      object: {
+    mainInfo: {
+      clan: {
+        img: data?.clan?.badgeUrls?.small,
+        value: data?.clan?.clanLevel,
+        title: data?.clan?.name
+      },
+      townHall: {
+        value: data.townHallLevel,
         img: `http://localhost:8000/public/townhall/home/${data.townHallLevel}.png`,
         title: `Townhall ${data.townHallLevel}`,
-        name: data?.name,
-        tag: data?.tag,
-        type: "PLAYER",
       },
-
-      labels: [
-        {
-          img: "http://localhost:8000/public/icons/war.webp",
-          title: "In war",
-        },
-      ],
+      name: data.name,
+      tag: data.tag
     },
 
     trophies: getTrophies(),
-
     otherInfo: {
       level: {
         img: "http://localhost:8000/public/icons/exp.png",
         value: data.expLevel,
       },
       stars: {
-        img: "http://localhost:8000/public/icons/star.png",
-        value: data.warStars,
-      },
-    },
-
-    clan: {
-      role: "member",
-      warPreference: {
         img: "http://localhost:8000/public/icons/star.png",
         value: data.warStars,
       },

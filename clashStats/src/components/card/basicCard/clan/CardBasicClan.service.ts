@@ -16,6 +16,6 @@ export const getClanGeneralizedObj = (card: TCardBasicClan): TCardBasicGeneraliz
       trophies: [card.trophies.main, card.trophies.versus, card.trophies.capital],
       otherInfo: [card.otherInfo.level, card.otherInfo.members],
       labels: card.labels,
-      absoluteImg: card.mainInfo.capital,
+      absoluteImg: card.mainInfo.country,
     };
   };

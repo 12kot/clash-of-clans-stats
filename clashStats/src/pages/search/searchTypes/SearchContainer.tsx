@@ -18,12 +18,12 @@ const SearchContainer = ({ Filters, cards }: Props) => {
 
       <section className={styles.displaySettings}>
         <p>Sort by name</p>
-        <button onClick={handleClick} className={styles.viewType}>
-          {viewType === "block" ? <GridViewSVG /> : <ListViewSVG />}
-        </button>
+        <button onClick={handleClick} className={styles.viewType}>{viewType === "block" ? <GridViewSVG /> : <ListViewSVG />}</button>
       </section>
 
-      <article className={`${styles.cards} ${styles.cardsLine}`}>
+      <article
+        className={`${styles.cards} ${styles.cardsLine}`}
+      >
         {cards}
       </article>
     </main>

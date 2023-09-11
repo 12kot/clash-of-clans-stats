@@ -76,11 +76,19 @@
   --card-min-width: 330px;
   //--card-max-width: 480px;
 
+  //LINE-CARD-ELEMENTS-WIDTH
+  --line-card-header-width: 160px;
+  --line-card-itemLabels-width: calc(var(--card-labels-img-heigth) * 2.2 + var(--items-gap));
+  --line-card-labels-width: calc(var(--card-labels-img-heigth) * 3 + var(--items-gap) * 2);
+
   //CARD-LABELS
   --card-player-img-heigth: 50px;
   --card-player-labels-img-heigth: 30px;
   --card-icons-img-heigth: 20px;
   --card-labels-img-heigth: 30px;
+
+  --line-card-heigth: 45px;
+  --line-card-img-heigth: 40px;
 
   //SEARCHPAGE
   --radio-width: 250px;
