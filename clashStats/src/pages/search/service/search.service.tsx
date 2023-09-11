@@ -5,16 +5,15 @@ import {
   TSearchCardPlayer,
 } from "types/types/slices/searchTypes";
 import styles from "./SearchService.module.scss";
-import CardBasicClan from "components/card/basicCard/clan/blockCard/Card";
-import LineCardLoader from "components/loader/cardLoader/lineCard/LineCardLoader";
-import CardBasicPlayer from "components/card/basicCard/player/blockCard/Card";
-import BlockCardLoader from "components/loader/cardLoader/blockCard/BlockCardLoader";
+import CardBasicClan from "components/card/basicCard/clan/card/Card";
+import CardBasicPlayer from "components/card/basicCard/player/card/Card";
+import CardLoader from "components/loader/cardLoader/CardLoader";
 
 export const getSearchCards = (
   loading: boolean,
   isEmpty: boolean
 ): ReactElement[] | ReactElement | undefined => {
-  if (loading) return [...Array(3)].map(() => <BlockCardLoader key={v4()} />);
+  if (loading) return [...Array(3)].map(() => <CardLoader key={v4()} />);
 
   if (isEmpty)
     return <h1 className={styles.emptyList}>There's nothing here</h1>;

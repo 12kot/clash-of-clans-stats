@@ -1,4 +1,4 @@
-import CardBasicPlayer from "components/card/basicCard/player/blockCard/Card";
+import CardBasicPlayer from "components/card/basicCard/player/card/Card";
 import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
 import { selectAppTopPlayer } from "store/selectors/appSelectors";

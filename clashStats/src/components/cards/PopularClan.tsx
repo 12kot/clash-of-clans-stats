@@ -1,4 +1,4 @@
-import CardBasicClan from "components/card/basicCard/clan/blockCard/Card";
+import CardBasicClan from "components/card/basicCard/clan/card/Card";
 import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
 import { selectAppPopularClan } from "store/selectors/appSelectors";

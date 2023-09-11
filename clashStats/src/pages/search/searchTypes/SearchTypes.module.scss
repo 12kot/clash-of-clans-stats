@@ -17,14 +17,24 @@
   .displaySettings {
     display: flex;
     justify-content: space-between;
+    height: 32px;
+
+    .viewType {
+      svg {
+        height: 100%;
+        stroke: var(--button-color);
+        fill: var(--button-color);
+      }
+    }
   }
 
   .cards {
-    min-height: calc(
-      100vh - var(--filters-container-heigth) - var(--header-height) * 2 -
-        var(--items-gap) * 3
-    );
-    
+    // min-height: calc(
+    //   100vh - var(--filters-container-heigth) - var(--header-height) * 2 -
+    //     var(--items-gap) * 4
+    // );
+
+    min-height: fit-content;
     height: fit-content;
 
     display: flex;
@@ -33,6 +43,10 @@
 
     gap: calc(var(--items-gap) / 2);
   }
+
+  // .cardsLine {
+  //   min-height: fit-content;
+  // }
 
   @extend .flex;
 }

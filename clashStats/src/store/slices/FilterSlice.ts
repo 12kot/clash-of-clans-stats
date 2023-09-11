@@ -6,7 +6,7 @@ const initialState: TFIlterSlice = {
   ...InitFilter,
 };
 
-const FilterSlice = createSlice({
+const filterSlice = createSlice({
   name: "filter",
   initialState,
   reducers: {
@@ -71,5 +71,5 @@ const FilterSlice = createSlice({
   extraReducers: (builder) => {},
 });
 
-export default FilterSlice;
-export const { addFilter, addLabel } = FilterSlice.actions;
+export default filterSlice;
+export const { addFilter, addLabel } = filterSlice.actions;
