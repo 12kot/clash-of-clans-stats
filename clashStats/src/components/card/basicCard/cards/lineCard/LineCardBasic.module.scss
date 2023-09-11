@@ -39,12 +39,12 @@
     }
 
     .header {
-      width: var(--line-card-header-width);
-      white-space: nowrap; 
-      overflow: scroll; 
+      white-space: nowrap;
+      width: fit-content;
+
       @extend .scroll;
     }
-    
+
     .itemLabels {
       min-width: var(--line-card-itemLabels-width);
       justify-content: space-between;
@@ -55,8 +55,19 @@
       margin: 0 0 0 auto !important;
       justify-content: flex-end;
       min-width: var(--line-card-labels-width);
-
     }
     @extend .scroll;
+  }
+}
+
+.player {
+  .content {
+    .header {
+      width: calc(var(--line-card-header-width) - var(--line-card-img-heigth))!important;
+    }
+    .itemLabels {
+      min-width: calc(var(--card-labels-img-heigth));
+      width: calc(var(--card-labels-img-heigth));
+    }
   }
 }

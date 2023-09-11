@@ -18,10 +18,10 @@ interface Props extends TCardBasicGeneralized {
 
 const getCardElements = (
   items: TCardItem[],
-  isOther?: boolean
+  isOther?: boolean,
 ): ReactElement[] => {
   return items.map((item) => (
-    <CardElementItem item={item} otherInfo={isOther} key={v4()} />
+    <CardElementItem item={item} otherInfo={isOther} viewType={"line"} key={v4()} />
   ));
 };
 
@@ -37,13 +37,13 @@ const LineCardBasic = ({
   if (loading) return <LineCardLoader />;
 
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${type === "player" && styles.player}`}>
       <div className={styles.content}>
         <span className={`${styles.item} ${styles.header}`}>
           <CardHeader {...head.info} link={type} viewType={"line"} />
         </span>
         <span className={`${styles.item} ${styles.itemLabels}`}>
-          <Labels labels={head.labels} />
+          {!!head.labels.length && <Labels labels={head.labels} />}
           {absoluteImg.img && (
             <Labels labels={[{ ...absoluteImg, id: absoluteImg.value }]} />
           )}

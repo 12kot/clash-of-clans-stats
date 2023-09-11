@@ -9,8 +9,6 @@
   justify-content: space-around;
   cursor: pointer;
 
-  min-width: 85px;
-
   padding: calc(var(--item-padding-top) / 2) calc(var(--item-padding-left) / 2);
 
   &:hover {
@@ -20,7 +18,7 @@
   .icon {
     height: var(--card-icons-img-heigth);
   }
-  
+
   .value {
     flex-basis: 40%;
     text-align: center;
@@ -28,5 +26,5 @@
 }
 
 .other {
-  min-width: 60px;
+  min-width: calc(var(--card-element-width) / 1.4) !important;
 }

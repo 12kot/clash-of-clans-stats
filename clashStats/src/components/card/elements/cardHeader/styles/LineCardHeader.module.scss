@@ -11,9 +11,8 @@
     align-items: flex-start;
 
     p {
-      text-overflow: ellipsis;
-      width: calc(var(--line-card-header-width) - var(--line-card-img-heigth) * 1.2);
-      overflow: hidden;
+      width: calc(var(--line-card-header-width) - var(--line-card-img-heigth))!important;
+      max-width: none;
     }
   }
 }

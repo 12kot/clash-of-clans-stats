@@ -1,0 +1,5 @@
+@import "./CardItem.module.scss";
+
+.item {
+  min-width: var(--card-element-width);
+}

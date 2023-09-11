@@ -8,6 +8,13 @@
     flex-direction: column;
     justify-content: center;
 
+    p {
+      text-overflow: ellipsis;
+      max-width: calc(var(--line-card-header-width) - var(--line-card-img-heigth) * 1.5);
+      overflow: hidden;
+      white-space: nowrap
+    }
+
     .name {
       font-weight: 600;
     }
