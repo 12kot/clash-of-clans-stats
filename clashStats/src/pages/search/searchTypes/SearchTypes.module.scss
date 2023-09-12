@@ -17,11 +17,28 @@
   .displaySettings {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 32px;
+
+    .sort {
+      color: var(--button-color);
+    }
+
+    .dropMenu {
+      color: var(--button-color);
+      display: none;
+      position: absolute;
+    }
+
+    .active {
+      display: flex !important;
+      flex-direction: column;
+    }
 
     .viewType {
       svg {
         height: 100%;
+        width: 32px;
         stroke: var(--button-color);
         fill: var(--button-color);
       }
