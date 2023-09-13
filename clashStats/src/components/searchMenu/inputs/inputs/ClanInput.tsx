@@ -30,7 +30,7 @@ const ClanInput = ({ onResults }: Props): ReactElement => {
       onChange={onChange}
       type="clan"
       onClickButton={OnClick}
-      disabledButton={value.length <= 3 || data.loading}
+      disabledButton={value.length <= 3}
       loading={data.loading}
       result={onResults}
     />

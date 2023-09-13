@@ -6,7 +6,7 @@ import CardBasicPlayer from "../card/basicCard/player/card/Card";
 const TopPlayer = (): ReactElement => {
   const card = useAppSelector(selectAppTopPlayer);
 
-  return <CardBasicPlayer card={card.item} loading={card.loading} header={"Лучший игрок Беларуси"} />
+  return <CardBasicPlayer card={card.item} loading={card.loading} header={"Best player in Belarus"} />
 };
 
 export default TopPlayer;

@@ -29,7 +29,7 @@ const InputSearchResults = ({ items, value, link }: Props): ReactElement => {
       {getResults(items, link)}
       {items.length !== 0 && (
         <NavLink
-          to={`/search/${link}/${value}`}
+          to={`/search/${link}`}
           className={`${styles.resultItem} ${styles.fixed}`}
         >
           <p>All results →</p>

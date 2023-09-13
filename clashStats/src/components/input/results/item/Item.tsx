@@ -22,7 +22,7 @@ const getImg = (item: TCardItem) => {
 
 const InputSearchResultItem = ({ item, name, tag, link}: Props): ReactElement => {
   return (
-    <NavLink to={`/${link}`} className={styles.resultItem}>
+    <NavLink to={`${link}`} className={styles.resultItem}>
       {getImg(item)}
       <div className={styles.name}>
         {name}
