@@ -6,7 +6,7 @@ import CardBasicClan from "../card/basicCard/clan/card/Card";
 const PopularClan = (): ReactElement => {
   const card = useAppSelector(selectAppPopularClan);
 
-  return <CardBasicClan card={card.item} header={"Most popular clan"} loading={card.loading} />;
+  return <CardBasicClan card={card.item} header={"The most popular clan"} loading={card.loading} />;
 };
 
 export default PopularClan;
