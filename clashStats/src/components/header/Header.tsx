@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const Header = (): ReactElement => {
   return (
     <NavLink to="/" className={styles.container}>
-      <h1 className={styles.logo}>LOGO</h1>
+      <h1 className={styles.logo}>CLANSIFY</h1>
     </NavLink>
   );
 };

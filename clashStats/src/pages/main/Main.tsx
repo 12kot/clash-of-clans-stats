@@ -8,7 +8,7 @@ const Main = (): ReactElement => {
   return (
     <main className={styles.container}>
       <article className={styles.banner}>
-        <Banner text="Book of stats - best stats" />
+        <Banner text="Clansify - your best stats" />
       </article>
       <SearchMenu />
       <TopStatisticItems />
