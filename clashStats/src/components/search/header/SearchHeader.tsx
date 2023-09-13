@@ -19,11 +19,11 @@ const SearchHeader = ({ active }: Props): ReactElement => {
     <header className={styles.header}>
       <p className={styles.main}>{active && active.toUpperCase()}</p>
       <ul className={styles.buttons}>
-        <li className={styles.item}>
-          <NavLink to={`/search/${getOtherText(active)}`}>
+        <NavLink to={`/search/${getOtherText(active)}`}>
+          <li className={styles.item}>
             <p>Search {getOtherText(active)}</p>
-          </NavLink>
-        </li>
+          </li>
+        </NavLink>
       </ul>
     </header>
   );

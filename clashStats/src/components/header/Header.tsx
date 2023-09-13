@@ -4,9 +4,11 @@ import { NavLink } from "react-router-dom";
 
 const Header = (): ReactElement => {
   return (
-    <NavLink to="/" className={styles.container}>
-      <h1 className={styles.logo}>CLANSIFY</h1>
-    </NavLink>
+    <div className={styles.container}>
+      <NavLink to="/" className={styles.logo}>
+        <h1>CLANSIFY</h1>
+      </NavLink>
+    </div>
   );
 };
 

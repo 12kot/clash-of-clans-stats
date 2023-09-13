@@ -5,7 +5,7 @@
   height: 100%;
 
   transition: var(--transition);
-  
+
   &:hover {
     background-color: var(--focus-color);
   }
@@ -27,12 +27,14 @@
   position: fixed;
   top: 0;
   z-index: 4000;
-  
+
   font-size: var(--font-size);
-  
+
   .logo {
-    font-size: var(--header-logo-size);
-    letter-spacing: 3px;
+    h1 {
+      font-size: var(--header-logo-size);
+      letter-spacing: 3px;
+    }
     @extend .headerItem;
   }
 }
