@@ -1,17 +1,19 @@
 import React, { ReactElement } from "react";
 import { useAppSelector } from "hooks/store";
-import { selectSearchClans } from "store/selectors/searchSelectors";
 import ClanFilters from "components/search/filters/ClanFilters";
 import { getSearchClans } from "../service/search.service";
 import SearchContainer from "./SearchContainer";
+import { selectBasicCardsClanByFilter } from "store/selectors/sortSelectors";
+import { selectSearchClansLoading } from "store/selectors/searchSelectors";
 
 const SearchClans = (): ReactElement => {
-  const clans = useAppSelector(selectSearchClans);
+  const list = useAppSelector(selectBasicCardsClanByFilter);
+  const loading = useAppSelector(selectSearchClansLoading);
 
   return (
     <SearchContainer
       Filters={ClanFilters}
-      cards={getSearchClans(clans)}
+      cards={getSearchClans({list, loading})}
       type={"basicClan"}
     />
   );
