@@ -1,7 +1,7 @@
-import CardBasicPlayer from "components/card/basicCard/player/card/Card";
 import { useAppSelector } from "hooks/store";
 import React, { ReactElement } from "react";
 import { selectAppPopularPlayer } from "store/selectors/appSelectors";
+import CardBasicPlayer from "../card/basicCard/player/card/Card";
 
 const PopularPlayer = (): ReactElement => {
   const card = useAppSelector(selectAppPopularPlayer);

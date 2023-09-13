@@ -1,13 +1,15 @@
 import { TAppSlice } from "./appTypes";
 import { TClanSlice } from "./clanTypes";
-import { TFIlterSlice } from "./filterTypes";
+import { TFilterSlice } from "./filterTypes";
 import { TSearchSlice } from "./searchTypes";
+import { TSortSlice } from "./sortTypes";
 import { TViewTypeSlice } from "./viewTypes";
 
 export type TStore = {
   app: TAppSlice;
   clan: TClanSlice;
   search: TSearchSlice;
-  filter: TFIlterSlice;
+  filter: TFilterSlice;
   viewType: TViewTypeSlice;
+  sort: TSortSlice
 };

@@ -12,6 +12,7 @@ const SearchPlayers = (): ReactElement => {
     <SearchContainer
       Filters={PlayerFilters}
       cards={getSearchPlayers(players)}
+      type={"basicClan"}
     />
   );
 };

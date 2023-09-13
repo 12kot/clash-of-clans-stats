@@ -8,15 +8,12 @@ import SearchContainer from "./SearchContainer";
 const SearchClans = (): ReactElement => {
   const clans = useAppSelector(selectSearchClans);
 
-  // {clans.list.length !== 0 && (
-  //   <section className={styles.displaySettings}>
-  //     <p>Sort by name</p>
-  //     <p>Cubes</p>
-  //   </section>
-  // )}
-
   return (
-    <SearchContainer Filters={ClanFilters} cards={getSearchClans(clans)} />
+    <SearchContainer
+      Filters={ClanFilters}
+      cards={getSearchClans(clans)}
+      type={"basicClan"}
+    />
   );
 };
 

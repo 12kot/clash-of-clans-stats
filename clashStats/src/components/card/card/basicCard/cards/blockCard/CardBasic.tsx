@@ -1,10 +1,7 @@
 import React, { ReactElement } from "react";
 import styles from "./CardBasic.module.scss";
-import CardTitle from "components/card/elements/header/CardTitle";
 import CardHeader from "../../../elements/cardHeader/CardHeader";
 import Labels from "components/labels/Labels";
-import CardElementItem from "components/card/elements/cardElementItem/CardElementItem";
-import AbsoluteImage from "components/card/elements/absoluteImage/AbsoluteImage";
 import {
   TCardBasicGeneralized,
   TCardItem,
@@ -12,6 +9,9 @@ import {
 import { v4 } from "uuid";
 import { TSearchButton } from "types/types";
 import SpinLoader from "components/loader/spinLoader/Loader";
+import CardElementItem from "components/card/card/elements/cardElementItem/CardElementItem";
+import CardTitle from "components/card/card/elements/header/CardTitle";
+import AbsoluteImage from "components/card/card/elements/absoluteImage/AbsoluteImage";
 
 interface Props extends TCardBasicGeneralized {
   header?: string;

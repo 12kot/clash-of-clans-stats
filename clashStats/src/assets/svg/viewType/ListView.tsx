@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./View.module.scss";
 
-const ListView = () => {
+const ListViewSVG = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -28,4 +28,4 @@ const ListView = () => {
   );
 };
 
-export default ListView;
+export default ListViewSVG;

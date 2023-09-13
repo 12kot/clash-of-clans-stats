@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+
+  .viewType {
+    svg {
+      height: 100%;
+      width: 32px;
+      stroke: var(--button-color);
+      fill: var(--button-color);
+    }
+  }
+}

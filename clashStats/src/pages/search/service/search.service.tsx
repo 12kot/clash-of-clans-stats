@@ -5,9 +5,9 @@ import {
   TSearchCardPlayer,
 } from "types/types/slices/searchTypes";
 import styles from "./SearchService.module.scss";
-import CardBasicClan from "components/card/basicCard/clan/card/Card";
-import CardBasicPlayer from "components/card/basicCard/player/card/Card";
 import CardLoader from "components/loader/cardLoader/CardLoader";
+import CardBasicPlayer from "components/card/card/basicCard/player/card/Card";
+import CardBasicClan from "components/card/card/basicCard/clan/card/Card";
 
 export const getSearchCards = (
   loading: boolean,

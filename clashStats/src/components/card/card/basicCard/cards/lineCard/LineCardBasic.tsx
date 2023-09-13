@@ -2,7 +2,6 @@ import React, { ReactElement } from "react";
 import styles from "./LineCardBasic.module.scss";
 import Labels from "components/labels/Labels";
 import CardElementItem from "../../../elements/cardElementItem/CardElementItem";
-import CardHeader from "components/card/elements/cardHeader/CardHeader";
 import {
   TCardBasicGeneralized,
   TCardItem,
@@ -10,6 +9,7 @@ import {
 import { TSearchButton } from "types/types";
 import { v4 } from "uuid";
 import LineCardLoader from "components/loader/cardLoader/lineCard/LineCardLoader";
+import CardHeader from "components/card/card/elements/cardHeader/CardHeader";
 
 interface Props extends TCardBasicGeneralized {
   type: TSearchButton;

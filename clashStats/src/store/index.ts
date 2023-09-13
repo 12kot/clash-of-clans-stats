@@ -4,6 +4,7 @@ import clanSlice from "./slices/ClanSlice";
 import searchSlice from "./slices/SearchSlice";
 import filterSlice from "./slices/FilterSlice";
 import viewTypeSlice from "./slices/ViewTypeSlice";
+import sortSlice from "./slices/SortSlice";
 
 const rootReducer = combineReducers({
     app: appSlice.reducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
     search: searchSlice.reducer,
     filter: filterSlice.reducer,
     viewType: viewTypeSlice.reducer,
+    sort: sortSlice.reducer
 });
 
 const store = configureStore({

@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./TopStatisticItems.module.scss";
-import TopPlayer from "components/cards/TopPlayer";
-import PopularClan from "components/cards/PopularClan";
-import PopularPlayer from "components/cards/PopularPlayer";
+import PopularClan from "components/card/cards/PopularClan";
+import PopularPlayer from "components/card/cards/PopularPlayer";
+import TopPlayer from "components/card/cards/TopPlayer";
 
 const TopStatisticItems = (): ReactElement => {
   return (

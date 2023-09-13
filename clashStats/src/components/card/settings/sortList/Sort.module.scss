@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  gap: calc(var(--items-gap) / 2);
+
+  .settings {
+    position: relative;
+    width: fit-content;
+
+    .btn {
+      color: var(--button-color);
+    }
+
+    .dropMenu {
+      width: fit-content;
+      white-space: nowrap;
+
+      display: none;
+      position: absolute;
+      left: 0;
+
+      border-radius: var(--border-radius);
+      background-color: var(--bg-color);
+      border: 1px solid var(--border-color);
+      z-index: 10;
+
+      .dropItem {
+        cursor: pointer;
+        padding: calc(var(--item-padding-top) / 2)
+          calc(var(--item-padding-left));
+        color: var(--second-font-color);
+
+        &:hover {
+          color: var(--button-color);
+          background-color: var(--focus-color);
+        }
+      }
+    }
+
+    .active {
+      display: flex !important;
+      flex-direction: column;
+    }
+  }
+}
