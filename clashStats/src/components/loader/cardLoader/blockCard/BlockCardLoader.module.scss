@@ -3,9 +3,11 @@
 .container {
   height: var(--card-height);
 
-  flex-basis: 32%;
-  flex-grow: 1;
+  flex-basis: var(--card-width);
   min-width: var(--card-min-width);
+  max-width: var(--card-max-width);
+  
+  flex-grow: 1;
 
   @extend .cardContainer;
 }
