@@ -2,18 +2,18 @@ import React from "react";
 import Sort from "../Sort";
 import { TSortItem } from "types/types/card/basic/sort/sortBasicTypes";
 import { useAppDispatch, useAppSelector } from "hooks/store";
-import { selectSortBasicClan } from "store/selectors/sortSelectors";
-import { changeClanSortType } from "store/slices/SortSlice";
+import { selectSortBasicPlayer } from "store/selectors/sortSelectors";
+import { changeBasicPlayerSort } from "store/slices/SortSlice";
 
-const SortBasicClan = () => {
-  const clanSort = useAppSelector(selectSortBasicClan);
+const SortBasicPlayer = () => {
+  const clanSort = useAppSelector(selectSortBasicPlayer);
   const dispatch = useAppDispatch();
 
   const handleClick = (item: TSortItem) => {
-    dispatch(changeClanSortType({ item }));
+    dispatch(changeBasicPlayerSort({ item }));
   };
 
   return <Sort {...clanSort} handleClick={handleClick} />;
 };
 
-export default SortBasicClan;
+export default SortBasicPlayer;

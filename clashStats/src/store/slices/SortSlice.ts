@@ -11,12 +11,15 @@ const sortSlice = createSlice({
   name: "sort",
   initialState,
   reducers: {
-    changeClanSortType(state, action: PayloadAction<{ item: TSortItem }>) {
+    changeBasicClanSort(state, action: PayloadAction<{ item: TSortItem }>) {
       state.basic.clan.current = action.payload.item;
+    },
+    changeBasicPlayerSort(state, action: PayloadAction<{ item: TSortItem }>) {
+      state.basic.player.current = action.payload.item;
     },
   },
   extraReducers: (builder) => {},
 });
 
 export default sortSlice;
-export const { changeClanSortType } = sortSlice.actions;
+export const { changeBasicClanSort, changeBasicPlayerSort } = sortSlice.actions;
