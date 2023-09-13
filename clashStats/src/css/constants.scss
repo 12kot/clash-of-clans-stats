@@ -73,9 +73,10 @@
 
   //CARD
   --card-height: 175px;
+  --card-width: 32%;
   --card-min-width: 330px;
+  --card-max-width: 33%;
   --card-element-width: 85px;
-  //--card-max-width: 480px;
 
   //LINE-CARD-ELEMENTS-WIDTH
   --line-card-header-width: 160px;
@@ -99,6 +100,11 @@
   --radio-width: 250px;
   --filters-container-heigth: 300px;
 
+  @media screen and (max-width: 1197px) {
+    //CARD
+    --card-max-width: 49.5%;
+  }
+
   @media screen and (max-width: 1024px) {
     --font-size: 15px;
     --h1-size: 35px;
@@ -111,9 +117,9 @@
     //CARD
     --card-height: 170px;
     --card-min-width: 300px;
+    --card-width: 45%;
+    --card-max-width: 49.5%;
     --card-element-width: 77px;
-
-    //--card-max-width: 480px;
 
     //CARD-LABELS
     --card-player-img-heigth: 45px;
@@ -136,7 +142,9 @@
 
     //CARD
     --card-height: 160px;
+    --card-width: 45%;
     --card-min-width: 290px;
+    --card-max-width: 49.5%;
     --card-element-width: 75px;
 
     //--card-max-width: 480px;
@@ -152,6 +160,11 @@
     --filters-container-heigth: 320px;
   }
 
+  @media screen and (max-width: 768px) {
+    //CARD
+    --card-max-width: 100%;
+  }
+
   @media screen and (max-width: 480px) {
     --font-size: 14px;
     --h1-size: 25px;
@@ -163,7 +176,9 @@
 
     //CARD
     --card-height: 160px;
+    --card-width: 50%;
     --card-min-width: 280px;
+    --card-max-width: 100%;
     --card-element-width: 75px;
 
     //--card-max-width: 480px;
@@ -186,7 +201,9 @@
 
     //CARD
     --card-height: 155px;
+    --card-width: 50%;
     --card-min-width: 250px;
+    --card-max-width: 100%;
     --card-element-width: 75px;
 
     //--card-max-width: 480px;

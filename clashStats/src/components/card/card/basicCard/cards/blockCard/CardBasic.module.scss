@@ -1,9 +1,9 @@
 @import "../../../CardStyles.module.scss";
 
 .container {
-  flex-basis: 32%;
+  flex-basis: var(--card-width);
   min-width: var(--card-min-width);
-  //max-width: var(--card-max-width);
+  max-width: var(--card-max-width);
   flex-grow: 1;
  
   display: flex;
