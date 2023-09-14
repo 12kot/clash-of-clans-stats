@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import styles from "../Results.module.scss";
+import styles from "../SearchMiniCards.module.scss";
 import { NavLink } from "react-router-dom";
 import { TCardItem } from "types/types/card/basic/cardBasicTypes";
 
@@ -20,7 +20,7 @@ const getImg = (item: TCardItem) => {
   );
 };
 
-const InputSearchResultItem = ({ item, name, tag, link}: Props): ReactElement => {
+const SearchMiniCardItem = ({ item, name, tag, link}: Props): ReactElement => {
   return (
     <NavLink to={`${link}`} className={styles.resultItem}>
       {getImg(item)}
@@ -32,4 +32,4 @@ const InputSearchResultItem = ({ item, name, tag, link}: Props): ReactElement =>
   );
 };
 
-export default InputSearchResultItem;
+export default SearchMiniCardItem;

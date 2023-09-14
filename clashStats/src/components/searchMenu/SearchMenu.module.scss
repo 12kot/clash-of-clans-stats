@@ -1,7 +1,12 @@
-.search {
+.container {
   padding: 0 var(--page-padding-left);
+  margin-bottom: var(--item-padding-top);
 
   height: fit-content;
   display: flex;
   flex-direction: column;
+
+  .input {
+    height: var(--main-input-height);
+  }
 }

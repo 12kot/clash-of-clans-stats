@@ -1,0 +1,21 @@
+.button {
+  height: 100%;
+  padding: 0px calc(var(--item-padding-left) / 2) 0;
+
+  svg {
+    fill: var(--border-color);
+    height: 40%;
+  }
+
+  &:hover {
+    svg {
+      fill: var(--button-color);
+    }
+  }
+
+  &:disabled {
+    svg {
+      fill: var(--border-color);
+    }
+  }
+}

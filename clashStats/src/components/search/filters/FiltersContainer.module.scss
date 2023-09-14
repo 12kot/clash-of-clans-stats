@@ -25,14 +25,14 @@
 
   .inputContainer {
     flex-basis: 100%;
-
     flex-direction: column;
 
     .input {
       white-space: nowrap;
+      height: var(--main-input-height);
 
       .button {
-        padding: 0 var(--item-padding-left);
+        padding: var(--item-padding-top) var(--item-padding-left);
         background-color: var(--button-color);
         border-radius: var(--border-radius);
         color: var(--button-font-color);

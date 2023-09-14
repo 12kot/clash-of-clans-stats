@@ -1,16 +1,27 @@
 import React, { ReactElement, useState } from "react";
 import styles from "./SearchMenu.module.scss";
-import Buttons from "./buttons/Buttons";
-import Inputs from "./inputs/Inputs";
 import { TSearchButton } from "types/types";
+import SearchButtons from "./searchButtons/SearchButtons";
+import SearchMenuClanInput from "./inputs/SearchMenuClanInput";
+import SearchMenuPlayerInput from "./inputs/SearchMenuPlayerInput";
 
 const SearchMenu = (): ReactElement => {
   const [activeButton, setActiveButton] = useState<TSearchButton>("player");
 
   return (
-    <article className={styles.search}>
-      <Buttons activeButton={activeButton} setActiveButton={setActiveButton} />
-      <Inputs activeButton={activeButton} />
+    <article className={styles.container}>
+      <SearchButtons
+        activeButton={activeButton}
+        setActiveButton={setActiveButton}
+      />
+
+      <span className={styles.input}>
+        {activeButton === "player" ? (
+          <SearchMenuPlayerInput />
+        ) : (
+          <SearchMenuClanInput />
+        )}
+      </span>
     </article>
   );
 };

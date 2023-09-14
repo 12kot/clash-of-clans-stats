@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import styles from "./Buttons.module.scss";
+import styles from "./SearchButtons.module.scss";
 import { TSearchButton } from "types/types";
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   setActiveButton: React.Dispatch<React.SetStateAction<TSearchButton>>;
 };
 
-const Buttons = ({ activeButton, setActiveButton }: Props): ReactElement => {
+const SearchButtons = ({ activeButton, setActiveButton }: Props): ReactElement => {
   return (
     <section className={styles.items}>
       <button
@@ -28,4 +28,4 @@ const Buttons = ({ activeButton, setActiveButton }: Props): ReactElement => {
   );
 };
 
-export default Buttons;
+export default SearchButtons;

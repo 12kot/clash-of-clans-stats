@@ -1,0 +1,41 @@
+.input {
+  height: 100%;
+
+  position: relative;
+  width: 100%;
+
+  border: 2px solid var(--border-color);
+  border-top: 3px solid var(--border-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .results {
+    position: absolute;
+    display: none;
+
+    top: 0;
+    left: 0;
+
+    transform: translateY(var(--main-input-height));
+    width: var(--input-results-width);
+
+    height: fit-content;
+    max-height: calc(var(--main-input-height) * 5);
+    overflow-y: auto;
+
+    z-index: 2;
+    border-radius: var(--border-radius);
+    box-shadow: 1px 1px 1px var(--button-color);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  input:focus ~ .results,
+  .results:hover {
+    display: block;
+  }
+}

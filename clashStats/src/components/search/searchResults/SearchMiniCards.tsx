@@ -1,19 +1,19 @@
 import React, { ReactElement } from "react";
-import styles from "./Results.module.scss";
+import styles from "./SearchMiniCards.module.scss";
 import { NavLink } from "react-router-dom";
-import InputSearchResultItem from "./item/Item";
 import { v4 } from "uuid";
 import { TMiniCard } from "types/types/card/cardTypes";
+import { TSearchButton } from "types/types";
+import SearchMiniCardItem from "./searchMiniCardItem/SearchMiniCardItem";
 
 type Props = {
   items: TMiniCard[];
-  link: string;
-  value: string;
+  link: TSearchButton;
 };
 
-const getResults = (items: TMiniCard[], link: string): ReactElement[] => {
+const getCards = (items: TMiniCard[], link: string): ReactElement[] => {
   return items.map((item) => (
-    <InputSearchResultItem
+    <SearchMiniCardItem
       item={item.img}
       link={`/${link}/${item.tag}`}
       name={item.name}
@@ -23,10 +23,10 @@ const getResults = (items: TMiniCard[], link: string): ReactElement[] => {
   ));
 };
 
-const InputSearchResults = ({ items, value, link }: Props): ReactElement => {
+const SearchMiniCards = ({ items, link }: Props): ReactElement => {
   return (
     <>
-      {getResults(items, link)}
+      {getCards(items, link)}
       {items.length !== 0 && (
         <NavLink
           to={`/search/${link}`}
@@ -39,4 +39,4 @@ const InputSearchResults = ({ items, value, link }: Props): ReactElement => {
   );
 };
 
-export default InputSearchResults;
+export default SearchMiniCards;
