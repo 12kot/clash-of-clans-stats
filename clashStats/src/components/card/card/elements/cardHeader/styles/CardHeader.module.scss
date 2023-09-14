@@ -2,17 +2,23 @@
   display: flex;
   align-items: center;
   gap: calc(var(--items-gap));
-
+  
   .cardInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    
     p {
       text-overflow: ellipsis;
       max-width: calc(var(--line-card-header-width) - var(--line-card-img-heigth) * 1.5);
       overflow: hidden;
-      white-space: nowrap
+      white-space: nowrap;
+
+      &:hover {
+        background-color: var(--bg-color);
+        width: fit-content!important;
+        max-width: fit-content!important;
+      }
     }
 
     .name {
