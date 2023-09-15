@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 dotenv.config();
 
 const key = process.env.CLASH_OF_CLANS_KEY;
+console.log(key)
 
 export const fetchData = async (path) => {
   const data = await fetch(`https://api.clashofclans.com/v1/${path}`, {
