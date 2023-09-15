@@ -1,18 +1,22 @@
 import { TSearchButton } from "types/types";
 import { TMiniCard } from "../card/cardTypes";
 
-interface TInput
+export interface TInput
   extends React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
-  > {}
+  > {
+    onKeyDown: () => void
+  }
 
-interface TButton
+export interface TButton
   extends React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
   loading: boolean;
+  disabled: boolean;
+  onClick: () => void;
 }
 
 export interface TSearchInput {

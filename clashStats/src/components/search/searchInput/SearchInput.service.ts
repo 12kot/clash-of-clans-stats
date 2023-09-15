@@ -29,6 +29,7 @@ export const getInputObj = ({
       placeholder: placeholder,
       value,
       onChange,
+      onKeyDown: onClick,
     },
 
     button: {

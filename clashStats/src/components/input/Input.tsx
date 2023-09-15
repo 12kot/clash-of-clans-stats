@@ -1,16 +1,26 @@
 import React, { ReactElement } from "react";
 import styles from "./Input.module.scss";
+import { TInput } from "types/types/search/searchTypes";
 
-interface Props
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {}
+interface Props extends TInput {}
 
-const Input = ({ ...restProps }: Props): ReactElement => {
+const Input = ({ onKeyDown, ...restProps }: Props): ReactElement => {
   const { value } = { ...restProps };
 
-  return <input className={styles.input} {...restProps} value={value} />;
+  const onKeyDownhandler = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (e.code === "Enter") {
+      onKeyDown();
+    }
+  };
+
+  return (
+    <input
+      className={styles.input}
+      {...restProps}
+      value={value}
+      onKeyDown={(e) => onKeyDownhandler(e)}
+    />
+  );
 };
 
 export default Input;
