@@ -11,6 +11,8 @@ export interface TFilterClan {
     versusTrophy: TFilterItem;
     level: TFilterItem;
   };
+
+  labels: number[];
 }
 
 export interface TFilterPlayer {
@@ -23,12 +25,13 @@ export interface TFilterPlayer {
     legendaryVersusTrophy: TFilterItem;
     level: TFilterItem;
   };
+
+  labels: number[];
 }
 
 export interface TFilterSlice {
   clan: TFilterClan;
   player: TFilterPlayer;
-  labels: number[];
 }
 
 export interface TFilterItem {

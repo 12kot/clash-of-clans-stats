@@ -58,18 +58,28 @@ const filterSlice = createSlice({
       }
     },
 
-    addLabel(state, action: PayloadAction<number>) {
+    addClanLabel(state, action: PayloadAction<number>) {
       const index = action.payload;
 
-      if (state.labels.includes(index))
-        state.labels = state.labels.filter((i) => i !== index);
-      else if (state.labels.length === 3)
-        state.labels = [...state.labels.slice(1), index];
-      else state.labels.push(index);
+      if (state.clan.labels.includes(index))
+        state.clan.labels = state.clan.labels.filter((i) => i !== index);
+      else if (state.clan.labels.length === 3)
+        state.clan.labels = [...state.clan.labels.slice(1), index];
+      else state.clan.labels.push(index);
+    },
+
+    addPlayerLabel(state, action: PayloadAction<number>) {
+      const index = action.payload;
+
+      if (state.player.labels.includes(index))
+        state.player.labels = state.player.labels.filter((i) => i !== index);
+      else if (state.player.labels.length === 3)
+        state.player.labels = [...state.player.labels.slice(1), index];
+      else state.player.labels.push(index);
     },
   },
   extraReducers: (builder) => {},
 });
 
 export default filterSlice;
-export const { addFilter, addLabel } = filterSlice.actions;
+export const { addFilter, addClanLabel, addPlayerLabel } = filterSlice.actions;

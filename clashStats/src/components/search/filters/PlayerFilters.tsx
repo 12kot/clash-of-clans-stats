@@ -11,22 +11,22 @@ import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import FilterInput from "./filters/inputs/FilterInput";
 import { selectFilterPlayer } from "store/selectors/filterSelectors";
 import { TFilterPlayer } from "types/types/slices/filterTypes";
+import AllLabelsPlayer from "components/labels/allLabels/AllLabelsPlayer";
 
 type Props = {
-  initValue: string
-}
+  initValue: string;
+};
 
-const PlayerFilters = ({initValue}: Props): ReactElement => {
+const PlayerFilters = ({ initValue }: Props): ReactElement => {
   const dispatch = useAppDispatch();
   const filters = useAppSelector(selectFilterPlayer);
 
   const { value, onChange } = useInput<string>(initValue);
-  const { data } = useSearch<TCardBasicPlayer, TSearchCardPlayer, TFilterPlayer>(
-    value,
-    searchPlayers,
-    selectSearchPlayers,
-    selectFilterPlayer
-  );
+  const { data } = useSearch<
+    TCardBasicPlayer,
+    TSearchCardPlayer,
+    TFilterPlayer
+  >(value, searchPlayers, selectSearchPlayers, selectFilterPlayer);
 
   const searchHandler = () => {
     dispatch(searchPlayers({ name: value, filters }));
@@ -44,6 +44,7 @@ const PlayerFilters = ({initValue}: Props): ReactElement => {
         />
       }
       Filters={FiltersPlayerList}
+      Labels={AllLabelsPlayer}
       applyFiltersHandler={searchHandler}
     />
   );

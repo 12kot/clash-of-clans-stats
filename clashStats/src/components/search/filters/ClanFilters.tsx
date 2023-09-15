@@ -11,6 +11,7 @@ import { selectSearchClans } from "store/selectors/searchSelectors";
 import FilterInput from "./filters/inputs/FilterInput";
 import { selectFilterClan } from "store/selectors/filterSelectors";
 import { TFilterClan } from "types/types/slices/filterTypes";
+import AllLabelsClan from "components/labels/allLabels/AllLabelsClan";
 
 type Props = {
   initValue: string;
@@ -44,6 +45,7 @@ const ClanFilters = ({initValue}: Props): ReactElement => {
         />
       }
       Filters={FiltersClanList}
+      Labels={AllLabelsClan}
       applyFiltersHandler={searchHandler}
     />
   );

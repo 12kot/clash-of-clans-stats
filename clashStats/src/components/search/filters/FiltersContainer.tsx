@@ -1,14 +1,14 @@
 import React, { ReactElement } from "react";
 import styles from "./FiltersContainer.module.scss";
-import AllLabels from "components/labels/allLabels/AllLabels";
 
 type Props = {
   Input: ReactElement;
   Filters: () => JSX.Element;
+  Labels: () => JSX.Element;
   applyFiltersHandler: () => void
 };
 
-const FiltersContainer = ({ Input, Filters, applyFiltersHandler }: Props) => {
+const FiltersContainer = ({ Input, Filters, Labels, applyFiltersHandler }: Props) => {
   return (
     <article className={styles.detailsContainer}>
       <section className={styles.inputContainer}>
@@ -21,7 +21,7 @@ const FiltersContainer = ({ Input, Filters, applyFiltersHandler }: Props) => {
         <Filters />
       </section>
       <span className={styles.labels}>
-        <AllLabels />
+        <Labels />
       </span>
     </article>
   );
