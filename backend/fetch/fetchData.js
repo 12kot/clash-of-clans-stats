@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import fetch from "node-fetch";
 dotenv.config();
 
 const key = process.env.CLASH_OF_CLANS_KEY;
