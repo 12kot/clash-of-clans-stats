@@ -4,6 +4,7 @@ import { getDataFromServer } from "./getDataFromServer";
 import { TSearchSlice } from "types/types/slices/searchTypes";
 import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
 import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
+import { TFilterClan, TFilterPlayer } from "types/types/slices/filterTypes";
 
 const initialState: TSearchSlice = {
   ...InitSearchSlice,
@@ -11,10 +12,12 @@ const initialState: TSearchSlice = {
 
 export const searchPlayers = createAsyncThunk<
   { items: TCardBasicPlayer[] },
-  { name: string }
-  >("clan/searchPlayers", async (props, { rejectWithValue }) => {
+  { name: string; filters: TFilterPlayer }
+>("clan/searchPlayers", async ({ name, filters }, { rejectWithValue }) => {
+  /* Добавить в запрос фильтры */
+
   const res: TCardBasicPlayer[] | Error = await getDataFromServer(
-    `search/player?tag=${props.name.replaceAll("#", "")}`
+    `search/player?tag=${name.replaceAll("#", "")}`
   );
 
   if (res instanceof Error) return rejectWithValue(res.message);
@@ -23,11 +26,13 @@ export const searchPlayers = createAsyncThunk<
 
 export const searchClans = createAsyncThunk<
   { items: TCardBasicClan[] },
-  { name: string }
->("clan/searchClans", async (props, { rejectWithValue }) => {
+  { name: string; filters: TFilterClan }
+>("clan/searchClans", async ({ name, filters }, { rejectWithValue }) => {
+  /* Добавить в запрос фильтры */
+
   const limit = 10;
   const res: TCardBasicClan[] | Error = await getDataFromServer(
-    `search/clan?name=${props.name.replaceAll("#", "")}&limit=${limit}`
+    `search/clan?name=${name.replaceAll("#", "")}&limit=${limit}`
   );
 
   if (res instanceof Error) return rejectWithValue(res.message);

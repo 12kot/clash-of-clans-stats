@@ -1,32 +1,34 @@
+export interface TFilterClan {
+  required: {
+    townhall: TFilterItem;
+    trophy: TFilterItem;
+    versusTrophy: TFilterItem;
+  };
+
+  details: {
+    capitalTownhall: TFilterItem;
+    trophy: TFilterItem;
+    versusTrophy: TFilterItem;
+    level: TFilterItem;
+  };
+}
+
+export interface TFilterPlayer {
+  details: {
+    townhall: TFilterItem;
+    versusTownhall: TFilterItem;
+    trophy: TFilterItem;
+    versusTrophy: TFilterItem;
+    legendaryTrophy: TFilterItem;
+    legendaryVersusTrophy: TFilterItem;
+    level: TFilterItem;
+  };
+}
+
 export interface TFilterSlice {
-  clan: {
-    required: {
-      townhall: TFilterItem;
-      trophy: TFilterItem;
-      versusTrophy: TFilterItem;
-    };
-
-    details: {
-      capitalTownhall: TFilterItem;
-      trophy: TFilterItem;
-      versusTrophy: TFilterItem;
-      level: TFilterItem;
-    };
-  };
-
-  player: {
-    details: {
-      townhall: TFilterItem;
-      versusTownhall: TFilterItem;
-      trophy: TFilterItem;
-      versusTrophy: TFilterItem;
-      legendaryTrophy: TFilterItem;
-      legendaryVersusTrophy: TFilterItem;
-      level: TFilterItem;
-    };
-  };
-
-  labels: number[]
+  clan: TFilterClan;
+  player: TFilterPlayer;
+  labels: number[];
 }
 
 export interface TFilterItem {

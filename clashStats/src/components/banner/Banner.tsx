@@ -7,7 +7,7 @@ const Banner = ({ text }: { text?: string }): ReactElement => {
     <div className={styles.banner}>
       <div className={styles.action}>
         <h1 className={styles.text}>{text}</h1>
-        <button className={styles.button}>НАЧАТЬ</button>
+        <button className={styles.button}>Start</button>
       </div>
       <img src={banner} alt="" />
     </div>

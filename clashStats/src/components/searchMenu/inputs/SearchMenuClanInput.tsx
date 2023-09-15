@@ -8,18 +8,21 @@ import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
 import { TSearchCardClan } from "types/types/slices/searchTypes";
 import { getInputClanWhitResultsObj } from "components/search/searchInput/SearchInput.service";
 import SearchInputWithResults from "components/search/searchInput/withResults/SearchInputWithResults";
+import { TFilterClan } from "types/types/slices/filterTypes";
+import { selectFilterClan } from "store/selectors/filterSelectors";
 
 const SearchMenuClanInput = (): ReactElement => {
   const navigate = useNavigate();
   const { value, onChange } = useInput<string>("");
-  const { data } = useSearch<TCardBasicClan, TSearchCardClan>(
+  const { data } = useSearch<TCardBasicClan, TSearchCardClan, TFilterClan>(
     value,
     searchClans,
-    selectSearchClans
+    selectSearchClans,
+    selectFilterClan
   );
 
   const onClick = (): void => {
-    navigate(`/search/clan?tag=${value}`);
+    navigate(`/search/clan?name=${value}`);
   };
 
   const inpObj = getInputClanWhitResultsObj({

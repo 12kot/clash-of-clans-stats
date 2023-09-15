@@ -9,7 +9,8 @@ import {
   getTopPlayer,
 } from "store/slices/AppSlice";
 import { Route, Routes } from "react-router-dom";
-import Search from "pages/search/Search";
+import SearchClans from "pages/search/SearchClans";
+import SearchPlayers from "pages/search/SearchPlayers";
 
 const App = (): ReactElement => {
   const dispatch = useAppDispatch();
@@ -25,7 +26,8 @@ const App = (): ReactElement => {
       <Header />
       <Routes>
         <Route path="/*" element={<Main />} />
-        <Route path="/search/:type" element={<Search />} />
+        <Route path="/search/clan" element={<SearchClans />} />
+        <Route path="/search/player" element={<SearchPlayers />} />
       </Routes>
     </>
   );
