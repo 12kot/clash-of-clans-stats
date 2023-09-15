@@ -3,3 +3,14 @@
   right: 50%;
   top: 50%;
 }
+
+.footer {
+  width: 100%;
+  padding: var(--item-padding-top) var(--item-padding-left);
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  background: #000;
+
+  color: var(--second-font-color);
+}

@@ -5,7 +5,12 @@
   width: 100%;
 
   border: 2px solid var(--border-color);
+  -webkit-border: 2px solid var(--border-color);
+  -moz-border: 2px solid var(--border-color);
+
   border-top: 3px solid var(--border-color);
+  -webkit-border-top: 3px solid var(--border-color);
+  -moz-border-top: 3px solid var(--border-color);
 
   display: flex;
   justify-content: center;
@@ -14,6 +19,8 @@
   .results {
     position: absolute;
     display: none;
+
+    background-color: var(--bg-color);
 
     top: 0;
     left: 0;
@@ -27,7 +34,7 @@
 
     z-index: 2;
     border-radius: var(--border-radius);
-    box-shadow: 1px 1px 1px var(--button-color);
+    border: 1px solid var(--border-color);
 
     &::-webkit-scrollbar {
       display: none;

@@ -11,7 +11,7 @@ type Props = {
 const CardLoader = ({ header }: Props): ReactElement => {
   const viewType = useAppSelector(selectViewType);
 
-  if (viewType === "block") return <BlockCardLoader header={header} />;
+  if (!!header || viewType === "block") return <BlockCardLoader header={header} />;
   return <LineCardLoader />;
 };
 

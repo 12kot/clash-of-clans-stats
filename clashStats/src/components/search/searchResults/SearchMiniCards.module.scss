@@ -18,6 +18,8 @@
 
   &:hover {
     border: 1px solid var(--border-focus-color);
+    background-color: var(--focus-color);
+    
     img {
       scale: 1.1;
     }
