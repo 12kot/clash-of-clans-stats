@@ -1,12 +1,20 @@
 import React from "react";
 import styles from "./BlockCardLoader.module.scss";
 import Loader from "../../spinLoader/Loader";
+import CardTitle from "components/card/card/elements/header/CardTitle";
 
-const BlockCardLoader = () => {
+type Props = {
+  header?: string;
+};
+
+const BlockCardLoader = ({ header }: Props) => {
   return (
-    <div className={styles.container}>
-      <Loader size="24px" weight="3px" />
-    </div>
+    <section className={styles.container}>
+      {!!header && <CardTitle header={header} />}
+      <div className={styles.content}>
+        <Loader size="24px" weight="3px" />
+      </div>
+    </section>
   );
 };
 

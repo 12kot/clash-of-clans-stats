@@ -8,10 +8,10 @@ import {
 } from "types/types/card/basic/cardBasicTypes";
 import { v4 } from "uuid";
 import { TSearchButton } from "types/types";
-import SpinLoader from "components/loader/spinLoader/Loader";
 import CardElementItem from "components/card/card/elements/cardElementItem/CardElementItem";
 import CardTitle from "components/card/card/elements/header/CardTitle";
 import AbsoluteImage from "components/card/card/elements/absoluteImage/AbsoluteImage";
+import CardLoader from "components/loader/cardLoader/CardLoader";
 
 interface Props extends TCardBasicGeneralized {
   header?: string;
@@ -33,34 +33,26 @@ const CardBasic = ({
   absoluteImg,
   type,
 }: Props): ReactElement => {
+  if (loading) return <CardLoader header={header} />;
+
   return (
     <section className={styles.container}>
       {!!header && <CardTitle header={header} />}
 
-      {loading ? (
-        <div className={styles.content}>
-          <SpinLoader size="24px" weight="3px" />
-        </div>
-      ) : (
-        <>
-          <main className={styles.content}>
-            <span className={styles.head}>
-              <CardHeader {...head.info} link={type} viewType="block" />
-              <Labels labels={head.labels} />
-            </span>
-            <section className={styles.values}>
-              {getCardElements(trophies)}
-            </section>
+      <main className={styles.content}>
+        <span className={styles.head}>
+          <CardHeader {...head.info} link={type} viewType="block" />
+          <Labels labels={head.labels} />
+        </span>
+        <section className={styles.values}>{getCardElements(trophies)}</section>
 
-            <section className={styles.values}>
-              {getCardElements(otherInfo)}
-              <Labels labels={labels} />
-            </section>
-          </main>
+        <section className={styles.values}>
+          {getCardElements(otherInfo)}
+          <Labels labels={labels} />
+        </section>
+      </main>
 
-          <AbsoluteImage {...absoluteImg} />
-        </>
-      )}
+      <AbsoluteImage {...absoluteImg} />
     </section>
   );
 };

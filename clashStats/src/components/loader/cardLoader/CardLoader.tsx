@@ -4,10 +4,14 @@ import { selectViewType } from "store/selectors/viewTypeSelectors";
 import BlockCardLoader from "./blockCard/BlockCardLoader";
 import LineCardLoader from "./lineCard/LineCardLoader";
 
-const CardLoader = (): ReactElement => {
+type Props = {
+  header?: string;
+};
+
+const CardLoader = ({ header }: Props): ReactElement => {
   const viewType = useAppSelector(selectViewType);
 
-  if (viewType === "block") return <BlockCardLoader />;
+  if (viewType === "block") return <BlockCardLoader header={header} />;
   return <LineCardLoader />;
 };
 

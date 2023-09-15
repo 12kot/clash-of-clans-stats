@@ -1,13 +1,20 @@
-@import "../CardLoader.module.scss";
-
 .container {
-  height: var(--card-height);
-
   flex-basis: var(--card-width);
   min-width: var(--card-min-width);
   max-width: var(--card-max-width);
-  
   flex-grow: 1;
 
-  @extend .cardContainer;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+
+  &:hover {
+    box-shadow: var(--box-shadow-focus);
+  }
+
+  .content {
+    height: var(--card-height);
+  }
 }
