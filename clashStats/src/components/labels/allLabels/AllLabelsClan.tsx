@@ -1,18 +1,12 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "hooks/store";
 import { selectFilterClanLabels } from "store/selectors/filterSelectors";
 import { addClanLabel } from "store/slices/FilterSlice";
 import AllLabels from "./AllLabels";
 import { getAllLabels } from "./AllLabels.service";
+import { useLabels } from "hooks/labels/useLabels";
 
 const AllLabelsClan = () => {
-  const active = useAppSelector(selectFilterClanLabels);
-  const dispatch = useAppDispatch();
-
-  const onClick = (index: number) => {
-    dispatch(addClanLabel(index));
-  };
-
+  const { active, onClick } = useLabels(selectFilterClanLabels, addClanLabel);
   return <AllLabels labels={getAllLabels(active, onClick)} />;
 };
 
