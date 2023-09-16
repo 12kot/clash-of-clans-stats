@@ -8,7 +8,7 @@ const Layout = (): ReactElement => {
   return (
     <>
       <Header />
-      <main>
+      <main className={styles.main}>
         <Suspense
           fallback={
             <div className={styles.loader}>

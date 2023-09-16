@@ -4,6 +4,10 @@
   top: 50%;
 }
 
+.main {
+  min-height: 100vh;
+}
+
 .footer {
   width: 100%;
   padding: var(--item-padding-top) var(--item-padding-left);
