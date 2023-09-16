@@ -9,7 +9,7 @@
     margin: 0 auto;
 
     height: fit-content;
-    width: fit-content;
+    height: var(--card-labels-img-heigth) !important;
 
     .icon {
       cursor: pointer;

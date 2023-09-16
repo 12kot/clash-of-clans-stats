@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  min-height: 100px;
+
+  background: #1b1c1d;
+
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  
+  .spoiler {
+      color: var(--second-font-color);
+      padding: var(--item-padding-top) var(--item-padding-left);
+      
+      display: flex;
+      justify-content: center;
+      align-self: center;
+  }
+}

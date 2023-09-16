@@ -1,6 +1,6 @@
 :root {
   --font-color: #141414;
-  --second-font-color: #696969;
+  --second-font-color: #7b8e8e;
   --bg-color: #ffff;
 
   --negative-color: #fff;
@@ -98,7 +98,7 @@
 
   //SEARCHPAGE
   --radio-width: 250px;
-  --filters-container-heigth: 300px;
+  --filters-container-heigth: 310px;
 
   @media screen and (max-width: 1220px) {
     //CARD
@@ -157,7 +157,7 @@
 
     //SEARCHPAGE
     --radio-width: 180px;
-    --filters-container-heigth: 320px;
+    --filters-container-heigth: 330px;
   }
 
   @media screen and (max-width: 768px) {

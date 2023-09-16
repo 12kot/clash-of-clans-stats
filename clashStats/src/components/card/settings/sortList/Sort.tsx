@@ -15,12 +15,10 @@ const getItemList = (
   handleItemClick: (item: TSortItem) => void
 ) => {
   return itemList.map((item) => (
-    <li
-      onClick={() => handleItemClick(item)}
-      className={styles.dropItem}
-      key={v4()}
-    >
-      <b>{item.value}</b>
+    <li className={styles.dropItem} key={v4()}>
+      <button onClick={() => handleItemClick(item)}>
+        <b>{item.value}</b>
+      </button>
     </li>
   ));
 };
@@ -46,8 +44,8 @@ const Sort = ({ list, handleClick, current }: Props): ReactElement => {
         <b>Sort by </b>
       </p>
       <span className={styles.settings} ref={listref}>
-        <button className={`${styles.btn}`}>
-          <b onClick={onClick}>{current.value}</b>
+        <button className={`${styles.btn}`} onClick={onClick}>
+          <b>{current.value}</b>
         </button>
         <ul className={`${styles.dropMenu} ${activeChoose && styles.active}`}>
           {getItemList(list, handleItemClick)}

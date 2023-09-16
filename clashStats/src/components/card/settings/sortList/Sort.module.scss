@@ -25,13 +25,19 @@
 
       .dropItem {
         cursor: pointer;
-        padding: calc(var(--item-padding-top) / 2)
-          calc(var(--item-padding-left));
-        color: var(--second-font-color);
 
-        &:hover {
-          color: var(--button-color);
-          background-color: var(--focus-color);
+        button {
+          padding: calc(var(--item-padding-top) / 2)
+            calc(var(--item-padding-left));
+          width: 100%;
+          color: var(--second-font-color);
+
+          text-align: start;
+          
+          &:hover {
+            color: var(--button-color);
+            background-color: var(--focus-color);
+          }
         }
       }
     }
