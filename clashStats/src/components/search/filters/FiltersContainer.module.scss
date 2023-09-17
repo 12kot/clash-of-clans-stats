@@ -56,7 +56,7 @@
       (var(--items-gap) / 2) * 1 + var(--card-labels-img-heigth) * 2 + 2px
     );
 
-    min-height: calc(var(--card-labels-img-heigth) + 8px);
+    min-height: calc(var(--card-labels-img-heigth) + var(--scrollbar-heigth) * 2 + 2px);
 
     overflow-y: scroll;
     &::-webkit-scrollbar {

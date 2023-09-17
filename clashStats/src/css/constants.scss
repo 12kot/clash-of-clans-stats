@@ -44,6 +44,11 @@
   --box-shadow-focus: 0 1px 3px 0 var(--border-focus-color),
     0 0 0 1px var(--border-focus-color);
 
+
+  //SCROLL-BAR
+  --scrollbar-heigth: 4px;
+  --scrollbar-width: 4px;
+  
   --page-padding-top: var(--header-height);
   --page-padding-left: 8vw;
   --page-padding-bottom: 25px;

@@ -62,8 +62,8 @@ h2 {
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-heigth);
 }
 
 ::-webkit-scrollbar-thumb {

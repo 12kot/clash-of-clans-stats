@@ -15,7 +15,7 @@ export const getAllLabels = (
           "https://api-assets.clashofclans.com/labels/128/hM7SHnN0x7syFa-s6fE7LzeO5yWG2sfFpZUHuzgMwQg.png"
         }
         title={index + ""}
-        alt=""
+        alt={""}
         className={`${styles.icon} ${active.includes(index) && styles.active}`}
       />
     </button>

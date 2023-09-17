@@ -8,8 +8,7 @@
   .button {
     margin: 0 auto;
 
-    height: fit-content;
-    height: var(--card-labels-img-heigth) !important;
+    max-height: var(--card-labels-img-heigth) !important;
 
     .icon {
       cursor: pointer;

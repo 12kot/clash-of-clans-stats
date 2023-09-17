@@ -2,10 +2,11 @@ import React, { ReactElement } from "react";
 import styles from "./Labels.module.scss";
 import { v4 } from "uuid";
 import { TLabel } from "types/types/label/labelTypes";
+import LabelItem from "./labelItem/LabelItem";
 
 const getLabels = (labels: TLabel[]): ReactElement[] => {
   return labels.map((label) => (
-    <img src={label.img} title={label.title} alt={label.title} className={styles.icon} key={v4()} />
+    <LabelItem label={label} key={v4()} />
   ));
 };
 
