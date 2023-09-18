@@ -21,13 +21,9 @@
   gap: var(--items-gap);
 
   .cards {
-    // min-height: calc(
-    //   100vh - var(--filters-container-heigth) - var(--header-height) * 2 -
-    //     var(--items-gap) * 4
-    // );
-
     min-height: fit-content;
     height: fit-content;
+    position: relative;
 
     display: flex;
     flex-direction: row;
