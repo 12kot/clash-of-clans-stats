@@ -17,9 +17,13 @@ const sortSlice = createSlice({
     changeBasicPlayerSort(state, action: PayloadAction<{ item: TSortItem }>) {
       state.basic.player.current = action.payload.item;
     },
+    changeSortDirection(state) {
+      if (state.direction === "less") state.direction = "more";
+      else state.direction = "less";
+    },
   },
   extraReducers: (builder) => {},
 });
 
 export default sortSlice;
-export const { changeBasicClanSort, changeBasicPlayerSort } = sortSlice.actions;
+export const { changeBasicClanSort, changeBasicPlayerSort, changeSortDirection } = sortSlice.actions;

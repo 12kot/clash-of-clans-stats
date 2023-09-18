@@ -3,6 +3,7 @@ import styles from "./Sort.module.scss";
 import { useOnClickOutside } from "hooks/outsideClick/useOutsideClick";
 import { v4 } from "uuid";
 import { TSortItem } from "types/types/card/basic/sort/sortBasicTypes";
+import SortDirection from "../sortDirection/SortDirection";
 
 type Props = {
   current: TSortItem;
@@ -51,6 +52,7 @@ const Sort = ({ list, handleClick, current }: Props): ReactElement => {
           {getItemList(list, handleItemClick)}
         </ul>
       </span>
+      <SortDirection />
     </div>
   );
 };

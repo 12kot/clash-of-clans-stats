@@ -7,4 +7,6 @@ export const InitSort: TSortSlice = {
     clan: InitSortBasicClan,
     player: InitSortBasicPlayer,
   },
+
+  direction: "more",
 };

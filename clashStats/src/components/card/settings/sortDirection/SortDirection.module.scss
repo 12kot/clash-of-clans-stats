@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  height: 32px;
+  //background-color: red;
+  width: 24px;
+
+  .item {
+    width: 24px;
+    height: fit-content;
+
+    position: absolute;
+  }
+
+  span:first-child {
+    top: 0px;
+  }
+
+  span:last-child {
+    bottom: 0px;
+    transform: rotate(180deg);
+  }
+
+  .active {
+    fill: var(--button-color);
+  }
+}

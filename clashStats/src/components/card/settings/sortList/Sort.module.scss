@@ -1,6 +1,7 @@
 .container {
   display: flex;
   gap: calc(var(--items-gap) / 2);
+  align-items: center;
 
   .settings {
     position: relative;
@@ -33,7 +34,7 @@
           color: var(--second-font-color);
 
           text-align: start;
-          
+
           &:hover {
             color: var(--button-color);
             background-color: var(--focus-color);

@@ -6,4 +6,6 @@ export interface TSortSlice {
     clan: TSortBasicClan;
     player: TSortBasicPlayer;
   };
+
+  direction: "more" | "less";
 }
