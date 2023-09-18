@@ -10,6 +10,8 @@ import { getMostPopularPlayer } from "./functions/cards/cards/getMostPopularPlay
 import { getMostPopularClan } from "./functions/cards/cards/getMostPopularClan.js";
 import { searchClan } from "./functions/search/searchClan.js";
 import { searchPlayer } from "./functions/search/searchPlayer.js";
+import { getPlayerLabels } from "./functions/getPlayerLabels.js";
+import { getClanLabels } from "./functions/getClanLabels.js";
 
 dotenv.config();
 
@@ -39,6 +41,7 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+
 app.use("/public", express.static("public"));
 
 app.get("/cards/player/top", async (req, res) => {
@@ -74,6 +77,20 @@ app.get("/search/clan", async (req, res) => {
 app.get("/search/player", async (req, res) => {
   const tag = req.query.tag;
   const data = await searchPlayer(tag);
+
+  if (typeof data.ok === "boolean") await checkData(data, res);
+  else res.send(data);
+});
+
+app.get("/labels/players", async (req, res) => {
+  const data = await getPlayerLabels();
+
+  if (typeof data.ok === "boolean") await checkData(data, res);
+  else res.send(data);
+});
+
+app.get("/labels/clans", async (req, res) => {
+  const data = await getClanLabels();
 
   if (typeof data.ok === "boolean") await checkData(data, res);
   else res.send(data);
