@@ -11,7 +11,7 @@ import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import FilterInput from "./filters/inputs/FilterInput";
 import { selectFilterPlayer } from "store/selectors/filterSelectors";
 import { TFilterPlayer } from "types/types/slices/filterTypes";
-import AllLabelsPlayer from "components/labels/allLabels/AllLabelsPlayer";
+import LabelsButtonsPlayer from "components/labels/labelsButtons/labelsType/LabelsButtonsPlayer";
 
 type Props = {
   initValue: string;
@@ -44,7 +44,7 @@ const PlayerFilters = ({ initValue }: Props): ReactElement => {
         />
       }
       Filters={FiltersPlayerList}
-      Labels={AllLabelsPlayer}
+      Labels={LabelsButtonsPlayer}
       applyFiltersHandler={searchHandler}
     />
   );

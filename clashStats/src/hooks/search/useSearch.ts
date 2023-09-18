@@ -1,12 +1,9 @@
-import { AsyncThunk, Dispatch } from "@reduxjs/toolkit";
+import { AsyncThunk } from "@reduxjs/toolkit";
 import { useDebounce } from "hooks/debounce/useDebounce";
 import { useAppDispatch, useAppSelector } from "hooks/store";
 import { useEffect } from "react";
+import { AsyncThunkConfig } from "types/types/AsyncThunkConfig";
 import { TStore } from "types/types/slices/storeType";
-
-type AsyncThunkConfig = {
-  dispatch?: Dispatch;
-};
 
 export const useSearch = <TFunc, Tdata, TFilters>(
   value: string,

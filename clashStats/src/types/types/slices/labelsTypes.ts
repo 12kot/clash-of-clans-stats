@@ -1,13 +1,11 @@
 import { TLabel } from "../label/labelTypes";
 
-export interface TLabelsSlice {
-  clan: {
-    items: TLabel[];
-    loading: boolean;
-  };
+export interface TLabelsItem {
+  items: TLabel[];
+  loading: boolean;
+}
 
-  player: {
-    items: TLabel[];
-    loading: boolean;
-  };
+export interface TLabelsSlice {
+  clan: TLabelsItem;
+  player: TLabelsItem;
 }

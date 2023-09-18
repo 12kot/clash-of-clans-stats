@@ -52,9 +52,13 @@
 
   .labels {
     padding: 1px;
-    max-width: calc(
-      (var(--items-gap) / 2) * 1 + var(--card-labels-img-heigth) * 2 + 2px
+    min-width: calc(
+      (var(--items-gap) / 2) * 2 + var(--card-labels-img-heigth) * 2 + 0px
     );
+    max-width: calc(
+      (var(--items-gap) / 2) * 2 + var(--card-labels-img-heigth) * 2 + 0px
+    );
+    justify-content: center;
 
     min-height: calc(var(--card-labels-img-heigth) + var(--scrollbar-heigth) * 2 + 2px);
 

@@ -8,7 +8,7 @@ const initialState: TLabelsSlice = {
   ...InitLabelsSlice,
 };
 
-const getLabelsPlayers = createAsyncThunk<{ labels: TLabel[] }, void>(
+export const getLabelsPlayers = createAsyncThunk<{ labels: TLabel[] }, void>(
   "labels/getLabelsPlayers",
   async (_, { rejectWithValue }) => {
     const res: TLabel[] | Error = await getDataFromServer(`labels/players`);
@@ -18,10 +18,12 @@ const getLabelsPlayers = createAsyncThunk<{ labels: TLabel[] }, void>(
   }
 );
 
-const getLabelsClans = createAsyncThunk<{ labels: TLabel[] }, void>(
+export const getLabelsClans = createAsyncThunk<{ labels: TLabel[] }, void>(
   "labels/getLabelsClans",
   async (_, { rejectWithValue }) => {
+    console.log("res")
     const res: TLabel[] | Error = await getDataFromServer(`labels/clans`);
+
 
     if (res instanceof Error) return rejectWithValue(res.message);
     return { labels: res };
@@ -39,6 +41,8 @@ const labelsSlice = createSlice({
       })
       .addCase(getLabelsPlayers.fulfilled, (state, action) => {
         state.player.items = action.payload.labels;
+        console.log(action.payload.labels);
+
         state.player.loading = false;
       })
       .addCase(getLabelsPlayers.rejected, (state, action) => {
@@ -51,6 +55,8 @@ const labelsSlice = createSlice({
       })
       .addCase(getLabelsClans.fulfilled, (state, action) => {
         state.clan.items = action.payload.labels;
+        console.log(action.payload.labels);
+
         state.clan.loading = false;
       })
       .addCase(getLabelsClans.rejected, (state, action) => {

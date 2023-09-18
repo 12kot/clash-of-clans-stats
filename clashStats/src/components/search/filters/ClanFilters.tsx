@@ -11,7 +11,7 @@ import { selectSearchClans } from "store/selectors/searchSelectors";
 import FilterInput from "./filters/inputs/FilterInput";
 import { selectFilterClan } from "store/selectors/filterSelectors";
 import { TFilterClan } from "types/types/slices/filterTypes";
-import AllLabelsClan from "components/labels/allLabels/AllLabelsClan";
+import AllLabelsClan from "components/labels/labelsButtons/labelsType/LabelsButtonsClan";
 
 type Props = {
   initValue: string;

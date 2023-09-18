@@ -1,0 +1,18 @@
+.button {
+  margin: 0 auto;
+
+  max-height: var(--card-labels-img-heigth) !important;
+
+  .icon {
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: 3px;
+
+    height:100% !important;
+  }
+
+  .active {
+    background-color: var(--button-color);
+  }
+}
