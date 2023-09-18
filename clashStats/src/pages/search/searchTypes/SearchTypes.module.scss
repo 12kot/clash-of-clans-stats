@@ -6,6 +6,12 @@
   gap: var(--items-gap);
 }
 
+.parent {
+  display: grid !important;
+  grid-template-columns: var(--card-grid);
+  grid-template-rows: 1fr;
+}
+
 .container {
   position: relative;
   flex-direction: column;
@@ -30,9 +36,9 @@
     gap: calc(var(--items-gap) / 2);
   }
 
-  // .cardsLine {
-  //   min-height: fit-content;
-  // }
+  .cardsBlock {
+    @extend .parent;
+  }
 
   @extend .flex;
 }

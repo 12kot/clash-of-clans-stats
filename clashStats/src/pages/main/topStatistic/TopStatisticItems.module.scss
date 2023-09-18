@@ -1,11 +1,17 @@
+.parent {
+  display: grid;
+  grid-template-columns: var(--card-grid);
+  grid-template-rows: 1fr;
+  grid-column-gap: var(--items-gap);
+  grid-row-gap: var(--items-gap);
+}
+
 .topStats {
   height: fit-content;
   background: var(--background-gradient);
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
   padding: var(--page-padding-top) var(--page-padding-left);
-  gap: var(--items-gap);
+
+  @extend .parent;
 }
+

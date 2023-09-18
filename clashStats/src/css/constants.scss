@@ -44,11 +44,10 @@
   --box-shadow-focus: 0 1px 3px 0 var(--border-focus-color),
     0 0 0 1px var(--border-focus-color);
 
-
   //SCROLL-BAR
   --scrollbar-heigth: 4px;
   --scrollbar-width: 4px;
-  
+
   --page-padding-top: var(--header-height);
   --page-padding-left: 8vw;
   --page-padding-bottom: 25px;
@@ -78,9 +77,7 @@
 
   //CARD
   --card-height: 175px;
-  --card-width: 32%;
-  --card-min-width: 330px;
-  --card-max-width: 33%;
+  --card-grid: repeat(3, 1fr);
   --card-element-width: 85px;
 
   //LINE-CARD-ELEMENTS-WIDTH
@@ -106,8 +103,7 @@
   --filters-container-heigth: 310px;
 
   @media screen and (max-width: 1220px) {
-    //CARD
-    --card-max-width: 49.5%;
+    --card-grid: repeat(2, 1fr);
   }
 
   @media screen and (max-width: 1024px) {
@@ -121,9 +117,7 @@
 
     //CARD
     --card-height: 170px;
-    --card-min-width: 300px;
-    --card-width: 45%;
-    --card-max-width: 49.5%;
+    --card-grid: repeat(2, 1fr);
     --card-element-width: 77px;
 
     //CARD-LABELS
@@ -147,9 +141,7 @@
 
     //CARD
     --card-height: 160px;
-    --card-width: 45%;
-    --card-min-width: 290px;
-    --card-max-width: 49.5%;
+    --card-grid: repeat(2, 1fr);
     --card-element-width: 75px;
 
     //--card-max-width: 480px;
@@ -165,9 +157,9 @@
     --filters-container-heigth: 330px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 670px) {
     //CARD
-    --card-max-width: 100%;
+    --card-grid: repeat(1, 1fr);
   }
 
   @media screen and (max-width: 480px) {
@@ -181,9 +173,7 @@
 
     //CARD
     --card-height: 160px;
-    --card-width: 50%;
-    --card-min-width: 280px;
-    --card-max-width: 100%;
+    --card-grid: repeat(1, 1fr);
     --card-element-width: 75px;
 
     //--card-max-width: 480px;
@@ -206,12 +196,8 @@
 
     //CARD
     --card-height: 155px;
-    --card-width: 50%;
-    --card-min-width: 250px;
-    --card-max-width: 100%;
+    --card-grid: repeat(1, 1fr);
     --card-element-width: 75px;
-
-    //--card-max-width: 480px;
 
     //CARD-LABELS
     --card-player-img-heigth: 30px;
