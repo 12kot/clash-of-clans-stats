@@ -5,6 +5,7 @@ import searchSlice from "./slices/SearchSlice";
 import filterSlice from "./slices/FilterSlice";
 import viewTypeSlice from "./slices/ViewTypeSlice";
 import sortSlice from "./slices/SortSlice";
+import labelsSlice from "./slices/LabelsSlice";
 
 const rootReducer = combineReducers({
     app: appSlice.reducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     search: searchSlice.reducer,
     filter: filterSlice.reducer,
     viewType: viewTypeSlice.reducer,
-    sort: sortSlice.reducer
+    sort: sortSlice.reducer,
+    labels: labelsSlice.reducer,
 });
 
 const store = configureStore({
