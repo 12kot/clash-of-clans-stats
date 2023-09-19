@@ -15,7 +15,6 @@ const LabelsButtonsPlayer = () => {
   const { active, onClick } = useActiveLabels(selectFilterPlayerLabels, addPlayerLabel);
   const { items } = useRequest<TLabelsItem, { labels: TLabel[] }, void>(selectLabelsPlayers, getLabelsPlayers);
 
-
   return <LabelsButtons labels={items} active={active} onClick={onClick} />;
 };
 

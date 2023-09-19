@@ -2,8 +2,8 @@ import React, { ReactElement, useState } from "react";
 import styles from "./SearchMenu.module.scss";
 import { TSearchButton } from "types/types";
 import SearchButtons from "./searchButtons/SearchButtons";
-import SearchMenuClanInput from "./inputs/SearchMenuClanInput";
-import SearchMenuPlayerInput from "./inputs/SearchMenuPlayerInput";
+import SearchMenuClanInput from "./inputs/type/SearchMenuClanInput";
+import SearchMenuPlayerInput from "./inputs/type/SearchMenuPlayerInput";
 
 const SearchMenu = (): ReactElement => {
   const [activeButton, setActiveButton] = useState<TSearchButton>("player");

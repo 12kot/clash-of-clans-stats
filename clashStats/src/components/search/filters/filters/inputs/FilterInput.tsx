@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./FiltersInput.module.scss";
-import SearchInput from "components/search/searchInput/basic/SearchInput";
+import SearchInput from "components/search/searchInput/SearchInput";
 import { getInputObj } from "components/search/searchInput/SearchInput.service";
 
 type Props = {

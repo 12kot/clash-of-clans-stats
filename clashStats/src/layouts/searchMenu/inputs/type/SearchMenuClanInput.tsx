@@ -7,9 +7,9 @@ import { searchClans } from "store/slices/SearchSlice";
 import { TCardBasicClan } from "types/types/card/basic/clan/cardBasicClanTypes";
 import { TSearchCardClan } from "types/types/slices/searchTypes";
 import { getInputClanWhitResultsObj } from "components/search/searchInput/SearchInput.service";
-import SearchInputWithResults from "components/search/searchInput/withResults/SearchInputWithResults";
 import { TFilterClan } from "types/types/slices/filterTypes";
 import { selectFilterClan } from "store/selectors/filterSelectors";
+import SearchInputWithResults from "../SearchInputWithResults";
 
 const SearchMenuClanInput = (): ReactElement => {
   const navigate = useNavigate();

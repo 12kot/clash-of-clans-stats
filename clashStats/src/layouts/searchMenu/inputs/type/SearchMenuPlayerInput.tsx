@@ -6,10 +6,10 @@ import { selectSearchPlayers } from "store/selectors/searchSelectors";
 import { searchPlayers } from "store/slices/SearchSlice";
 import { TSearchCardPlayer } from "types/types/slices/searchTypes";
 import { getInputPlayerWhitResultsObj } from "components/search/searchInput/SearchInput.service";
-import SearchInputWithResults from "components/search/searchInput/withResults/SearchInputWithResults";
 import { TCardBasicPlayer } from "types/types/card/basic/player/cardBasicPlayerTypes";
 import { TFilterPlayer } from "types/types/slices/filterTypes";
 import { selectFilterPlayer } from "store/selectors/filterSelectors";
+import SearchInputWithResults from "../SearchInputWithResults";
 
 const SearchMenuPlayerInput = (): ReactElement => {
   const navigate = useNavigate();

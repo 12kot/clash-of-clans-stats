@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { v4 } from "uuid";
 import { TMiniCard } from "types/types/card/cardTypes";
 import { TSearchButton } from "types/types";
-import SearchMiniCardItem from "./searchMiniCardItem/SearchMiniCardItem";
+import SearchMiniCardItem from "./resultItem/SearchMiniCardItem";
 
 type Props = {
   items: TMiniCard[];

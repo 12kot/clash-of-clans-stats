@@ -1,0 +1,16 @@
+.input {
+  height: 100%;
+
+  position: relative;
+  width: 100%;
+
+  border-color:var(--border-color)!important;
+  border-style: solid !important;
+
+  border-width: 2px;  
+  border-top-width: 3px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

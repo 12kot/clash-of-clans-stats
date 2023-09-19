@@ -10,7 +10,6 @@ type Props = {
 
 const getOtherText = (active?: TActive): string => {
   if (active === "clan") return "player";
-
   return "clan";
 };
 

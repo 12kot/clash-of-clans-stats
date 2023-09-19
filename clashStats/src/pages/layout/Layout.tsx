@@ -1,9 +1,9 @@
-import Header from "components/header/Header";
 import SpinLoader from "components/loader/spinLoader/Loader";
 import React, { ReactElement, Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import styles from "./Layout.module.scss";
-import Footer from "components/footer/Footer";
+import Footer from "layouts/footer/Footer";
+import Header from "layouts/header/Header";
 
 const Layout = (): ReactElement => {
   return (

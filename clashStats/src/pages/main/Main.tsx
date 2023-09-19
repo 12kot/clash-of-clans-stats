@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from "./Main.module.scss";
-import Banner from "components/banner/Banner";
-import SearchMenu from "components/searchMenu/SearchMenu";
+import Banner from "layouts/banner/Banner";
 import TopStatisticItems from "./topStatistic/TopStatisticItems";
+import SearchMenu from "layouts/searchMenu/SearchMenu";
 
 const Main = (): ReactElement => {
   return (

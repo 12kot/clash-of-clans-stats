@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import styles from "../SearchInputs.module.scss";
+import styles from "css/Input.module.scss";
 import Input from "components/input/Input";
 import { TSearchInput } from "types/types/search/searchTypes";
 import SearchButton from "components/ui/buttons/searchButton/SearchButton";

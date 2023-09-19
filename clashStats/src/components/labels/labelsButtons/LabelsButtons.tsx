@@ -6,11 +6,13 @@ import LabelItem from "../labelItem/LabelItem";
 import { LabelInit } from "types/initial/label/LabelInitial";
 import { v4 } from "uuid";
 
-export const getLabels = (
-  labels: TLabelsItem,
-  active: number[],
-  onClick: (n: number) => void
-): ReactElement[] => {
+type Props = {
+  labels: TLabelsItem;
+  active: number[];
+  onClick: (n: number) => void;
+};
+
+export const getLabels = ({ labels, active, onClick, }: Props): ReactElement[] => {
   if (labels.loading)
     return [...Array(20)].map(() => <LabelItem label={LabelInit} key={v4()} />);
 
@@ -24,16 +26,10 @@ export const getLabels = (
   ));
 };
 
-type Props = {
-  labels: TLabelsItem;
-  active: number[];
-  onClick: (n: number) => void;
-};
-
 const LabelsButtons = ({ labels, active, onClick }: Props): ReactElement => {
   return (
     <section className={styles.container}>
-      {getLabels(labels, active, onClick)}
+      {getLabels({ labels, active, onClick })}
     </section>
   );
 };
