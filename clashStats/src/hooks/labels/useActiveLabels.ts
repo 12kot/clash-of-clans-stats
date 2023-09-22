@@ -2,6 +2,7 @@ import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { useAppDispatch, useAppSelector } from "hooks/store";
 import { TStore } from "types/types/slices/storeType";
 
+//меняем активные лейблы
 export const useActiveLabels = (
   selector: (state: TStore) => number[],
   func: ActionCreatorWithPayload<number>

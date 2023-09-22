@@ -7,6 +7,7 @@ const initialState: TSortSlice = {
   ...InitSort,
 };
 
+//Сортировочка
 const sortSlice = createSlice({
   name: "sort",
   initialState,

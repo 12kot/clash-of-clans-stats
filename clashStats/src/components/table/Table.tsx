@@ -5,6 +5,7 @@ import Header from "./header/Header";
 import Thead from "./thead/Thead";
 import Tbody from "./tbody/Tbody";
 
+//Нигде не используется. Потом переделаю или удалю.
 const Table = (): ReactElement => {
   return (
     <article className={styles.tableContainer}>

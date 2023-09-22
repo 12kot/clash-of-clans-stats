@@ -6,6 +6,7 @@ const initialState: TFilterSlice = {
   ...InitFilter,
 };
 
+//Установка фильтров
 const filterSlice = createSlice({
   name: "filter",
   initialState,

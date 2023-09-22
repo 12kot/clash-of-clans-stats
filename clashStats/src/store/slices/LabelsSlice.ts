@@ -8,6 +8,7 @@ const initialState: TLabelsSlice = {
   ...InitLabelsSlice,
 };
 
+//Получение всех лейблов игры
 export const getLabelsPlayers = createAsyncThunk<{ labels: TLabel[] }, void>(
   "labels/getLabelsPlayers",
   async (_, { rejectWithValue }) => {

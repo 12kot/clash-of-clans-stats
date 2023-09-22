@@ -1,4 +1,5 @@
-export const getDataFromServer= async <T>(
+//запрос на сервер
+export const getDataFromServer = async <T>(
   path: string
 ): Promise<T | Error> => {
   const res = await fetch(`http://localhost:8000/${path}`);
